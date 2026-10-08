@@ -1,0 +1,32 @@
+{
+  "_publicationNotice": "Sanitized historical record, not a new test or operational approval. Identifiers are placeholders; original private evidence is retained separately. Recorded statuses/times/results are historical, not current state. Sanitized bytes cannot verify original hashes.",
+  "observedAt": "2026-10-07T07:58:34.282657+00:00",
+  "scope": "Read-only post-enable connector comparison against the original approved plan; only known Graph service fields may differ",
+  "items": [
+    {
+      "itemId": "example-item-0001",
+      "exactApprovedContentAclAndProperties": true
+    },
+    {
+      "itemId": "example-item-0002",
+      "exactApprovedContentAclAndProperties": true
+    },
+    {
+      "itemId": "example-item-0003",
+      "exactApprovedContentAclAndProperties": true
+    },
+    {
+      "itemId": "example-item-0004",
+      "exactApprovedContentAclAndProperties": true
+    },
+    {
+      "itemId": "example-item-0005",
+      "exactApprovedContentAclAndProperties": true
+    },
+    {
+      "itemId": "example-item-0006",
+      "exactApprovedContentAclAndProperties": true
+    }
+  ],
+  "passed": true
+}

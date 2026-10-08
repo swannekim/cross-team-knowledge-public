@@ -1,0 +1,620 @@
+{
+  "_publicationNotice": "Sanitized historical record, not a new test or operational approval. Identifiers are placeholders; original private evidence is retained separately. Recorded statuses/times/results are historical, not current state. Sanitized bytes cannot verify original hashes.",
+  "schemaVersion": 1,
+  "startedAt": "2026-10-07T12:42:15.9588223+00:00",
+  "completedAt": "2026-10-07T12:42:17.1453267+00:00",
+  "result": "PASSED",
+  "scope": "Local AST-extracted functions and mocked workflows only; not cloud, browser, authentication, or live watchdog validation.",
+  "cloudValidation": false,
+  "cloudChanges": false,
+  "credentialsRead": false,
+  "privateLedgerReadOrWritten": false,
+  "activeWatchdogUnaffected": true,
+  "activeWatchdogStatusChecked": false,
+  "automationModified": false,
+  "operationalCaution": "The already-running watchdog retains its loaded functions. A -Restore invocation while its event exists only signals that watchdog; these tests do not repair or validate the active process.",
+  "runner": {
+    "path": "C:\\EXAMPLE\\private-evidence\\operational-script-regressions.ps1",
+    "sha256": "3F48488379FC55219DA8B9F01CAED28CB23D42550E20FA6C2F2DDC7896055EDB",
+    "powerShellVersion": "7.6.6",
+    "command": "pwsh -NoProfile -File \"C:\\EXAMPLE\\private-evidence\\operational-script-regressions.ps1\" -RepoRoot \"C:\\EXAMPLE\\cross-team-knowledge-public\""
+  },
+  "sourceFiles": [
+    {
+      "path": "deployment\\scripts\\Set-TemporaryTestMfaException.ps1",
+      "sha256": "9784908475B700E3B2FDA11C07C0D247D7B63EDD8A009CF308727CD32C91FEED"
+    },
+    {
+      "path": "deployment\\scripts\\Deploy-Broker.ps1",
+      "sha256": "6ED72C339BEF62C6FD6E7A889E80C71520F8B3B62FB4E3B9130EFB009BD94663"
+    },
+    {
+      "path": "deployment\\scripts\\Test-DelegatedAccess.ps1",
+      "sha256": "5DE9B4E1F40A4EE03038F1CD56040960890A627C2E956921AEC0A03A9CACF89A"
+    }
+  ],
+  "syntax": {
+    "result": "PASSED",
+    "scriptsParsed": 3
+  },
+  "scenarioCount": 26,
+  "passedScenarioCount": 26,
+  "failedScenarioCount": 0,
+  "assertionCount": 91,
+  "passedAssertionCount": 91,
+  "failedAssertionCount": 0,
+  "scenarios": [
+    {
+      "group": "MFA",
+      "scenario": "transient-policy-failure",
+      "result": "PASSED",
+      "assertions": [
+        {
+          "assertion": "Transient failure is recovered and readback verified.",
+          "passed": true
+        },
+        {
+          "assertion": "First-policy failure does not prevent second-policy cleanup.",
+          "passed": true
+        },
+        {
+          "assertion": "Only the failed policy is retried.",
+          "passed": true
+        },
+        {
+          "assertion": "Successful final ledger retains the prior error history.",
+          "passed": true
+        },
+        {
+          "assertion": "p1 removes introduced u1 only; preexisting u2 and unrelated exclusions survive.",
+          "passed": true
+        },
+        {
+          "assertion": "p1 preserves concurrent unrelated policy fields.",
+          "passed": true
+        },
+        {
+          "assertion": "p2 removes introduced u1 only; preexisting u2 and unrelated exclusions survive.",
+          "passed": true
+        },
+        {
+          "assertion": "p2 preserves concurrent unrelated policy fields.",
+          "passed": true
+        },
+        {
+          "assertion": "Every PATCH contains only conditions.users.excludeUsers.",
+          "passed": true
+        }
+      ],
+      "assertionCount": 9
+    },
+    {
+      "group": "MFA",
+      "scenario": "idempotent-restored-recheck",
+      "result": "PASSED",
+      "assertions": [
+        {
+          "assertion": "Repeated restoration verifies without new PATCHes.",
+          "passed": true
+        }
+      ],
+      "assertionCount": 1
+    },
+    {
+      "group": "MFA",
+      "scenario": "permanent-policy-failure",
+      "result": "PASSED",
+      "assertions": [
+        {
+          "assertion": "Permanent failure throws a critical error; never claims restoration.",
+          "passed": true
+        },
+        {
+          "assertion": "Six bounded first-policy attempts do not block second-policy success.",
+          "passed": true
+        },
+        {
+          "assertion": "Retry delays are bounded at 5, 15, 30, 60, and 120 seconds.",
+          "passed": true
+        },
+        {
+          "assertion": "Final ledger names the outstanding policy and all six errors.",
+          "passed": true
+        }
+      ],
+      "assertionCount": 4
+    },
+    {
+      "group": "MFA",
+      "scenario": "readback-mismatch",
+      "result": "PASSED",
+      "assertions": [
+        {
+          "assertion": "Readback with a remaining introduced exclusion fails and is retried.",
+          "passed": true
+        }
+      ],
+      "assertionCount": 1
+    },
+    {
+      "group": "MFA",
+      "scenario": "unowned-exclusion-ledger",
+      "result": "PASSED",
+      "assertions": [
+        {
+          "assertion": "Unowned exclusion is fatal for that policy only.",
+          "passed": true
+        },
+        {
+          "assertion": "Preexisting exclusion cannot be removed by a malformed ownership ledger.",
+          "passed": true
+        }
+      ],
+      "assertionCount": 2
+    },
+    {
+      "group": "MFA",
+      "scenario": "ledger-write-failure",
+      "result": "PASSED",
+      "assertions": [
+        {
+          "assertion": "Persistence failure is surfaced as a critical ledger error.",
+          "passed": true
+        },
+        {
+          "assertion": "Ledger I/O failure does not prevent either policy cleanup.",
+          "passed": true
+        }
+      ],
+      "assertionCount": 2
+    },
+    {
+      "group": "MFA",
+      "scenario": "authentication-outage",
+      "result": "PASSED",
+      "assertions": [
+        {
+          "assertion": "Authentication failures are bounded independently for both policies.",
+          "passed": true
+        },
+        {
+          "assertion": "Both unverified policies and all authentication failures reach the ledger.",
+          "passed": true
+        }
+      ],
+      "assertionCount": 2
+    },
+    {
+      "group": "MFA",
+      "scenario": "valid-baseline-ownership",
+      "result": "PASSED",
+      "assertions": [
+        {
+          "assertion": "Valid baseline permits introduced-only removal.",
+          "passed": true
+        }
+      ],
+      "assertionCount": 1
+    },
+    {
+      "group": "MFA",
+      "scenario": "missing-baseline-ownership",
+      "result": "PASSED",
+      "assertions": [
+        {
+          "assertion": "Missing ownership baseline fails closed without mutation.",
+          "passed": true
+        },
+        {
+          "assertion": "Missing first-policy baseline does not abort second-policy cleanup.",
+          "passed": true
+        }
+      ],
+      "assertionCount": 2
+    },
+    {
+      "group": "Deployment",
+      "scenario": "Failed",
+      "result": "PASSED",
+      "assertions": [
+        {
+          "assertion": "Replacement is submitted only after every old revision is inactive and has zero replicas.",
+          "passed": true
+        },
+        {
+          "assertion": "Submission follows at least 75 seconds of confirmed quiet for natural lease expiry.",
+          "passed": true
+        },
+        {
+          "assertion": "Recovery reaches verified state with exactly one replacement submission.",
+          "passed": true
+        },
+        {
+          "assertion": "Both old revisions are deactivated.",
+          "passed": true
+        },
+        {
+          "assertion": "Recovery preflight accepts this terminal prior state.",
+          "passed": true
+        },
+        {
+          "assertion": "Default post-submission readiness still rejects this terminal failure.",
+          "passed": true
+        }
+      ],
+      "assertionCount": 6
+    },
+    {
+      "group": "Deployment",
+      "scenario": "Canceled",
+      "result": "PASSED",
+      "assertions": [
+        {
+          "assertion": "Replacement is submitted only after every old revision is inactive and has zero replicas.",
+          "passed": true
+        },
+        {
+          "assertion": "Submission follows at least 75 seconds of confirmed quiet for natural lease expiry.",
+          "passed": true
+        },
+        {
+          "assertion": "Recovery reaches verified state with exactly one replacement submission.",
+          "passed": true
+        },
+        {
+          "assertion": "Both old revisions are deactivated.",
+          "passed": true
+        },
+        {
+          "assertion": "Recovery preflight accepts this terminal prior state.",
+          "passed": true
+        },
+        {
+          "assertion": "Default post-submission readiness still rejects this terminal failure.",
+          "passed": true
+        }
+      ],
+      "assertionCount": 6
+    },
+    {
+      "group": "Deployment",
+      "scenario": "Succeeded",
+      "result": "PASSED",
+      "assertions": [
+        {
+          "assertion": "Replacement is submitted only after every old revision is inactive and has zero replicas.",
+          "passed": true
+        },
+        {
+          "assertion": "Submission follows at least 75 seconds of confirmed quiet for natural lease expiry.",
+          "passed": true
+        },
+        {
+          "assertion": "Recovery reaches verified state with exactly one replacement submission.",
+          "passed": true
+        },
+        {
+          "assertion": "Both old revisions are deactivated.",
+          "passed": true
+        }
+      ],
+      "assertionCount": 4
+    },
+    {
+      "group": "Deployment",
+      "scenario": "single-mode",
+      "result": "PASSED",
+      "assertions": [
+        {
+          "assertion": "Replacement is submitted only after every old revision is inactive and has zero replicas.",
+          "passed": true
+        },
+        {
+          "assertion": "Submission follows at least 75 seconds of confirmed quiet for natural lease expiry.",
+          "passed": true
+        },
+        {
+          "assertion": "Recovery reaches verified state with exactly one replacement submission.",
+          "passed": true
+        },
+        {
+          "assertion": "Both old revisions are deactivated.",
+          "passed": true
+        },
+        {
+          "assertion": "Single mode is changed to Multiple before drain.",
+          "passed": true
+        }
+      ],
+      "assertionCount": 5
+    },
+    {
+      "group": "Deployment",
+      "scenario": "never-drains",
+      "result": "PASSED",
+      "assertions": [
+        {
+          "assertion": "A remaining replica blocks replacement submission until drain times out.",
+          "passed": true
+        }
+      ],
+      "assertionCount": 1
+    },
+    {
+      "group": "Deployment",
+      "scenario": "concurrent-revision",
+      "result": "PASSED",
+      "assertions": [
+        {
+          "assertion": "An unexpected concurrent revision blocks replacement submission.",
+          "passed": true
+        }
+      ],
+      "assertionCount": 1
+    },
+    {
+      "group": "Deployment",
+      "scenario": "post-submit-failure",
+      "result": "PASSED",
+      "assertions": [
+        {
+          "assertion": "Replacement is submitted only after every old revision is inactive and has zero replicas.",
+          "passed": true
+        },
+        {
+          "assertion": "Submission follows at least 75 seconds of confirmed quiet for natural lease expiry.",
+          "passed": true
+        },
+        {
+          "assertion": "Post-submission failure cannot be promoted to ready or verified.",
+          "passed": true
+        }
+      ],
+      "assertionCount": 3
+    },
+    {
+      "group": "Delegated",
+      "scenario": "response-shapes",
+      "result": "PASSED",
+      "assertions": [
+        {
+          "assertion": "A nonempty answer with valid citations passes.",
+          "passed": true
+        },
+        {
+          "assertion": "A real successful JSON-RPC result with cited structured content passes.",
+          "passed": true
+        },
+        {
+          "assertion": "Invalid citations fail: missing.",
+          "passed": true
+        },
+        {
+          "assertion": "Invalid citations fail: empty.",
+          "passed": true
+        },
+        {
+          "assertion": "Invalid citations fail: nullElement.",
+          "passed": true
+        },
+        {
+          "assertion": "Invalid citations fail: emptyObject.",
+          "passed": true
+        },
+        {
+          "assertion": "Invalid citations fail: stringElement.",
+          "passed": true
+        },
+        {
+          "assertion": "Invalid citations fail: notArray.",
+          "passed": true
+        },
+        {
+          "assertion": "Invalid citations fail: mixedNull.",
+          "passed": true
+        },
+        {
+          "assertion": "Invalid JSON-RPC shape fails: errorWithoutResult.",
+          "passed": true
+        },
+        {
+          "assertion": "Invalid JSON-RPC shape fails: nullResult.",
+          "passed": true
+        },
+        {
+          "assertion": "Invalid JSON-RPC shape fails: missingStructuredContent.",
+          "passed": true
+        },
+        {
+          "assertion": "Invalid JSON-RPC shape fails: isErrorTrue.",
+          "passed": true
+        },
+        {
+          "assertion": "Invalid JSON-RPC shape fails: errorAndResult.",
+          "passed": true
+        },
+        {
+          "assertion": "Invalid JSON-RPC shape fails: missingIsError.",
+          "passed": true
+        },
+        {
+          "assertion": "Invalid JSON-RPC shape fails: stringIsError.",
+          "passed": true
+        }
+      ],
+      "assertionCount": 16
+    },
+    {
+      "group": "Delegated",
+      "scenario": "valid",
+      "result": "PASSED",
+      "assertions": [
+        {
+          "assertion": "Evidence is produced even when this run fails.",
+          "passed": true
+        },
+        {
+          "assertion": "Valid allowed or denied role-specific response shapes pass the full run.",
+          "passed": true
+        }
+      ],
+      "assertionCount": 2
+    },
+    {
+      "group": "Delegated",
+      "scenario": "mcp-error",
+      "result": "PASSED",
+      "assertions": [
+        {
+          "assertion": "Evidence is produced even when this run fails.",
+          "passed": true
+        },
+        {
+          "assertion": "Malformed successful-HTTP response fails the overall run.",
+          "passed": true
+        },
+        {
+          "assertion": "Specific evidence assertion fails: B-DELEGATED-MCP.",
+          "passed": true
+        }
+      ],
+      "assertionCount": 3
+    },
+    {
+      "group": "Delegated",
+      "scenario": "mcp-null-result",
+      "result": "PASSED",
+      "assertions": [
+        {
+          "assertion": "Evidence is produced even when this run fails.",
+          "passed": true
+        },
+        {
+          "assertion": "Malformed successful-HTTP response fails the overall run.",
+          "passed": true
+        },
+        {
+          "assertion": "Specific evidence assertion fails: B-DELEGATED-MCP.",
+          "passed": true
+        }
+      ],
+      "assertionCount": 3
+    },
+    {
+      "group": "Delegated",
+      "scenario": "maintenance-missing",
+      "result": "PASSED",
+      "assertions": [
+        {
+          "assertion": "Evidence is produced even when this run fails.",
+          "passed": true
+        },
+        {
+          "assertion": "Malformed successful-HTTP response fails the overall run.",
+          "passed": true
+        },
+        {
+          "assertion": "Specific evidence assertion fails: B-MAINTENANCE-ANSWER.",
+          "passed": true
+        }
+      ],
+      "assertionCount": 3
+    },
+    {
+      "group": "Delegated",
+      "scenario": "maintenance-null",
+      "result": "PASSED",
+      "assertions": [
+        {
+          "assertion": "Evidence is produced even when this run fails.",
+          "passed": true
+        },
+        {
+          "assertion": "Malformed successful-HTTP response fails the overall run.",
+          "passed": true
+        },
+        {
+          "assertion": "Specific evidence assertion fails: B-MAINTENANCE-ANSWER.",
+          "passed": true
+        }
+      ],
+      "assertionCount": 3
+    },
+    {
+      "group": "Delegated",
+      "scenario": "wet-null",
+      "result": "PASSED",
+      "assertions": [
+        {
+          "assertion": "Evidence is produced even when this run fails.",
+          "passed": true
+        },
+        {
+          "assertion": "Malformed successful-HTTP response fails the overall run.",
+          "passed": true
+        },
+        {
+          "assertion": "Specific evidence assertion fails: B-WET-CLEAN-ANSWER.",
+          "passed": true
+        }
+      ],
+      "assertionCount": 3
+    },
+    {
+      "group": "Delegated",
+      "scenario": "broker-auth-failure",
+      "result": "PASSED",
+      "assertions": [
+        {
+          "assertion": "Evidence is produced even when this run fails.",
+          "passed": true
+        },
+        {
+          "assertion": "Broker authentication failure accurately records a partially completed run.",
+          "passed": true
+        },
+        {
+          "assertion": "Broker authentication diagnostics remain in the evidence.",
+          "passed": true
+        }
+      ],
+      "assertionCount": 3
+    },
+    {
+      "group": "Delegated",
+      "scenario": "device-auth-failure",
+      "result": "PASSED",
+      "assertions": [
+        {
+          "assertion": "Evidence is produced even when this run fails.",
+          "passed": true
+        },
+        {
+          "assertion": "Device authentication failure does not become a pass.",
+          "passed": true
+        },
+        {
+          "assertion": "Device authentication diagnostics remain in the evidence.",
+          "passed": true
+        }
+      ],
+      "assertionCount": 3
+    },
+    {
+      "group": "Delegated",
+      "scenario": "outsider",
+      "result": "PASSED",
+      "assertions": [
+        {
+          "assertion": "Evidence is produced even when this run fails.",
+          "passed": true
+        },
+        {
+          "assertion": "Valid allowed or denied role-specific response shapes pass the full run.",
+          "passed": true
+        }
+      ],
+      "assertionCount": 2
+    }
+  ]
+}

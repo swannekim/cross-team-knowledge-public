@@ -1,0 +1,30 @@
+{
+  "acl": [
+    {
+      "type": "group",
+      "value": "b0b0b0b0-2222-4222-8222-0000000000bb",
+      "accessType": "grant"
+    },
+    {
+      "type": "user",
+      "value": "0dafe000-0000-4000-8000-0000000000d4",
+      "accessType": "deny"
+    }
+  ],
+  "properties": {
+    "url": "https://broker.contoso.com/access-request?ref=ref-a5532ca2bc769783dd0de7ed",
+    "containerName": "Process Engineering → Yield Analytics (SC-2026-0042)",
+    "lastModifiedDateTime": "2026-09-05T07:30:00Z",
+    "sourceTeam": "Process Engineering",
+    "sensitivity": "Confidential",
+    "contractId": "SC-2026-0042",
+    "validUntil": "2026-11-06T01:00:00Z",
+    "sourceFingerprint": "sha256:86d05d134d37f704a1b545ee253d93cc3fd01eeb638e743e91e6399d89acce89",
+    "title": "SUPPLIER QUALITY ISSUE SQ-118 - Photoresist lot contamination (extract 1/1)",
+    "derivativeType": "redactedExtract"
+  },
+  "content": {
+    "type": "text",
+    "value": "SUPPLIER QUALITY ISSUE SQ-118 - Photoresist lot contamination\nSupplier: Northwind Chemicals (fictional), product NR-248 KrF photoresist\nOpened: 2026-08-27   Status: corrective action in verification\nReport owner: Supplier Quality, Process Engineering\n\nProblem statement\nLot NR248-2608-11 of NR-248 photoresist contained gel particles that caused bridging defects on the NX-7 gate lithography layer. Incoming inspection did not detect the gels because the liquid particle count specification only covers particles of 0.2 um and larger.\n\nImpact\nFour NX-7 lots were reworked at the litho step. Defect density at gate litho rose from 0.08 to 0.31 defects per square centimetre for wafers coated from the affected bottles. No lots were scrapped.\n\nContainment\nAll bottles from lot NR248-2608-11 were quarantined. Coating tools were purged and two filter changes were performed on track TRK-04.\n\nSupplier response (8D summary)\nD4 root cause: a filter housing seal on the supplier filling line was replaced with a non-qualified material that shed gel-like fragments.\nD5/D6: the seal material was reverted and the supplier added a 0.1 um final filtration step.\nD7: the supplier will report liquid particle counts down to 0.1 um on every certificate of analysis.\n\nSupplier contacts\nSupplier quality engineer: J. H. Kim, [REDACTED:EMAIL], mobile [REDACTED:KR_MOBILE].\nOn-site visit 2026-09-03: visitor registration for the supplier engineer was filed with resident registration number [REDACTED:KR_RRN] (to be purged after 30 days).\n\nRelated: the liner surface finish question raised in YE-0412 has been added to the next supplier quarterly review."
+  }
+}

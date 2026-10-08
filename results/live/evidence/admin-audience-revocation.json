@@ -1,0 +1,33 @@
+{
+  "_publicationNotice": "Sanitized historical record, not a new test or operational approval. Identifiers are placeholders; original private evidence is retained separately. Recorded statuses/times/results are historical, not current state. Sanitized bytes cannot verify original hashes.",
+  "scope": "Temporary removal/restoration of the demo administrator only; not an independent outsider identity.",
+  "groupId": "f0000000-0000-4000-8000-000000000016",
+  "userId": "f0000000-0000-4000-8000-000000000031",
+  "restoreTimeoutSeconds": 300,
+  "status": "RESTORED",
+  "originalMembers": [
+    "f0000000-0000-4000-8000-000000000015",
+    "f0000000-0000-4000-8000-000000000031"
+  ],
+  "startedAt": "2026-10-07T08:04:16.1004497+00:00",
+  "removedAt": "2026-10-07T08:04:20.6688429+00:00",
+  "membersWhileRemoved": [
+    "f0000000-0000-4000-8000-000000000015"
+  ],
+  "restoreTriggeredEarly": true,
+  "restoredAt": "2026-10-07T08:08:37.0056658+00:00",
+  "finalMembers": [
+    "f0000000-0000-4000-8000-000000000015",
+    "f0000000-0000-4000-8000-000000000031"
+  ],
+  "originalMembershipSetRestored": true,
+  "brokerDenialTest": {
+    "status": "NOT RUN",
+    "reason": "Copilot client did not become interactive while membership was removed. The request remained an unsent draft; no new conversation or broker call was completed.",
+    "observedBrowserError": "ChunkLoadError: Loading chunk 88758 failed (timeout: m365-chat-3s-calling-config.shared.52d93f45.chunk.js on res.public.onecdn.static.microsoft).",
+    "inputReadyWaitTimeoutSeconds": 20,
+    "unsentDraftClearedAfterRestoration": true,
+    "denialPassed": false,
+    "interpretation": "A browser-load failure, not a passed authorization denial or a broker authorization defect."
+  }
+}

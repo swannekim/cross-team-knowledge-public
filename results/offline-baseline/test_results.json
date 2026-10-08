@@ -1,0 +1,1083 @@
+{
+  "summary": {
+    "command": "python3 -m unittest discover -v   (recorded via python3 tools/run_tests.py)",
+    "generatedAt": "2026-10-07T02:50:15Z",
+    "python": "3.12.14",
+    "total": 104,
+    "passed": 104,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 0,
+    "durationSeconds": 40.49,
+    "successful": true,
+    "byArchitecture": {
+      "A": {
+        "total": 38,
+        "passed": 38,
+        "failed": 0
+      },
+      "B": {
+        "total": 29,
+        "passed": 29,
+        "failed": 0
+      },
+      "C": {
+        "total": 18,
+        "passed": 18,
+        "failed": 0
+      },
+      "Common": {
+        "total": 17,
+        "passed": 17,
+        "failed": 0
+      },
+      "Benchmark": {
+        "total": 2,
+        "passed": 2,
+        "failed": 0
+      }
+    }
+  },
+  "tests": [
+    {
+      "unittestId": "arch_a_connector.tests.test_arch_a.ArchABaseline.test_acl_is_audience_group_only",
+      "architecture": "A",
+      "test": "test_acl_is_audience_group_only",
+      "verifies": "Every item ACL grants only the Team B group (never the source group/ACL, never everyone); denies are guests only.",
+      "result": "pass",
+      "durationMs": 68.2,
+      "detail": "",
+      "id": "A-01"
+    },
+    {
+      "unittestId": "arch_a_connector.tests.test_arch_a.ArchABaseline.test_audit_chain_verifies_and_matches_writes",
+      "architecture": "A",
+      "test": "test_audit_chain_verifies_and_matches_writes",
+      "verifies": "Every PUT has a 'publish' audit record, the hash chain verifies, and no PII or secrets reach the audit log.",
+      "result": "pass",
+      "durationMs": 28.8,
+      "detail": "",
+      "id": "A-02"
+    },
+    {
+      "unittestId": "arch_a_connector.tests.test_arch_a.ArchABaseline.test_connection_payload_valid",
+      "architecture": "A",
+      "test": "test_connection_payload_valid",
+      "verifies": "Connection JSON {id,name,description} is valid: id 3-32 alphanumeric, not starting with 'Microsoft'.",
+      "result": "pass",
+      "durationMs": 0.5,
+      "detail": "",
+      "id": "A-03"
+    },
+    {
+      "unittestId": "arch_a_connector.tests.test_arch_a.ArchABaseline.test_container_name_is_contract_display_name",
+      "architecture": "A",
+      "test": "test_container_name_is_contract_display_name",
+      "verifies": "Every item's containerName (semantic label) is the contract display name, never an original path.",
+      "result": "pass",
+      "durationMs": 0.9,
+      "detail": "",
+      "id": "A-04"
+    },
+    {
+      "unittestId": "arch_a_connector.tests.test_arch_a.ArchABaseline.test_highly_confidential_internal_and_drafts_excluded",
+      "architecture": "A",
+      "test": "test_highly_confidential_internal_and_drafts_excluded",
+      "verifies": "Highly Confidential (label ceiling), /Internal (scope) and /Shareable/Drafts (excluded path) produce no items.",
+      "result": "pass",
+      "durationMs": 108.3,
+      "detail": "",
+      "id": "A-05"
+    },
+    {
+      "unittestId": "arch_a_connector.tests.test_arch_a.ArchABaseline.test_item_ids_deterministic_and_valid",
+      "architecture": "A",
+      "test": "test_item_ids_deterministic_and_valid",
+      "verifies": "Item ids are URL-safe, <=128 chars and identical across independent full crawls.",
+      "result": "pass",
+      "durationMs": 1293.0,
+      "detail": "",
+      "id": "A-06"
+    },
+    {
+      "unittestId": "arch_a_connector.tests.test_arch_a.ArchABaseline.test_large_document_chunked_for_retrieval_within_item_limit",
+      "architecture": "A",
+      "test": "test_large_document_chunked_for_retrieval_within_item_limit",
+      "verifies": "The 4.5 MB log is split into <=8,000-char items (retrieval-quality choice); every item is far below the 30 MB per-item limit, and an item above the limit is rejected by the validator.",
+      "result": "pass",
+      "durationMs": 472.1,
+      "detail": "",
+      "id": "A-07"
+    },
+    {
+      "unittestId": "arch_a_connector.tests.test_arch_a.ArchABaseline.test_no_original_url_path_or_id_in_any_payload",
+      "architecture": "A",
+      "test": "test_no_original_url_path_or_id_in_any_payload",
+      "verifies": "No original webUrl, library path, site/drive/driveItem id or Teams link appears in any Graph request body.",
+      "result": "pass",
+      "durationMs": 192.4,
+      "detail": "",
+      "id": "A-08"
+    },
+    {
+      "unittestId": "arch_a_connector.tests.test_arch_a.ArchABaseline.test_pii_and_secrets_redacted",
+      "architecture": "A",
+      "test": "test_pii_and_secrets_redacted",
+      "verifies": "Emails, KR mobiles, KR RRN, API key, connection string and internal links are replaced by [REDACTED:*] tokens.",
+      "result": "pass",
+      "durationMs": 398.4,
+      "detail": "",
+      "id": "A-09"
+    },
+    {
+      "unittestId": "arch_a_connector.tests.test_arch_a.ArchABaseline.test_prompt_injection_neutralised",
+      "architecture": "A",
+      "test": "test_prompt_injection_neutralised",
+      "verifies": "The injection sentence is stripped from derived items, flagged in state and audited; other content is kept.",
+      "result": "pass",
+      "durationMs": 48.1,
+      "detail": "",
+      "id": "A-10"
+    },
+    {
+      "unittestId": "arch_a_connector.tests.test_arch_a.ArchABaseline.test_schema_valid_and_registered",
+      "architecture": "A",
+      "test": "test_schema_valid_and_registered",
+      "verifies": "Schema uses baseType externalItem, required semantic labels, valid flags, and registers via PATCH + 202 polling.",
+      "result": "pass",
+      "durationMs": 0.4,
+      "detail": "",
+      "id": "A-11"
+    },
+    {
+      "unittestId": "arch_a_connector.tests.test_arch_a.ArchABaseline.test_teams_chat_ingested_as_derived_items",
+      "architecture": "A",
+      "test": "test_teams_chat_ingested_as_derived_items",
+      "verifies": "Teams chat becomes per-day digests (pseudonymised, redacted) plus the chat file from the sender's OneDrive.",
+      "result": "pass",
+      "durationMs": 1956.6,
+      "detail": "",
+      "id": "A-12"
+    },
+    {
+      "unittestId": "arch_a_connector.tests.test_arch_a.ArchABaseline.test_trimming_bob_sees_carol_and_guest_dave_do_not",
+      "architecture": "A",
+      "test": "test_trimming_bob_sees_carol_and_guest_dave_do_not",
+      "verifies": "Search trimming: bob (Team B) gets results; carol (no group), dave (Team B guest, deny ACE) and alice get none.",
+      "result": "pass",
+      "durationMs": 6.5,
+      "detail": "",
+      "id": "A-13"
+    },
+    {
+      "unittestId": "arch_a_connector.tests.test_arch_a.ArchAMutations.test_audience_change_by_group_membership_only",
+      "architecture": "A",
+      "test": "test_audience_change_by_group_membership_only",
+      "verifies": "Removing bob from grp-team-b removes his access at once (the ACL references the group) with zero item writes.",
+      "result": "pass",
+      "durationMs": 498.3,
+      "detail": "",
+      "id": "A-14"
+    },
+    {
+      "unittestId": "arch_a_connector.tests.test_arch_a.ArchAMutations.test_audit_tampering_detected",
+      "architecture": "A",
+      "test": "test_audit_tampering_detected",
+      "verifies": "Editing a persisted audit record breaks the hash chain and verify() pinpoints it.",
+      "result": "pass",
+      "durationMs": 1085.7,
+      "detail": "",
+      "id": "A-15"
+    },
+    {
+      "unittestId": "arch_a_connector.tests.test_arch_a.ArchAMutations.test_contract_revocation_deletes_all_items",
+      "architecture": "A",
+      "test": "test_contract_revocation_deletes_all_items",
+      "verifies": "Revoking the contract deletes every derived item; later syncs publish nothing.",
+      "result": "pass",
+      "durationMs": 521.5,
+      "detail": "",
+      "id": "A-16"
+    },
+    {
+      "unittestId": "arch_a_connector.tests.test_arch_a.ArchAMutations.test_expired_delta_token_triggers_full_resync",
+      "architecture": "A",
+      "test": "test_expired_delta_token_triggers_full_resync",
+      "verifies": "HTTP 410-style expired delta token falls back to a full crawl without duplicate writes.",
+      "result": "pass",
+      "durationMs": 394.7,
+      "detail": "",
+      "id": "A-17"
+    },
+    {
+      "unittestId": "arch_a_connector.tests.test_arch_a.ArchAMutations.test_incremental_delete_propagates",
+      "architecture": "A",
+      "test": "test_incremental_delete_propagates",
+      "verifies": "A source deletion (delta 'deleted' facet) deletes all derived items for that doc.",
+      "result": "pass",
+      "durationMs": 431.7,
+      "detail": "",
+      "id": "A-18"
+    },
+    {
+      "unittestId": "arch_a_connector.tests.test_arch_a.ArchAMutations.test_incremental_update_republishes_only_changed_document",
+      "architecture": "A",
+      "test": "test_incremental_update_republishes_only_changed_document",
+      "verifies": "An edit to one doc re-publishes only that doc's items via drive delta; new content becomes searchable.",
+      "result": "pass",
+      "durationMs": 507.0,
+      "detail": "",
+      "id": "A-19"
+    },
+    {
+      "unittestId": "arch_a_connector.tests.test_arch_a.ArchAMutations.test_move_out_of_scope_and_relabel_above_ceiling_remove_items",
+      "architecture": "A",
+      "test": "test_move_out_of_scope_and_relabel_above_ceiling_remove_items",
+      "verifies": "Moving a doc to /Internal or relabelling it Highly Confidential removes its derived items on the next sync.",
+      "result": "pass",
+      "durationMs": 338.8,
+      "detail": "",
+      "id": "A-20"
+    },
+    {
+      "unittestId": "arch_a_connector.tests.test_arch_a.ArchAMutations.test_new_guest_visible_until_acl_refresh_then_denied",
+      "architecture": "A",
+      "test": "test_new_guest_visible_until_acl_refresh_then_denied",
+      "verifies": "ACL drift: a guest newly added to Team B can see items until the next sync re-publishes them with a deny ACE.",
+      "result": "pass",
+      "durationMs": 1303.6,
+      "detail": "",
+      "id": "A-21"
+    },
+    {
+      "unittestId": "arch_a_connector.tests.test_arch_a.ArchAMutations.test_new_in_scope_file_is_published",
+      "architecture": "A",
+      "test": "test_new_in_scope_file_is_published",
+      "verifies": "A new file under /Shareable is picked up by the next incremental sync.",
+      "result": "pass",
+      "durationMs": 493.7,
+      "detail": "",
+      "id": "A-22"
+    },
+    {
+      "unittestId": "arch_a_connector.tests.test_arch_a.ArchAMutations.test_no_change_rerun_zero_writes",
+      "architecture": "A",
+      "test": "test_no_change_rerun_zero_writes",
+      "verifies": "Re-running full and incremental sync with no source change performs zero PUT/DELETE calls.",
+      "result": "pass",
+      "durationMs": 450.8,
+      "detail": "",
+      "id": "A-23"
+    },
+    {
+      "unittestId": "arch_a_connector.tests.test_arch_a.ArchAMutations.test_refresh_before_expiry_extends_validity",
+      "architecture": "A",
+      "test": "test_refresh_before_expiry_extends_validity",
+      "verifies": "An incremental run inside the refresh window re-publishes due items with a later validUntil.",
+      "result": "pass",
+      "durationMs": 1407.8,
+      "detail": "",
+      "id": "A-24"
+    },
+    {
+      "unittestId": "arch_a_connector.tests.test_arch_a.ArchAMutations.test_shrinking_document_deletes_superseded_chunks",
+      "architecture": "A",
+      "test": "test_shrinking_document_deletes_superseded_chunks",
+      "verifies": "When a doc shrinks, extract items that are no longer produced are deleted (no orphans).",
+      "result": "pass",
+      "durationMs": 797.5,
+      "detail": "",
+      "id": "A-25"
+    },
+    {
+      "unittestId": "arch_a_connector.tests.test_arch_a.ArchAMutations.test_state_persists_and_resumes_without_rewrites",
+      "architecture": "A",
+      "test": "test_state_persists_and_resumes_without_rewrites",
+      "verifies": "JSON state survives a restart: a new engine resumes from the saved deltaLink with zero writes.",
+      "result": "pass",
+      "durationMs": 1589.6,
+      "detail": "",
+      "id": "A-26"
+    },
+    {
+      "unittestId": "arch_a_connector.tests.test_arch_a.ArchAMutations.test_suspended_contract_purges_on_next_run",
+      "architecture": "A",
+      "test": "test_suspended_contract_purges_on_next_run",
+      "verifies": "A contract that is no longer active (suspended) purges derived content on the next scheduled run.",
+      "result": "pass",
+      "durationMs": 495.1,
+      "detail": "",
+      "id": "A-27"
+    },
+    {
+      "unittestId": "arch_a_connector.tests.test_arch_a.ArchAMutations.test_tenant_wide_audience_only_when_contract_allows",
+      "architecture": "A",
+      "test": "test_tenant_wide_audience_only_when_contract_allows",
+      "verifies": "everyone/everyoneExceptGuests ACEs appear only if the contract allows it; their value is the (configurable) tenant ID.",
+      "result": "pass",
+      "durationMs": 394.6,
+      "detail": "",
+      "id": "A-28"
+    },
+    {
+      "unittestId": "arch_a_connector.tests.test_arch_a.ArchAMutations.test_ttl_expiry_sweep_removes_items",
+      "architecture": "A",
+      "test": "test_ttl_expiry_sweep_removes_items",
+      "verifies": "After ttlDays without refresh (e.g. engine down) the expiry sweep deletes every derived item.",
+      "result": "pass",
+      "durationMs": 595.9,
+      "detail": "",
+      "id": "A-29"
+    },
+    {
+      "unittestId": "arch_a_connector.tests.test_arch_a.ArchAValidatorsAndTransport.test_artifacts_are_valid_graph_payloads",
+      "architecture": "A",
+      "test": "test_artifacts_are_valid_graph_payloads",
+      "verifies": "artifacts/arch_a (connection, schema, example items) validate against the Graph constraints and leak nothing.",
+      "result": "pass",
+      "durationMs": 107.7,
+      "detail": "",
+      "id": "A-30"
+    },
+    {
+      "unittestId": "arch_a_connector.tests.test_arch_a.ArchAValidatorsAndTransport.test_client_retries_throttling_with_retry_after",
+      "architecture": "A",
+      "test": "test_client_retries_throttling_with_retry_after",
+      "verifies": "ConnectorClient retries 429/503 honouring Retry-After before succeeding.",
+      "result": "pass",
+      "durationMs": 93.0,
+      "detail": "",
+      "id": "A-31"
+    },
+    {
+      "unittestId": "arch_a_connector.tests.test_arch_a.ArchAValidatorsAndTransport.test_connection_id_derived_from_contract",
+      "architecture": "A",
+      "test": "test_connection_id_derived_from_contract",
+      "verifies": "The connection id is derived deterministically from the contract id and is valid.",
+      "result": "pass",
+      "durationMs": 31.8,
+      "detail": "",
+      "id": "A-32"
+    },
+    {
+      "unittestId": "arch_a_connector.tests.test_arch_a.ArchAValidatorsAndTransport.test_connector_declarative_agent_v18",
+      "architecture": "A",
+      "test": "test_connector_declarative_agent_v18",
+      "verifies": "declarativeAgent.connector.json (v1.8) scopes Copilot to this connection via GraphConnectors and is up to date.",
+      "result": "pass",
+      "durationMs": 25.4,
+      "detail": "",
+      "id": "A-33"
+    },
+    {
+      "unittestId": "arch_a_connector.tests.test_arch_a.ArchAValidatorsAndTransport.test_http_transport_request_formation",
+      "architecture": "A",
+      "test": "test_http_transport_request_formation",
+      "verifies": "HttpGraphTransport forms the client-credentials token request and Graph calls correctly (fake opener, no network).",
+      "result": "pass",
+      "durationMs": 1.3,
+      "detail": "",
+      "id": "A-34"
+    },
+    {
+      "unittestId": "arch_a_connector.tests.test_arch_a.ArchAValidatorsAndTransport.test_mock_rejects_items_before_schema_and_invalid_payloads",
+      "architecture": "A",
+      "test": "test_mock_rejects_items_before_schema_and_invalid_payloads",
+      "verifies": "The emulator returns 400 before schema completion and for invalid items (incl. missing/empty acl), 409 for duplicates.",
+      "result": "pass",
+      "durationMs": 68.7,
+      "detail": "",
+      "id": "A-35"
+    },
+    {
+      "unittestId": "arch_a_connector.tests.test_arch_a.ArchAValidatorsAndTransport.test_mock_trimming_semantics_deny_wins",
+      "architecture": "A",
+      "test": "test_mock_trimming_semantics_deny_wins",
+      "verifies": "Emulator trimming: grant via user/group/everyoneExceptGuests, guests excluded from everyoneExceptGuests, deny wins.",
+      "result": "pass",
+      "durationMs": 37.9,
+      "detail": "",
+      "id": "A-36"
+    },
+    {
+      "unittestId": "arch_a_connector.tests.test_arch_a.ArchAValidatorsAndTransport.test_validators_reject_invalid_items_and_connections",
+      "architecture": "A",
+      "test": "test_validators_reject_invalid_items_and_connections",
+      "verifies": "Item/connection validators enforce id rules, ACL enums, content type, DateTime format, schema typing and the 30 MB item limit.",
+      "result": "pass",
+      "durationMs": 448.6,
+      "detail": "",
+      "id": "A-37"
+    },
+    {
+      "unittestId": "arch_a_connector.tests.test_arch_a.ArchAValidatorsAndTransport.test_validators_reject_invalid_schemas",
+      "architecture": "A",
+      "test": "test_validators_reject_invalid_schemas",
+      "verifies": "Schema validator enforces name length/charset, property count, searchable types, searchable+refinable and unique labels.",
+      "result": "pass",
+      "durationMs": 0.9,
+      "detail": "",
+      "id": "A-38"
+    },
+    {
+      "unittestId": "arch_b_broker.tests.test_arch_b.ArchBEndToEnd.test_audit_chain_verifies_and_detects_tampering",
+      "architecture": "B",
+      "test": "test_audit_chain_verifies_and_detects_tampering",
+      "verifies": "The JSONL audit hash chain verifies; editing or deleting a record is detected at the right index.",
+      "result": "pass",
+      "durationMs": 3745.6,
+      "detail": "",
+      "id": "B-01"
+    },
+    {
+      "unittestId": "arch_b_broker.tests.test_arch_b.ArchBEndToEnd.test_exfiltration_guard_triggers_after_coverage_threshold",
+      "architecture": "B",
+      "test": "test_exfiltration_guard_triggers_after_coverage_threshold",
+      "verifies": "Per user and document, rolling-24h unique chunk coverage is capped at the threshold; excess chunks are withheld.",
+      "result": "pass",
+      "durationMs": 706.7,
+      "detail": "",
+      "id": "B-02"
+    },
+    {
+      "unittestId": "arch_b_broker.tests.test_arch_b.ArchBEndToEnd.test_guest_member_is_excluded",
+      "architecture": "B",
+      "test": "test_guest_member_is_excluded",
+      "verifies": "dave (Team B member, userType Guest) gets 403 guest_excluded; a token claiming acct=1 is also refused (fail closed).",
+      "result": "pass",
+      "durationMs": 367.5,
+      "detail": "",
+      "id": "B-03"
+    },
+    {
+      "unittestId": "arch_b_broker.tests.test_arch_b.ArchBEndToEnd.test_highly_confidential_never_returned",
+      "architecture": "B",
+      "test": "test_highly_confidential_never_returned",
+      "verifies": "Queries aimed at the Highly Confidential doc return none of its content.",
+      "result": "pass",
+      "durationMs": 135.1,
+      "detail": "",
+      "id": "B-04"
+    },
+    {
+      "unittestId": "arch_b_broker.tests.test_arch_b.ArchBEndToEnd.test_http_routing_and_input_validation",
+      "architecture": "B",
+      "test": "test_http_routing_and_input_validation",
+      "verifies": "GET /healthz is 200; wrong method 405; unknown route 404; invalid JSON / bad fields 400; oversize body 413.",
+      "result": "pass",
+      "durationMs": 177.4,
+      "detail": "",
+      "id": "B-05"
+    },
+    {
+      "unittestId": "arch_b_broker.tests.test_arch_b.ArchBEndToEnd.test_invalid_tokens_rejected_with_401",
+      "architecture": "B",
+      "test": "test_invalid_tokens_rejected_with_401",
+      "verifies": "Bad signature, expired, wrong audience/tenant/issuer, alg=none, malformed and missing tokens all get 401.",
+      "result": "pass",
+      "durationMs": 264.2,
+      "detail": "",
+      "id": "B-06"
+    },
+    {
+      "unittestId": "arch_b_broker.tests.test_arch_b.ArchBEndToEnd.test_mcp_tools_list_and_call",
+      "architecture": "B",
+      "test": "test_mcp_tools_list_and_call",
+      "verifies": "MCP JSON-RPC on /mcp: initialize, tools/list matches mcp-tools.json, tools/call enforces the same policy.",
+      "result": "pass",
+      "durationMs": 514.4,
+      "detail": "",
+      "id": "B-07"
+    },
+    {
+      "unittestId": "arch_b_broker.tests.test_arch_b.ArchBEndToEnd.test_member_gets_answer_with_opaque_citations_over_http",
+      "architecture": "B",
+      "test": "test_member_gets_answer_with_opaque_citations_over_http",
+      "verifies": "bob (Team B member) gets a 200 answer over localhost HTTP with opaque refs and broker access links only.",
+      "result": "pass",
+      "durationMs": 269.2,
+      "detail": "",
+      "id": "B-08"
+    },
+    {
+      "unittestId": "arch_b_broker.tests.test_arch_b.ArchBEndToEnd.test_non_member_gets_403_and_is_audited",
+      "architecture": "B",
+      "test": "test_non_member_gets_403_and_is_audited",
+      "verifies": "carol (not in Team B) gets 403 not_in_audience with no content, and the denial is in the audit log.",
+      "result": "pass",
+      "durationMs": 124.1,
+      "detail": "",
+      "id": "B-09"
+    },
+    {
+      "unittestId": "arch_b_broker.tests.test_arch_b.ArchBEndToEnd.test_purpose_must_match_contract",
+      "architecture": "B",
+      "test": "test_purpose_must_match_contract",
+      "verifies": "A request whose declared purpose differs from the contract purpose is refused (403 purpose_mismatch).",
+      "result": "pass",
+      "durationMs": 133.5,
+      "detail": "",
+      "id": "B-10"
+    },
+    {
+      "unittestId": "arch_b_broker.tests.test_arch_b.ArchBEndToEnd.test_rate_limit_returns_429_with_retry_after",
+      "architecture": "B",
+      "test": "test_rate_limit_returns_429_with_retry_after",
+      "verifies": "The 11th request inside one minute gets 429 + Retry-After; capacity refills over time.",
+      "result": "pass",
+      "durationMs": 898.8,
+      "detail": "",
+      "id": "B-11"
+    },
+    {
+      "unittestId": "arch_b_broker.tests.test_arch_b.ArchBEndToEnd.test_redaction_applied_to_answers",
+      "architecture": "B",
+      "test": "test_redaction_applied_to_answers",
+      "verifies": "Answers redact e-mails, KR mobiles, RRNs and internal links; secrets never reach the private index at all.",
+      "result": "pass",
+      "durationMs": 1036.5,
+      "detail": "",
+      "id": "B-12"
+    },
+    {
+      "unittestId": "arch_b_broker.tests.test_arch_b.ArchBEndToEnd.test_responses_never_contain_original_locations",
+      "architecture": "B",
+      "test": "test_responses_never_contain_original_locations",
+      "verifies": "Across a probe set, no response contains original URLs, paths, driveItem ids or unredacted PII.",
+      "result": "pass",
+      "durationMs": 463.3,
+      "detail": "",
+      "id": "B-13"
+    },
+    {
+      "unittestId": "arch_b_broker.tests.test_arch_b.ArchBEndToEnd.test_revoked_contract_denies_everything",
+      "architecture": "B",
+      "test": "test_revoked_contract_denies_everything",
+      "verifies": "When the contract is revoked the broker refuses all requests (403 contract_inactive).",
+      "result": "pass",
+      "durationMs": 261.8,
+      "detail": "",
+      "id": "B-14"
+    },
+    {
+      "unittestId": "arch_b_broker.tests.test_arch_b.ArchBEndToEnd.test_scope_and_user_context_required",
+      "architecture": "B",
+      "test": "test_scope_and_user_context_required",
+      "verifies": "A token without Knowledge.Ask gets 403 insufficient_scope; an app-only token (no scp) gets 401.",
+      "result": "pass",
+      "durationMs": 378.7,
+      "detail": "",
+      "id": "B-15"
+    },
+    {
+      "unittestId": "arch_b_broker.tests.test_arch_b.ArchBEndToEnd.test_search_endpoint_applies_same_policy",
+      "architecture": "B",
+      "test": "test_search_endpoint_applies_same_policy",
+      "verifies": "/search returns <=5 opaque citations (title, url, label id) with <=160-char redacted snippets; carol 403; top>5 is 400.",
+      "result": "pass",
+      "durationMs": 229.6,
+      "detail": "",
+      "id": "B-16"
+    },
+    {
+      "unittestId": "arch_b_broker.tests.test_arch_b.ArchBEndToEnd.test_verbatim_cap_and_max_citations",
+      "architecture": "B",
+      "test": "test_verbatim_cap_and_max_citations",
+      "verifies": "Every excerpt is <= maxExcerptChars (and visibly truncated from longer chunks); <= 3 citations per answer.",
+      "result": "pass",
+      "durationMs": 447.5,
+      "detail": "",
+      "id": "B-17"
+    },
+    {
+      "unittestId": "arch_b_broker.tests.test_arch_b.ArchBInjection.test_exfiltration_guard_returns_403_when_everything_is_withheld",
+      "architecture": "B",
+      "test": "test_exfiltration_guard_returns_403_when_everything_is_withheld",
+      "verifies": "With only one document available, once its allowance is used further new excerpts are refused with 403.",
+      "result": "pass",
+      "durationMs": 220.1,
+      "detail": "",
+      "id": "B-18"
+    },
+    {
+      "unittestId": "arch_b_broker.tests.test_arch_b.ArchBInjection.test_source_injection_has_no_effect_and_is_flagged",
+      "architecture": "B",
+      "test": "test_source_injection_has_no_effect_and_is_flagged",
+      "verifies": "Answers from the RCA with the injected line equal answers from a copy without it; citations are flagged.",
+      "result": "pass",
+      "durationMs": 179.7,
+      "detail": "",
+      "id": "B-19"
+    },
+    {
+      "unittestId": "arch_b_broker.tests.test_arch_b.ArchBOverBroadIndex.test_pdp_filters_hc_internal_and_drafts_even_if_indexed",
+      "architecture": "B",
+      "test": "test_pdp_filters_hc_internal_and_drafts_even_if_indexed",
+      "verifies": "Even if the private index (wrongly) contains HC, /Internal and /Drafts content, the PDP never returns it.",
+      "result": "pass",
+      "durationMs": 196.9,
+      "detail": "",
+      "id": "B-20"
+    },
+    {
+      "unittestId": "arch_b_broker.tests.test_arch_b.ArchBPurview.test_purview_blocks_prompt",
+      "architecture": "B",
+      "test": "test_purview_blocks_prompt",
+      "verifies": "A prompt matching a Purview policy is refused (403 purview_blocked) before any retrieval, and audited.",
+      "result": "pass",
+      "durationMs": 46.7,
+      "detail": "",
+      "id": "B-21"
+    },
+    {
+      "unittestId": "arch_b_broker.tests.test_arch_b.ArchBPurview.test_purview_blocks_response_without_consuming_coverage",
+      "architecture": "B",
+      "test": "test_purview_blocks_response_without_consuming_coverage",
+      "verifies": "A response matching a Purview policy is withheld (403 purview_blocked); no excerpt is released or counted.",
+      "result": "pass",
+      "durationMs": 85.9,
+      "detail": "",
+      "id": "B-22"
+    },
+    {
+      "unittestId": "arch_b_broker.tests.test_arch_b.ArchBPurview.test_purview_called_for_prompt_and_response_and_audited",
+      "architecture": "B",
+      "test": "test_purview_called_for_prompt_and_response_and_audited",
+      "verifies": "Every allowed request calls process_content twice (uploadText for the prompt, downloadText for the response).",
+      "result": "pass",
+      "durationMs": 50.3,
+      "detail": "",
+      "id": "B-23"
+    },
+    {
+      "unittestId": "arch_b_broker.tests.test_arch_b.ArchBUnits.test_artifacts_match_generated_manifests",
+      "architecture": "B",
+      "test": "test_artifacts_match_generated_manifests",
+      "verifies": "artifacts/arch_b contains the broker manifests exactly as generated from the constants file.",
+      "result": "pass",
+      "durationMs": 44.8,
+      "detail": "",
+      "id": "B-24"
+    },
+    {
+      "unittestId": "arch_b_broker.tests.test_arch_b.ArchBUnits.test_declarative_agent_validator_rules_v18",
+      "architecture": "B",
+      "test": "test_declarative_agent_validator_rules_v18",
+      "verifies": "DA v1.8 rules: required keys, unrecognised keys invalid, length limits, <=12 starters, 1-10 {id,file} actions, disclaimer <=500, GraphConnectors connection ids must be valid.",
+      "result": "pass",
+      "durationMs": 1.4,
+      "detail": "",
+      "id": "B-25"
+    },
+    {
+      "unittestId": "arch_b_broker.tests.test_arch_b.ArchBUnits.test_jwt_validator_unit_rules",
+      "architecture": "B",
+      "test": "test_jwt_validator_unit_rules",
+      "verifies": "HS256 validator: round-trip, leeway on exp, list audience, tampered payload and alg confusion rejected.",
+      "result": "pass",
+      "durationMs": 41.2,
+      "detail": "",
+      "id": "B-26"
+    },
+    {
+      "unittestId": "arch_b_broker.tests.test_arch_b.ArchBUnits.test_manifests_valid_and_cross_consistent",
+      "architecture": "B",
+      "test": "test_manifests_valid_and_cross_consistent",
+      "verifies": "Manifests match the generator (constants), validate as DA v1.8 / plugin v2.4 / MCP tools/list, and operationIds == plugin function names == MCP tool names; both plugins use OAuthPluginVault SSO.",
+      "result": "pass",
+      "durationMs": 27.8,
+      "detail": "",
+      "id": "B-27"
+    },
+    {
+      "unittestId": "arch_b_broker.tests.test_arch_b.ArchBUnits.test_pdp_unit_rules",
+      "architecture": "B",
+      "test": "test_pdp_unit_rules",
+      "verifies": "PDP: label/path/chat scope per chunk, min-one-chunk rule for tiny docs, per-user isolation, rolling window.",
+      "result": "pass",
+      "durationMs": 51.5,
+      "detail": "",
+      "id": "B-28"
+    },
+    {
+      "unittestId": "arch_b_broker.tests.test_arch_b.ArchBUnits.test_plugin_and_mcp_validator_rules_v24",
+      "architecture": "B",
+      "test": "test_plugin_and_mcp_validator_rules_v24",
+      "verifies": "Plugin v2.4 rules: required keys, namespace ^[A-Za-z0-9]+$, function names ^[A-Za-z0-9_]+$, run_for_functions subset of functions, operationIds match; MCP tools need name/description/inputSchema.",
+      "result": "pass",
+      "durationMs": 5.8,
+      "detail": "",
+      "id": "B-29"
+    },
+    {
+      "unittestId": "arch_c_publish.tests.test_arch_c.ArchCOnDisk.test_artifact_card_and_publish_manifest",
+      "architecture": "C",
+      "test": "test_artifact_card_and_publish_manifest",
+      "verifies": "artifacts/arch_c: sample card carries provenance and no PII/original URL; manifest has columns + Graph requests.",
+      "result": "pass",
+      "durationMs": 635.1,
+      "detail": "",
+      "id": "C-01"
+    },
+    {
+      "unittestId": "arch_c_publish.tests.test_arch_c.ArchCOnDisk.test_publish_manifest_columns_and_graph_requests",
+      "architecture": "C",
+      "test": "test_publish_manifest_columns_and_graph_requests",
+      "verifies": "Publishing writes list-item columns (SourceFingerprint, ExpiryDate, ApprovalId, RetentionLabel) and emits the production Graph requests (PUT .../{parentId}:/{fileName}:/content, PATCH .../listItem/fields, retentionLabel).",
+      "result": "pass",
+      "durationMs": 916.1,
+      "detail": "",
+      "id": "C-02"
+    },
+    {
+      "unittestId": "arch_c_publish.tests.test_arch_c.ArchCOnDisk.test_workflow_audit_and_persistence",
+      "architecture": "C",
+      "test": "test_workflow_audit_and_persistence",
+      "verifies": "Every transition is audited in a verifiable hash chain and workflow state survives a restart.",
+      "result": "pass",
+      "durationMs": 502.7,
+      "detail": "",
+      "id": "C-03"
+    },
+    {
+      "unittestId": "arch_c_publish.tests.test_arch_c.ArchCWorkflow.test_approval_is_bound_to_source_version",
+      "architecture": "C",
+      "test": "test_approval_is_bound_to_source_version",
+      "verifies": "If the source changes between approval and publishing, publishing is refused and the request goes STALE.",
+      "result": "pass",
+      "durationMs": 382.4,
+      "detail": "",
+      "id": "C-04"
+    },
+    {
+      "unittestId": "arch_c_publish.tests.test_arch_c.ArchCWorkflow.test_bob_finds_card_carol_and_dave_cannot",
+      "architecture": "C",
+      "test": "test_bob_finds_card_carol_and_dave_cannot",
+      "verifies": "Native index trimming: bob (site member) finds the card; carol (no access) and dave (guest) get nothing.",
+      "result": "pass",
+      "durationMs": 52.0,
+      "detail": "",
+      "id": "C-05"
+    },
+    {
+      "unittestId": "arch_c_publish.tests.test_arch_c.ArchCWorkflow.test_card_provenance_redaction_and_no_original_url",
+      "architecture": "C",
+      "test": "test_card_provenance_redaction_and_no_original_url",
+      "verifies": "Cards carry the provenance header (fingerprint, approval id, generatedAt, expiresAt, notice), redacted text, an excerpt <= maxExcerptChars, the broker access link - and no original URL, path or id.",
+      "result": "pass",
+      "durationMs": 88.3,
+      "detail": "",
+      "id": "C-06"
+    },
+    {
+      "unittestId": "arch_c_publish.tests.test_arch_c.ArchCWorkflow.test_confidential_requires_compliance_approval",
+      "architecture": "C",
+      "test": "test_confidential_requires_compliance_approval",
+      "verifies": "Confidential content needs owner + a different compliance officer before publishing.",
+      "result": "pass",
+      "durationMs": 36.2,
+      "detail": "",
+      "id": "C-07"
+    },
+    {
+      "unittestId": "arch_c_publish.tests.test_arch_c.ArchCWorkflow.test_contract_revocation_withdraws_all_cards",
+      "architecture": "C",
+      "test": "test_contract_revocation_withdraws_all_cards",
+      "verifies": "Revoking the sharing contract revokes every open request and deletes all published cards.",
+      "result": "pass",
+      "durationMs": 73.4,
+      "detail": "",
+      "id": "C-08"
+    },
+    {
+      "unittestId": "arch_c_publish.tests.test_arch_c.ArchCWorkflow.test_duplicate_requests_are_idempotent",
+      "architecture": "C",
+      "test": "test_duplicate_requests_are_idempotent",
+      "verifies": "Repeated requests for the same source+purpose return the same open request; a new one follows a terminal state.",
+      "result": "pass",
+      "durationMs": 31.4,
+      "detail": "",
+      "id": "C-09"
+    },
+    {
+      "unittestId": "arch_c_publish.tests.test_arch_c.ArchCWorkflow.test_expiry_removes_card",
+      "architecture": "C",
+      "test": "test_expiry_removes_card",
+      "verifies": "After ttlDays the expiry sweep withdraws the card (EXPIRED) and it disappears from search.",
+      "result": "pass",
+      "durationMs": 74.7,
+      "detail": "",
+      "id": "C-10"
+    },
+    {
+      "unittestId": "arch_c_publish.tests.test_arch_c.ArchCWorkflow.test_general_document_publishes_after_owner_approval",
+      "architecture": "C",
+      "test": "test_general_document_publishes_after_owner_approval",
+      "verifies": "A General document needs only the data owner's approval; compliance approval is not applicable.",
+      "result": "pass",
+      "durationMs": 39.0,
+      "detail": "",
+      "id": "C-11"
+    },
+    {
+      "unittestId": "arch_c_publish.tests.test_arch_c.ArchCWorkflow.test_highly_confidential_and_out_of_scope_auto_rejected",
+      "architecture": "C",
+      "test": "test_highly_confidential_and_out_of_scope_auto_rejected",
+      "verifies": "HC (above ceiling), /Internal and /Shareable/Drafts requests are auto-rejected and never published.",
+      "result": "pass",
+      "durationMs": 229.7,
+      "detail": "",
+      "id": "C-12"
+    },
+    {
+      "unittestId": "arch_c_publish.tests.test_arch_c.ArchCWorkflow.test_invalid_transitions_rejected",
+      "architecture": "C",
+      "test": "test_invalid_transitions_rejected",
+      "verifies": "The state machine refuses illegal transitions (double publish, approving a rejected request, etc.).",
+      "result": "pass",
+      "durationMs": 373.1,
+      "detail": "",
+      "id": "C-13"
+    },
+    {
+      "unittestId": "arch_c_publish.tests.test_arch_c.ArchCWorkflow.test_label_raised_or_source_deleted_after_publish_revokes",
+      "architecture": "C",
+      "test": "test_label_raised_or_source_deleted_after_publish_revokes",
+      "verifies": "Relabelling a source to Highly Confidential or deleting it withdraws the published card on the next check.",
+      "result": "pass",
+      "durationMs": 44.4,
+      "detail": "",
+      "id": "C-14"
+    },
+    {
+      "unittestId": "arch_c_publish.tests.test_arch_c.ArchCWorkflow.test_no_publish_without_owner_approval",
+      "architecture": "C",
+      "test": "test_no_publish_without_owner_approval",
+      "verifies": "A REQUESTED (unapproved) request cannot be published; nothing reaches the Knowledge Exchange site.",
+      "result": "pass",
+      "durationMs": 34.2,
+      "detail": "",
+      "id": "C-15"
+    },
+    {
+      "unittestId": "arch_c_publish.tests.test_arch_c.ArchCWorkflow.test_requester_eligibility",
+      "architecture": "C",
+      "test": "test_requester_eligibility",
+      "verifies": "Only non-guest audience members with the contract purpose can request (carol, dave, wrong purpose rejected).",
+      "result": "pass",
+      "durationMs": 62.0,
+      "detail": "",
+      "id": "C-16"
+    },
+    {
+      "unittestId": "arch_c_publish.tests.test_arch_c.ArchCWorkflow.test_revoke_removes_card",
+      "architecture": "C",
+      "test": "test_revoke_removes_card",
+      "verifies": "The data owner (or compliance) can revoke: the card is deleted and the request is REVOKED; others cannot.",
+      "result": "pass",
+      "durationMs": 34.4,
+      "detail": "",
+      "id": "C-17"
+    },
+    {
+      "unittestId": "arch_c_publish.tests.test_arch_c.ArchCWorkflow.test_source_change_makes_card_stale_then_republished",
+      "architecture": "C",
+      "test": "test_source_change_makes_card_stale_then_republished",
+      "verifies": "A source edit withdraws the card (STALE); after re-approval it is regenerated and REPUBLISHED.",
+      "result": "pass",
+      "durationMs": 79.2,
+      "detail": "",
+      "id": "C-18"
+    },
+    {
+      "unittestId": "common.tests.test_common.AuditDeltaAndGuard.test_audit_chain_detects_edit_delete_reorder_and_keyed_mode",
+      "architecture": "Common",
+      "test": "test_audit_chain_detects_edit_delete_reorder_and_keyed_mode",
+      "verifies": "Hash chain verifies; editing, deleting or re-ordering records is detected; HMAC-keyed chains need the key.",
+      "result": "pass",
+      "durationMs": 203.6,
+      "detail": "",
+      "id": "CM-01"
+    },
+    {
+      "unittestId": "common.tests.test_common.AuditDeltaAndGuard.test_drive_delta_paging_tombstones_and_resync",
+      "architecture": "Common",
+      "test": "test_drive_delta_paging_tombstones_and_resync",
+      "verifies": "Delta: paged full crawl with deltaLink, incremental changes incl. 'deleted' facet, 410-style resync.",
+      "result": "pass",
+      "durationMs": 20.6,
+      "detail": "",
+      "id": "CM-02"
+    },
+    {
+      "unittestId": "common.tests.test_common.AuditDeltaAndGuard.test_fingerprint_and_clock_helpers",
+      "architecture": "Common",
+      "test": "test_fingerprint_and_clock_helpers",
+      "verifies": "Fingerprints change with content or eTag; ISO timestamps round-trip in UTC with a 'Z' suffix.",
+      "result": "pass",
+      "durationMs": 0.2,
+      "detail": "",
+      "id": "CM-03"
+    },
+    {
+      "unittestId": "common.tests.test_common.AuditDeltaAndGuard.test_network_guard_blocks_non_loopback",
+      "architecture": "Common",
+      "test": "test_network_guard_blocks_non_loopback",
+      "verifies": "The offline guard blocks DNS/connections to Microsoft endpoints while allowing loopback.",
+      "result": "pass",
+      "durationMs": 0.1,
+      "detail": "",
+      "id": "CM-04"
+    },
+    {
+      "unittestId": "common.tests.test_common.ContractAndLabels.test_contract_validator_rejects_bad_values",
+      "architecture": "Common",
+      "test": "test_contract_validator_rejects_bad_values",
+      "verifies": "Missing fields, unknown labels, bad GUIDs, out-of-range numbers and bad timestamps are rejected.",
+      "result": "pass",
+      "durationMs": 20.0,
+      "detail": "",
+      "id": "CM-05"
+    },
+    {
+      "unittestId": "common.tests.test_common.ContractAndLabels.test_label_ordering_fails_closed",
+      "architecture": "Common",
+      "test": "test_label_ordering_fails_closed",
+      "verifies": "Label order Public < General < Confidential < Highly Confidential; unknown/missing labels exceed any ceiling.",
+      "result": "pass",
+      "durationMs": 0.1,
+      "detail": "",
+      "id": "CM-06"
+    },
+    {
+      "unittestId": "common.tests.test_common.ContractAndLabels.test_policy_gate_decisions",
+      "architecture": "Common",
+      "test": "test_policy_gate_decisions",
+      "verifies": "The shared gate allows in-scope supported files and explains every denial.",
+      "result": "pass",
+      "durationMs": 1.9,
+      "detail": "",
+      "id": "CM-07"
+    },
+    {
+      "unittestId": "common.tests.test_common.ContractAndLabels.test_sample_contract_loads_and_validates",
+      "architecture": "Common",
+      "test": "test_sample_contract_loads_and_validates",
+      "verifies": "The sample Sharing Contract has every required field with the agreed values and validates cleanly.",
+      "result": "pass",
+      "durationMs": 2.7,
+      "detail": "",
+      "id": "CM-08"
+    },
+    {
+      "unittestId": "common.tests.test_common.ContractAndLabels.test_scope_paths_are_normalised",
+      "architecture": "Common",
+      "test": "test_scope_paths_are_normalised",
+      "verifies": "Path scope uses decoded, normalised, case-insensitive prefixes ('..' traversal and look-alike prefixes fail).",
+      "result": "pass",
+      "durationMs": 1.4,
+      "detail": "",
+      "id": "CM-09"
+    },
+    {
+      "unittestId": "common.tests.test_common.InjectionAndText.test_chat_digest_pseudonymises_participants",
+      "architecture": "Common",
+      "test": "test_chat_digest_pseudonymises_participants",
+      "verifies": "Chat digests group messages per day, skip system events and replace author names/mentions with aliases.",
+      "result": "pass",
+      "durationMs": 31.8,
+      "detail": "",
+      "id": "CM-10"
+    },
+    {
+      "unittestId": "common.tests.test_common.InjectionAndText.test_chunker_respects_max_and_preserves_content",
+      "architecture": "Common",
+      "test": "test_chunker_respects_max_and_preserves_content",
+      "verifies": "Every chunk is <= max_chars and the chunks preserve all words in order (paragraph -> line -> sentence -> word).",
+      "result": "pass",
+      "durationMs": 3.2,
+      "detail": "",
+      "id": "CM-11"
+    },
+    {
+      "unittestId": "common.tests.test_common.InjectionAndText.test_html_to_text",
+      "architecture": "Common",
+      "test": "test_html_to_text",
+      "verifies": "HTML extraction drops script/style/comments, keeps table cells pipe-separated and returns the title.",
+      "result": "pass",
+      "durationMs": 1.0,
+      "detail": "",
+      "id": "CM-12"
+    },
+    {
+      "unittestId": "common.tests.test_common.InjectionAndText.test_injection_lines_are_flagged_and_stripped",
+      "architecture": "Common",
+      "test": "test_injection_lines_are_flagged_and_stripped",
+      "verifies": "Imperative injection sentences (EN/KR, tags, role overrides) are removed and flagged; benign text is kept.",
+      "result": "pass",
+      "durationMs": 0.3,
+      "detail": "",
+      "id": "CM-13"
+    },
+    {
+      "unittestId": "common.tests.test_common.InjectionAndText.test_summariser_is_deterministic_and_extractive",
+      "architecture": "Common",
+      "test": "test_summariser_is_deterministic_and_extractive",
+      "verifies": "Summaries/key facts/excerpts are deterministic, verbatim from the source, length-bounded and skip the title.",
+      "result": "pass",
+      "durationMs": 85.1,
+      "detail": "",
+      "id": "CM-14"
+    },
+    {
+      "unittestId": "common.tests.test_common.Redaction.test_large_input_is_fast",
+      "architecture": "Common",
+      "test": "test_large_input_is_fast",
+      "verifies": "Redaction of a 4 MB+ log stays well under a second thanks to cheap prefilters.",
+      "result": "pass",
+      "durationMs": 109.4,
+      "detail": "",
+      "id": "CM-15"
+    },
+    {
+      "unittestId": "common.tests.test_common.Redaction.test_no_false_positives_on_engineering_text",
+      "architecture": "Common",
+      "test": "test_no_false_positives_on_engineering_text",
+      "verifies": "Dates, lot ids, recipe values, timestamps and non-credential key=value pairs are left untouched.",
+      "result": "pass",
+      "durationMs": 0.4,
+      "detail": "",
+      "id": "CM-16"
+    },
+    {
+      "unittestId": "common.tests.test_common.Redaction.test_redacts_each_category_with_tokens",
+      "architecture": "Common",
+      "test": "test_redacts_each_category_with_tokens",
+      "verifies": "Emails, KR mobiles (local/+82), RRNs, API keys, JWT/bearer tokens, connection strings and SharePoint links.",
+      "result": "pass",
+      "durationMs": 0.4,
+      "detail": "",
+      "id": "CM-17"
+    },
+    {
+      "unittestId": "bench.tests.test_benchmark.BenchmarkSafety.test_answer_rates_and_policy_signals",
+      "architecture": "Benchmark",
+      "test": "test_answer_rates_and_policy_signals",
+      "verifies": "bob gets useful answers everywhere; B shows its per-request controls (403s for carol/dave, guard withholds).",
+      "result": "pass",
+      "durationMs": 0.2,
+      "detail": "",
+      "id": "BM-01"
+    },
+    {
+      "unittestId": "bench.tests.test_benchmark.BenchmarkSafety.test_zero_leaks_and_zero_unauthorised_results",
+      "architecture": "Benchmark",
+      "test": "test_zero_leaks_and_zero_unauthorised_results",
+      "verifies": "All 3 architectures x 20 probes x 3 users: 0 unauthorised results, 0 PII, 0 original URLs, 0 HC leaks.",
+      "result": "pass",
+      "durationMs": 0.1,
+      "detail": "",
+      "id": "BM-02"
+    }
+  ]
+}

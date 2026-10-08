@@ -1,0 +1,16 @@
+__pycache__/
+*.py[cod]
+.scratch/
+.venv/
+.env
+.env.*
+!.env.example
+.local/
+*.pfx
+*.pem
+*.key
+*.cer
+*.p12
+*.msal
+node_modules/
+deployment/runtime/snapshot.json

@@ -1,0 +1,30 @@
+{
+  "acl": [
+    {
+      "type": "group",
+      "value": "b0b0b0b0-2222-4222-8222-0000000000bb",
+      "accessType": "grant"
+    },
+    {
+      "type": "user",
+      "value": "0dafe000-0000-4000-8000-0000000000d4",
+      "accessType": "deny"
+    }
+  ],
+  "properties": {
+    "url": "https://broker.contoso.com/access-request?ref=ref-7b0b3b85773b72d96a56a9ec",
+    "containerName": "Process Engineering → Yield Analytics (SC-2026-0042)",
+    "lastModifiedDateTime": "2026-09-16T08:20:00Z",
+    "sourceTeam": "Process Engineering",
+    "sensitivity": "Confidential",
+    "contractId": "SC-2026-0042",
+    "validUntil": "2026-11-06T01:00:00Z",
+    "sourceFingerprint": "sha256:ed6105e5547589ce871fc4c4276f5400d4be2e38404b2804d0dd616260ff04c9",
+    "title": "YE-0412 Yield Excursion Root-Cause Analysis (NX-7, September 2026) (summary)",
+    "derivativeType": "summary"
+  },
+  "content": {
+    "type": "text",
+    "value": "YE-0412 Yield Excursion Root-Cause Analysis (NX-7, September 2026)\nDerived summary - original not shared (source team: Process Engineering).\n\nFinal wafer-sort yield on NX-7 fell from a 92.4% baseline to 78.1% for three consecutive lots processed on ETCH-07 chamber B between 2026-09-10 and 2026-09-13. The root cause is incomplete chamber seasoning after the 2026-09-09 preventive maintenance: fluorocarbon film flaking from the new upper liner deposited particles on the wafer edge during main etch. 2026-09-09 19:30 Chamber released to production after 10 seasoning wafers instead of the 25 required by the seasoning guideline. 2026-09-13 11:00 Additional 25 seasoning wafers run; particle monitor back to 4 adders per wafer; chamber released.\n\nKey facts:\n- Final wafer-sort yield on NX-7 fell from a 92.4% baseline to 78.1% for three consecutive lots processed on ETCH-07 chamber B between 2026-09-10 and 2026-09-13.\n- The root cause is incomplete chamber seasoning after the 2026-09-09 preventive maintenance: fluorocarbon film flaking from the new upper liner deposited particles on the wafer…\n- 2026-09-09 19:30 Chamber released to production after 10 seasoning wafers instead of the 25 required by the seasoning guideline.\n- 2026-09-13 11:00 Additional 25 seasoning wafers run; particle monitor back to 4 adders per wafer; chamber released.\n- Raise the post-PM seasoning requirement for chamber B from 25 to 35 wafers whenever the upper liner is replaced (owner: etch module, due 2026-10-15)."
+  }
+}

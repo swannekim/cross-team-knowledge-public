@@ -1,0 +1,199 @@
+{
+  "_publicationNotice": "Sanitized historical record, not a new test or operational approval. Identifiers are placeholders; original private evidence is retained separately. Recorded statuses/times/results are historical, not current state. Sanitized bytes cannot verify original hashes.",
+  "observedAt": "2026-10-07T06:52:45.2319827+00:00",
+  "identity": "admin@example.invalid",
+  "scope": "Real delegated Graph and broker API checks; not Copilot UI or ordinary-user proof when identity is admin.",
+  "authentication": "PASS",
+  "tests": [
+    {
+      "id": "ORIGINAL-METADATA-DENIED",
+      "expectedStatus": [
+        403,
+        404
+      ],
+      "actualStatus": 403,
+      "passed": true,
+      "requestId": "f0000000-0000-4000-8000-00000000002d",
+      "errorCode": "accessDenied"
+    },
+    {
+      "id": "ORIGINAL-LIST-DENIED",
+      "expectedStatus": [
+        403,
+        404
+      ],
+      "actualStatus": 403,
+      "passed": true,
+      "requestId": "f0000000-0000-4000-8000-000000000030",
+      "errorCode": "accessDenied"
+    },
+    {
+      "id": "EXCHANGE-LIST-ACCESS",
+      "expectedStatus": [
+        200
+      ],
+      "actualStatus": 200,
+      "passed": true,
+      "requestId": "f0000000-0000-4000-8000-00000000000d"
+    },
+    {
+      "id": "A-DELEGATED-SEARCH",
+      "actualStatus": 200,
+      "hitCount": 1,
+      "expected": "At least one scoped synthetic result",
+      "passed": true,
+      "requestId": "f0000000-0000-4000-8000-000000000040"
+    },
+    {
+      "id": "C-DELEGATED-SEARCH",
+      "actualStatus": 200,
+      "hitCount": 1,
+      "expected": "At least one scoped synthetic result",
+      "passed": true,
+      "requestId": "f0000000-0000-4000-8000-000000000003"
+    },
+    {
+      "id": "B-DELEGATED-ASK",
+      "expectedStatus": [
+        200
+      ],
+      "actualStatus": 200,
+      "passed": true,
+      "requestId": null,
+      "citationCount": 2,
+      "response": {
+        "requestId": "e000000000000000000000000000000a",
+        "answer": "Derived answer from shared Process Engineering knowledge (redacted excerpts; originals are not shared):\n[1] Seasoning conditions the chamber walls after a wet clean or preventive maintenance so that the first production wafers see a stable plasma and a low particle level.\n[2] Planned downtime windows for etch, clean and deposition tools in Fab 3. … ETCH-07 | CH-B | Quarterly PM | 2026-10-21 | 18 | Upper liner replacement; 35 seasoning wafers required",
+        "citations": [
+          {
+            "ref": "ref-000000000000000000000004",
+            "title": "ETCH CHAMBER SEASONING GUIDELINE (GL-ETCH-007, revision 5)",
+            "sourceTeam": "KX synthetic source",
+            "sensitivity": "General",
+            "sensitivityLabelId": null,
+            "accessRequestUrl": "https://broker.example.invalid/access-request?ref=ref-000000000000000000000004",
+            "excerpt": "Seasoning conditions the chamber walls after a wet clean or preventive maintenance so that the first production wafers see a stable plasma and a low particle level."
+          },
+          {
+            "ref": "ref-000000000000000000000008",
+            "title": "Tool Preventive Maintenance Schedule - Q4 2026",
+            "sourceTeam": "KX synthetic source",
+            "sensitivity": "General",
+            "sensitivityLabelId": null,
+            "accessRequestUrl": "https://broker.example.invalid/access-request?ref=ref-000000000000000000000008",
+            "excerpt": "Planned downtime windows for etch, clean and deposition tools in Fab 3. … ETCH-07 | CH-B | Quarterly PM | 2026-10-21 | 18 | Upper liner replacement; 35 seasoning wafers required"
+          }
+        ],
+        "policy": {
+          "contractId": "KX-DEMO-20261007",
+          "purpose": "yield-excursion-analysis",
+          "maxExcerptChars": 300,
+          "maxCitations": 3,
+          "withheld": [
+            {
+              "reason": "exfiltration_guard",
+              "count": 1
+            }
+          ],
+          "redactions": {}
+        },
+        "notice": "Content is derived and redacted. Use accessRequestUrl to ask the data owner for the original.",
+        "service": {
+          "mode": "live-synthetic-demo",
+          "authentication": "entra-rs256",
+          "directory": "microsoft-graph",
+          "deployment": "azure-blob",
+          "retrieval": "local-bm25",
+          "answerGeneration": "extractive-no-model",
+          "ingestion": "graph-snapshot-not-continuous",
+          "capturedAt": "2026-10-07T05:59:02Z",
+          "validUntil": "2026-10-08T05:59:02Z",
+          "purview": {
+            "mode": "disabled-demo",
+            "evaluation": "not evaluated",
+            "complianceClaim": false
+          }
+        }
+      }
+    },
+    {
+      "id": "B-DELEGATED-MCP",
+      "expectedStatus": [
+        200
+      ],
+      "actualStatus": 200,
+      "passed": true,
+      "requestId": null,
+      "response": {
+        "jsonrpc": "2.0",
+        "id": 1,
+        "result": {
+          "content": [
+            {
+              "type": "text",
+              "text": "{\"requestId\": \"e0000000000000000000000000000001\", \"answer\": \"Derived answer from shared Process Engineering knowledge (redacted excerpts; originals are not shared):\\n[1] Seasoning conditions the chamber walls after a wet clean or preventive maintenance so that the first production wafers see a stable plasma and a low particle level.\\n[2] Planned downtime windows for etch, clean and deposition tools in Fab 3. … ETCH-07 | CH-B | Quarterly PM | 2026-10-21 | 18 | Upper liner replacement; 35 seasoning wafers required\", \"citations\": [{\"ref\": \"ref-000000000000000000000004\", \"title\": \"ETCH CHAMBER SEASONING GUIDELINE (GL-ETCH-007, revision 5)\", \"sourceTeam\": \"KX synthetic source\", \"sensitivity\": \"General\", \"sensitivityLabelId\": null, \"accessRequestUrl\": \"https://broker.example.invalid/access-request?ref=ref-000000000000000000000004\", \"excerpt\": \"Seasoning conditions the chamber walls after a wet clean or preventive maintenance so that the first production wafers see a stable plasma and a low particle level.\"}, {\"ref\": \"ref-000000000000000000000008\", \"title\": \"Tool Preventive Maintenance Schedule - Q4 2026\", \"sourceTeam\": \"KX synthetic source\", \"sensitivity\": \"General\", \"sensitivityLabelId\": null, \"accessRequestUrl\": \"https://broker.example.invalid/access-request?ref=ref-000000000000000000000008\", \"excerpt\": \"Planned downtime windows for etch, clean and deposition tools in Fab 3. … ETCH-07 | CH-B | Quarterly PM | 2026-10-21 | 18 | Upper liner replacement; 35 seasoning wafers required\"}], \"policy\": {\"contractId\": \"KX-DEMO-20261007\", \"purpose\": \"yield-excursion-analysis\", \"maxExcerptChars\": 300, \"maxCitations\": 3, \"withheld\": [{\"reason\": \"exfiltration_guard\", \"count\": 1}], \"redactions\": {}}, \"notice\": \"Content is derived and redacted. Use accessRequestUrl to ask the data owner for the original.\", \"service\": {\"mode\": \"live-synthetic-demo\", \"authentication\": \"entra-rs256\", \"directory\": \"microsoft-graph\", \"deployment\": \"azure-blob\", \"retrieval\": \"local-bm25\", \"answerGeneration\": \"extractive-no-model\", \"ingestion\": \"graph-snapshot-not-continuous\", \"capturedAt\": \"2026-10-07T05:59:02Z\", \"validUntil\": \"2026-10-08T05:59:02Z\", \"purview\": {\"mode\": \"disabled-demo\", \"evaluation\": \"not evaluated\", \"complianceClaim\": false}}}"
+            }
+          ],
+          "structuredContent": {
+            "requestId": "e0000000000000000000000000000001",
+            "answer": "Derived answer from shared Process Engineering knowledge (redacted excerpts; originals are not shared):\n[1] Seasoning conditions the chamber walls after a wet clean or preventive maintenance so that the first production wafers see a stable plasma and a low particle level.\n[2] Planned downtime windows for etch, clean and deposition tools in Fab 3. … ETCH-07 | CH-B | Quarterly PM | 2026-10-21 | 18 | Upper liner replacement; 35 seasoning wafers required",
+            "citations": [
+              {
+                "ref": "ref-000000000000000000000004",
+                "title": "ETCH CHAMBER SEASONING GUIDELINE (GL-ETCH-007, revision 5)",
+                "sourceTeam": "KX synthetic source",
+                "sensitivity": "General",
+                "sensitivityLabelId": null,
+                "accessRequestUrl": "https://broker.example.invalid/access-request?ref=ref-000000000000000000000004",
+                "excerpt": "Seasoning conditions the chamber walls after a wet clean or preventive maintenance so that the first production wafers see a stable plasma and a low particle level."
+              },
+              {
+                "ref": "ref-000000000000000000000008",
+                "title": "Tool Preventive Maintenance Schedule - Q4 2026",
+                "sourceTeam": "KX synthetic source",
+                "sensitivity": "General",
+                "sensitivityLabelId": null,
+                "accessRequestUrl": "https://broker.example.invalid/access-request?ref=ref-000000000000000000000008",
+                "excerpt": "Planned downtime windows for etch, clean and deposition tools in Fab 3. … ETCH-07 | CH-B | Quarterly PM | 2026-10-21 | 18 | Upper liner replacement; 35 seasoning wafers required"
+              }
+            ],
+            "policy": {
+              "contractId": "KX-DEMO-20261007",
+              "purpose": "yield-excursion-analysis",
+              "maxExcerptChars": 300,
+              "maxCitations": 3,
+              "withheld": [
+                {
+                  "reason": "exfiltration_guard",
+                  "count": 1
+                }
+              ],
+              "redactions": {}
+            },
+            "notice": "Content is derived and redacted. Use accessRequestUrl to ask the data owner for the original.",
+            "service": {
+              "mode": "live-synthetic-demo",
+              "authentication": "entra-rs256",
+              "directory": "microsoft-graph",
+              "deployment": "azure-blob",
+              "retrieval": "local-bm25",
+              "answerGeneration": "extractive-no-model",
+              "ingestion": "graph-snapshot-not-continuous",
+              "capturedAt": "2026-10-07T05:59:02Z",
+              "validUntil": "2026-10-08T05:59:02Z",
+              "purview": {
+                "mode": "disabled-demo",
+                "evaluation": "not evaluated",
+                "complianceClaim": false
+              }
+            }
+          },
+          "isError": false
+        }
+      }
+    }
+  ],
+  "verifiedObjectId": "f0000000-0000-4000-8000-000000000031",
+  "exchangePublishedCardsSeen": 6,
+  "completedAt": "2026-10-07T07:01:09.7834927+00:00"
+}

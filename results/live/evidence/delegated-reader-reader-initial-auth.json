@@ -1,0 +1,11 @@
+{
+  "_publicationNotice": "Sanitized historical record, not a new test or operational approval. Identifiers are placeholders; original private evidence is retained separately. Recorded statuses/times/results are historical, not current state. Sanitized bytes cannot verify original hashes.",
+  "startedAt": "2026-10-07T08:39:22.2034668+00:00",
+  "identity": "Reader@example.invalid",
+  "testRole": "reader",
+  "selectedExistingUser": true,
+  "scope": "Real delegated Graph and broker API checks; not Copilot UI or ordinary-user proof when identity is admin.",
+  "authentication": "PENDING",
+  "tests": [],
+  "failure": "Device authentication failed: invalid_grant; codes=50076"
+}

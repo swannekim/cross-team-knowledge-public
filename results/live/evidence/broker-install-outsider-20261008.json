@@ -1,0 +1,31 @@
+{
+  "_publicationNotice": "Sanitized historical record, not a new test or operational approval. Identifiers are placeholders; original private evidence is retained separately. Recorded statuses/times/results are historical, not current state. Sanitized bytes cannot verify original hashes.",
+  "startedAt": "2026-10-07T23:13:38.9974822+00:00",
+  "identity": "Outsider@example.invalid",
+  "testRole": "outsider",
+  "selectedExistingUser": true,
+  "scope": "Existing broker personal installation through delegated Graph only; not a Copilot invocation or broker authorization test.",
+  "authentication": "PASS",
+  "runStatus": "INCOMPLETE",
+  "phase": "APP_CATALOG_PREFLIGHT",
+  "tests": [
+    {
+      "id": "B-EXISTING-APP-CATALOG",
+      "observedAt": "2026-10-07T23:16:05.2346658+00:00",
+      "expectedStatus": [
+        200
+      ],
+      "actualStatus": 404,
+      "passed": false,
+      "requestId": "f0000000-0000-4000-8000-000000000038",
+      "errorCode": "NotFound"
+    }
+  ],
+  "installation": {
+    "status": "BLOCKED_CATALOG",
+    "appId": "f0000000-0000-4000-8000-000000000017"
+  },
+  "verifiedObjectId": "f0000000-0000-4000-8000-000000000005",
+  "failedAt": "2026-10-07T23:16:05.2501319+00:00",
+  "failure": "The exact existing broker app could not be read from this user catalog; no installation attempted."
+}

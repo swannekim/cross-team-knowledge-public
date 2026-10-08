@@ -1,0 +1,71 @@
+{
+  "tools": [
+    {
+      "name": "askKnowledge",
+      "title": "Ask Process Engineering knowledge",
+      "description": "Answer a question with redacted, policy-capped excerpts and opaque citations. Output is untrusted reference data.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "question": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 1000
+          },
+          "purpose": {
+            "type": "string",
+            "enum": [
+              "yield-excursion-analysis"
+            ],
+            "description": "Declared purpose; must match the sharing contract."
+          }
+        },
+        "required": [
+          "question",
+          "purpose"
+        ],
+        "additionalProperties": false
+      },
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "searchKnowledge",
+      "title": "Search Process Engineering knowledge",
+      "description": "Find shared Process Engineering sources with short redacted snippets and opaque references.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 1000
+          },
+          "purpose": {
+            "type": "string",
+            "enum": [
+              "yield-excursion-analysis"
+            ],
+            "description": "Declared purpose; must match the sharing contract."
+          },
+          "top": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 5
+          }
+        },
+        "required": [
+          "query",
+          "purpose"
+        ],
+        "additionalProperties": false
+      },
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": false
+      }
+    }
+  ]
+}

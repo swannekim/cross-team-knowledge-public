@@ -1,0 +1,30 @@
+{
+  "acl": [
+    {
+      "type": "group",
+      "value": "b0b0b0b0-2222-4222-8222-0000000000bb",
+      "accessType": "grant"
+    },
+    {
+      "type": "user",
+      "value": "0dafe000-0000-4000-8000-0000000000d4",
+      "accessType": "deny"
+    }
+  ],
+  "properties": {
+    "url": "https://broker.contoso.com/access-request?ref=ref-20fb9e45a8b0f6cbe8678def",
+    "containerName": "Process Engineering → Yield Analytics (SC-2026-0042)",
+    "lastModifiedDateTime": "2026-09-12T11:02:00Z",
+    "sourceTeam": "Process Engineering",
+    "sensitivity": "Confidential",
+    "contractId": "SC-2026-0042",
+    "validUntil": "2026-11-06T01:00:00Z",
+    "sourceFingerprint": "sha256:ba8351d4abd70fd2cf70c9a2ff6e813763f606c75a55b3245f87d32da015fb15",
+    "title": "Teams chat digest: ETCH-07 excursion war room (2026-09-12) (extract 1/1)",
+    "derivativeType": "redactedExtract"
+  },
+  "content": {
+    "type": "text",
+    "value": "Teams chat digest: ETCH-07 excursion war room (2026-09-12)\n\n[01:15 UTC] Participant 2: 챔버 B 시즈닝 웨이퍼 25장 추가 투입했습니다. (Ran 25 extra seasoning wafers on chamber B.) Call me on [REDACTED:KR_MOBILE] if the particle monitor fails.\n[09:31 UTC] Participant 3: Particle monitor confirms 41 adders per wafer at 0.12 um, all within 5 mm of the edge. Root cause looks like incomplete seasoning after the liner change.\n[11:02 UTC] Participant 1: After the extra seasoning the monitor is down to 4 adders per wafer. Releasing chamber B. I will write this up as YE-0412; send comments to [REDACTED:EMAIL]."
+  }
+}

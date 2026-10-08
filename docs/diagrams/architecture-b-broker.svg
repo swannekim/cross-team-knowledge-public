@@ -1,0 +1,136 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1460" height="1250" viewBox="0 0 1460 1250" role="img" aria-labelledby="title description">
+<title id="title">B | Policy-enforcing knowledge broker</title>
+<desc id="description">Implemented synthetic demo, 7-8 October 2026. Not a production target or a new test result.</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#495057"/></marker></defs>
+<rect width="1460" height="1250" fill="#ffffff"/>
+<text x="40" y="36" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="700" fill="#000000" dominant-baseline="text-before-edge" data-max-width="1380">
+<tspan x="40" dy="0">B | Policy-enforcing knowledge broker</tspan>
+</text>
+<text x="40" y="94" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="400" fill="#000000" dominant-baseline="text-before-edge" data-max-width="1380">
+<tspan x="40" dy="0">Implemented synthetic demo | 7-8 October 2026 | Original-file permissions are not widened</tspan>
+</text>
+<g data-node="Private source site"><rect x="40" y="165" width="360" height="190" rx="12" fill="#CFE4FA" stroke="#0078D4" stroke-width="2"/>
+<text x="60" y="185" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="700" fill="#000000" dominant-baseline="text-before-edge" data-max-width="320">
+<tspan x="60" dy="0">Private source site</tspan>
+</text>
+<text x="60" y="231" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="400" fill="#000000" dominant-baseline="text-before-edge" data-max-width="320">
+<tspan x="60" dy="0">Synthetic SharePoint files</tspan>
+<tspan x="60" dy="26.599999999999998">Pipeline: selected-site READ</tspan>
+<tspan x="60" dy="26.599999999999998">User original-file access denied</tspan>
+</text>
+</g>
+<g data-node="Manual snapshot capture"><rect x="550" y="165" width="360" height="190" rx="12" fill="#FFF4CE" stroke="#C75B00" stroke-width="2"/>
+<text x="570" y="185" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="700" fill="#000000" dominant-baseline="text-before-edge" data-max-width="320">
+<tspan x="570" dy="0">Manual snapshot capture</tspan>
+</text>
+<text x="570" y="231" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="400" fill="#000000" dominant-baseline="text-before-edge" data-max-width="320">
+<tspan x="570" dy="0">Operator-run Graph ingestion</tspan>
+<tspan x="570" dy="26.599999999999998">Pinned synthetic source content</tspan>
+<tspan x="570" dy="26.599999999999998">No continuous ingestion</tspan>
+</text>
+</g>
+<g data-node="Broker source snapshot"><rect x="1060" y="165" width="360" height="190" rx="12" fill="#E8DAEF" stroke="#5C2D91" stroke-width="2"/>
+<text x="1080" y="185" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="700" fill="#000000" dominant-baseline="text-before-edge" data-max-width="320">
+<tspan x="1080" dy="0">Broker source snapshot</tspan>
+</text>
+<text x="1080" y="231" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="400" fill="#000000" dominant-baseline="text-before-edge" data-max-width="320">
+<tspan x="1080" dy="0">6 source documents + contract</tspan>
+<tspan x="1080" dy="26.599999999999998">Capture time and expiry bound</tspan>
+<tspan x="1080" dy="26.599999999999998">Private container-image input</tspan>
+</text>
+</g>
+<polyline points="400,260 550,260" fill="none" stroke="#495057" stroke-width="2.5" marker-end="url(#arrow)"/>
+<text x="416" y="196" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="400" fill="#000000" dominant-baseline="text-before-edge" data-max-width="130">
+<tspan x="416" dy="0">App-only</tspan>
+<tspan x="416" dy="23.799999999999997">read</tspan>
+</text>
+<polyline points="910,260 1060,260" fill="none" stroke="#495057" stroke-width="2.5" marker-end="url(#arrow)"/>
+<text x="925" y="196" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="400" fill="#000000" dominant-baseline="text-before-edge" data-max-width="130">
+<tspan x="925" dy="0">Prepare</tspan>
+<tspan x="925" dy="23.799999999999997">snapshot</tspan>
+</text>
+<g data-node="Clients and actual coverage"><rect x="40" y="510" width="360" height="245" rx="12" fill="#DFF4F5" stroke="#0C8599" stroke-width="2"/>
+<text x="60" y="530" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="700" fill="#000000" dominant-baseline="text-before-edge" data-max-width="320">
+<tspan x="60" dy="0">Clients and actual coverage</tspan>
+</text>
+<text x="60" y="576" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="400" fill="#000000" dominant-baseline="text-before-edge" data-max-width="320">
+<tspan x="60" dy="0">Admin: personal Copilot agent</tspan>
+<tspan x="60" dy="26.599999999999998">Entra SSO / OpenAPI /ask</tspan>
+<tspan x="60" dy="26.599999999999998">Reader / Outsider: API tests only</tspan>
+<tspan x="60" dy="26.599999999999998">Their Copilot install: blocked</tspan>
+</text>
+</g>
+<g data-node="Azure Container App"><rect x="550" y="510" width="360" height="245" rx="12" fill="#FFF4CE" stroke="#C75B00" stroke-width="2"/>
+<text x="570" y="530" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="700" fill="#000000" dominant-baseline="text-before-edge" data-max-width="320">
+<tspan x="570" dy="0">Azure Container App</tspan>
+</text>
+<text x="570" y="576" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="400" fill="#000000" dominant-baseline="text-before-edge" data-max-width="320">
+<tspan x="570" dy="0">RS256 + delegated scope</tspan>
+<tspan x="570" dy="26.599999999999998">Live Graph identity / group gate</tspan>
+<tspan x="570" dy="26.599999999999998">Purpose + freshness + caps</tspan>
+<tspan x="570" dy="26.599999999999998">BM25 deterministic extracts</tspan>
+</text>
+</g>
+<g data-node="Policy-controlled response"><rect x="1060" y="510" width="360" height="245" rx="12" fill="#DFF4F5" stroke="#0C8599" stroke-width="2"/>
+<text x="1080" y="530" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="700" fill="#000000" dominant-baseline="text-before-edge" data-max-width="320">
+<tspan x="1080" dy="0">Policy-controlled response</tspan>
+</text>
+<text x="1080" y="576" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="400" fill="#000000" dominant-baseline="text-before-edge" data-max-width="320">
+<tspan x="1080" dy="0">Capped text + opaque citations</tspan>
+<tspan x="1080" dy="26.599999999999998">or denial / safe abstention</tspan>
+<tspan x="1080" dy="26.599999999999998">Admin PM answer: correct</tspan>
+<tspan x="1080" dy="26.599999999999998">Wet-clean fact: not returned</tspan>
+</text>
+</g>
+<polyline points="400,633 550,633" fill="none" stroke="#495057" stroke-width="2.5" marker-end="url(#arrow)"/>
+<text x="418" y="569" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="400" fill="#000000" dominant-baseline="text-before-edge" data-max-width="130">
+<tspan x="418" dy="0">User token</tspan>
+<tspan x="418" dy="23.799999999999997">POST /ask</tspan>
+</text>
+<polyline points="910,633 1060,633" fill="none" stroke="#495057" stroke-width="2.5" marker-end="url(#arrow)"/>
+<text x="932" y="569" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="400" fill="#000000" dominant-baseline="text-before-edge" data-max-width="125">
+<tspan x="932" dy="0">Answer</tspan>
+<tspan x="932" dy="23.799999999999997">or refusal</tspan>
+</text>
+<polyline points="1240,355 1240,425 730,425 730,510" fill="none" stroke="#495057" stroke-width="2.5" marker-end="url(#arrow)"/>
+<text x="815" y="387" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="400" fill="#000000" dominant-baseline="text-before-edge" data-max-width="360">
+<tspan x="815" dy="0">Load bounded snapshot</tspan>
+</text>
+<g data-node="Microsoft Graph"><rect x="550" y="900" width="360" height="155" rx="12" fill="#CFE4FA" stroke="#0078D4" stroke-width="2"/>
+<text x="570" y="920" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="700" fill="#000000" dominant-baseline="text-before-edge" data-max-width="320">
+<tspan x="570" dy="0">Microsoft Graph</tspan>
+</text>
+<text x="570" y="966" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="400" fill="#000000" dominant-baseline="text-before-edge" data-max-width="320">
+<tspan x="570" dy="0">Managed identity calls</tspan>
+<tspan x="570" dy="26.599999999999998">Current user + membership</tspan>
+</text>
+</g>
+<g data-node="SQLite + private Azure Blob"><rect x="1060" y="900" width="360" height="185" rx="12" fill="#E8DAEF" stroke="#5C2D91" stroke-width="2"/>
+<text x="1080" y="920" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="700" fill="#000000" dominant-baseline="text-before-edge" data-max-width="320">
+<tspan x="1080" dy="0">SQLite + private Azure Blob</tspan>
+</text>
+<text x="1080" y="966" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="400" fill="#000000" dominant-baseline="text-before-edge" data-max-width="320">
+<tspan x="1080" dy="0">Exclusive lease + ETag</tspan>
+<tspan x="1080" dy="26.599999999999998">Rate / coverage / audit</tspan>
+<tspan x="1080" dy="26.599999999999998">Checkpoint before response</tspan>
+</text>
+</g>
+<polyline points="680,755 680,900" fill="none" stroke="#495057" stroke-width="2.5" marker-end="url(#arrow)" marker-start="url(#arrow)"/>
+<text x="520" y="813" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="400" fill="#000000" dominant-baseline="text-before-edge" data-max-width="160">
+<tspan x="520" dy="0">Identity /</tspan>
+<tspan x="520" dy="23.799999999999997">audience check</tspan>
+</text>
+<polyline points="800,755 800,825 1240,825 1240,900" fill="none" stroke="#495057" stroke-width="2.5" marker-end="url(#arrow)" marker-start="url(#arrow)"/>
+<text x="916" y="786" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="400" fill="#000000" dominant-baseline="text-before-edge" data-max-width="310">
+<tspan x="916" dy="0">Persist policy state</tspan>
+</text>
+<g data-node="Evidence boundary"><rect x="40" y="1105" width="1380" height="135" rx="12" fill="#F3F2F1" stroke="#495057" stroke-width="2"/>
+<text x="60" y="1125" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="700" fill="#000000" dominant-baseline="text-before-edge" data-max-width="1340">
+<tspan x="60" dy="0">Evidence boundary</tspan>
+</text>
+<text x="60" y="1171" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="400" fill="#000000" dominant-baseline="text-before-edge" data-max-width="1340">
+<tspan x="60" dy="0">No live Purview, Azure AI Search or Azure OpenAI. This diagram does not claim ordinary-user Copilot success.</tspan>
+<tspan x="60" dy="26.599999999999998">Snapshot expiry blocks new retrieval; previously returned text and conversation history are not recalled.</tspan>
+</text>
+</g>
+</svg>

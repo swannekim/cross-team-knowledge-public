@@ -1,0 +1,83 @@
+{
+  "_publicationNotice": "Sanitized historical record, not a new test or operational approval. Identifiers are placeholders; original private evidence is retained separately. Recorded statuses/times/results are historical, not current state. Sanitized bytes cannot verify original hashes.",
+  "tenantId": "f0000000-0000-4000-8000-000000000019",
+  "approvalAtKst": "2026-10-07T17:30:28+09:00",
+  "scope": "Explicitly approved, temporary test-user exclusion from two always-on MFA policies only. Not a tenant-wide MFA disablement.",
+  "users": [
+    {
+      "upn": "Reader@example.invalid",
+      "id": "f0000000-0000-4000-8000-00000000001a"
+    },
+    {
+      "upn": "Outsider@example.invalid",
+      "id": "f0000000-0000-4000-8000-000000000005"
+    }
+  ],
+  "policyIds": [
+    "f0000000-0000-4000-8000-00000000001c",
+    "f0000000-0000-4000-8000-00000000003e"
+  ],
+  "change": "Append exactly the two user IDs to conditions.users.excludeUsers; retain enabled policy state and all other settings.",
+  "readbackMatchedExpectedChange": true,
+  "riskBasedPoliciesChanged": false,
+  "administratorExcluded": false,
+  "otherUsersChanged": false,
+  "securityDefaultsChanged": false,
+  "perUserMfaChanged": false,
+  "fullPolicyBackup": "Local deployment state only; excluded from repository.",
+  "extensionRequest": {
+    "approvedAtKst": "2026-10-07T20:43:06+09:00",
+    "requestedRestoreByKst": "2026-10-08T20:43:00+09:00",
+    "scope": "The same two users and two always-on MFA policies only",
+    "status": "ACTIVE; RESTORATION ARMED",
+    "initialAttemptFailure": "Microsoft Graph rejected the existing administrator token: Continuous Access Evaluation InteractionRequired, TokenCreatedWithOutdatedPolicies. No policy mutation occurred on that attempt.",
+    "previousRestorationUnaffected": true,
+    "rollbackAutomationId": "REDACTED-MFA-BACKUP-ID",
+    "rollbackAutomationScheduled": true,
+    "isolatedAdminSignInPending": false,
+    "adminIdentityVerified": "admin@example.invalid",
+    "readbackMatchedExpectedChange": true,
+    "appliedPolicies": [
+      {
+        "id": "f0000000-0000-4000-8000-00000000001c",
+        "appliedAtKst": "2026-10-07T20:49:37.5864674+09:00"
+      },
+      {
+        "id": "f0000000-0000-4000-8000-00000000003e",
+        "appliedAtKst": "2026-10-07T20:49:44.0534762+09:00"
+      }
+    ],
+    "restoreByUtc": "2026-10-08T11:43:00Z",
+    "watchdogShell": "REDACTED-MFA-EXTENSION-WATCHDOG",
+    "earlyRestore": "deployment/scripts/Set-TemporaryTestMfaException.ps1 -Restore",
+    "otherPolicySettingsUnchanged": true
+  },
+  "restoration": {
+    "statusAtRecordedCheckpoint": "RESTORED; both introduced exclusion lists are empty",
+    "restoreByUtc": "2026-10-07T09:33:21.3152007Z",
+    "restoreByKst": "2026-10-07T18:33:21+09:00",
+    "earlyRestore": "deployment/scripts/Set-TemporaryTestMfaException.ps1 -Restore",
+    "behavior": "Remove only exclusions introduced by this run, preserving unrelated subsequent policy changes.",
+    "watchdogShell": "REDACTED-MFA-INITIAL-WATCHDOG",
+    "watchdogExitCode": 0,
+    "restoredAtKst": "2026-10-07T18:33:38.5419737+09:00",
+    "policyReadbacks": [
+      {
+        "id": "f0000000-0000-4000-8000-00000000001c",
+        "restoredAtKst": "2026-10-07T18:33:33.1642066+09:00",
+        "remainingUserExclusions": []
+      },
+      {
+        "id": "f0000000-0000-4000-8000-00000000003e",
+        "restoredAtKst": "2026-10-07T18:33:38.5367093+09:00",
+        "remainingUserExclusions": []
+      }
+    ],
+    "issuedSessionsRevoked": false
+  },
+  "limitations": [
+    "Risk-based or other authentication requirements can still require MFA.",
+    "Per-user MFA and Security Defaults reads with the existing CLI token returned 403; their state was not established or changed.",
+    "An exception policy readback is not a successful sign-in or access-control test."
+  ]
+}

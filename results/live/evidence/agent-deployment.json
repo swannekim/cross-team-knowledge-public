@@ -1,0 +1,148 @@
+{
+  "_publicationNotice": "Sanitized historical record, not a new test or operational approval. Identifiers are placeholders; original private evidence is retained separately. Recorded statuses/times/results are historical, not current state. Sanitized bytes cannot verify original hashes.",
+  "date": "2026-10-07",
+  "approvalTimeKst": "2026-10-07T16:20:27+09:00",
+  "approvedPreviewSha256": "810a3387e38ee8c94a0c68e6ab43a4b2e3ebd696bef26b3a4568c8b2283b4258",
+  "installedFor": "admin@example.invalid",
+  "distribution": "Personal sideload through Teams Upload a customised app; not organization catalogue publication.",
+  "connector": {
+    "manifestId": "f0000000-0000-4000-8000-00000000001e",
+    "uploadedAppDefinitionId": "f0000000-0000-4000-8000-000000000007",
+    "copilotAgentId": "U_f0000000-0000-4000-8000-00000000002e.kxSyntheticConnector",
+    "installed": true,
+    "knowledgeScope": "GraphConnectors ExampleDerived, contractId:KX-Synthetic-20261007",
+    "firstScopedAttempt": {
+      "conversationId": "f0000000-0000-4000-8000-000000000028",
+      "result": "No matching connector evidence returned; no answer or citation.",
+      "passed": false,
+      "screenshot": "../screenshots/a-scoped-agent-no-results.png"
+    },
+    "postPropagationAttempt": {
+      "conversationId": "f0000000-0000-4000-8000-000000000039",
+      "submittedAtApproximateKst": "2026-10-07T16:46:24+09:00",
+      "prompt": "Find GL-ETCH-007 revision 5 in the configured connector. What are the wet-clean-only seasoning wafer count and the chamber release criteria? Quote the relevant approved summary and provide its connector citation.",
+      "expectedFactsMatched": true,
+      "facts": [
+        "15 seasoning wafers after wet clean only",
+        "below 10 particles of 0.12 um or larger per wafer",
+        "etch-rate monitor within 3% of chamber baseline"
+      ],
+      "nativeCitationTitle": "[Synthetic] ETCH CHAMBER SEASONING GUIDELINE (GL-ETCH-007, revision 5) (summary)",
+      "clickedCitationUrl": "https://broker.example.invalid/access-request?ref=ref-000000000000000000000005",
+      "citationMatchesApprovedExternalItem": "example-item-0005",
+      "citationNotSharePointOriginalOrCard": true,
+      "passed": true,
+      "scope": "Administrator positive grounding path with real native connector citation. First successful sampled attempt approximately 31 minutes after enablement, not measured exact propagation latency or an SLA.",
+      "screenshots": [
+        "../screenshots/a-scoped-agent-grounded.png",
+        "../screenshots/a-scoped-agent-citation.png"
+      ]
+    }
+  },
+  "broker": {
+    "manifestId": "f0000000-0000-4000-8000-000000000024",
+    "uploadedAppDefinitionId": "f0000000-0000-4000-8000-000000000017",
+    "copilotAgentId": "U_f0000000-0000-4000-8000-000000000002.kxSyntheticKnowledge",
+    "installed": true,
+    "zipSha256": "effa56ee65104c8bf84bc4c61d2eb4892e32835c14016acf53dc434b801940c8",
+    "sso": {
+      "name": "EXAMPLE-Broker-SSO",
+      "registrationId": "ZjAwMDAwMDAtMDAwMC00MDAwLTgwMDAtMDAwMDAwMDAwMDE5IyNmMDAwMDAwMC0wMDAwLTQwMDAtODAwMC0wMDAwMDAwMDAwMjU=",
+      "applicationIdUri": "api://auth-f0000000-0000-4000-8000-000000000025/f0000000-0000-4000-8000-00000000002a",
+      "organizationRestriction": "My organization only",
+      "appRestriction": "Existing Teams app f0000000-0000-4000-8000-000000000017; saved and verified after Developer Portal reload",
+      "appBindingEvidence": "Native Copilot acquisitions/get returned titleId U_f0000000-0000-4000-8000-000000000002, appId f0000000-0000-4000-8000-000000000017, manifestId f0000000-0000-4000-8000-000000000024, acquired state and user context.",
+      "existingIdentifierUriPreserved": true,
+      "tokenVersion": 2,
+      "validatedAudience": "f0000000-0000-4000-8000-00000000002a",
+      "preauthorizedTokenStoreClient": "ab3be6b7-f5df-413d-ac2d-abf1e3fd9c0b",
+      "scope": "Knowledge.Ask",
+      "webRedirectUri": "https://teams.microsoft.com/api/platform/v1.0/oAuthConsentRedirect"
+    },
+    "firstCopilotInvocation": {
+      "conversationId": "f0000000-0000-4000-8000-00000000003b",
+      "confirmedToolQuestion": "Retrieve approved synthetic GL-ETCH-007 guidance. How many seasoning wafers are needed after a wet clean only? Return excerpts containing this fact if available.",
+      "auditTimestamp": "2026-10-07T07:34:53.451484+00:00",
+      "auditSequence": 26,
+      "requestId": "e0000000000000000000000000000003",
+      "userObjectId": "f0000000-0000-4000-8000-000000000031",
+      "queryHash": "870a492bef21b469",
+      "httpStatus": 200,
+      "returnedRef": "ref-000000000000000000000004",
+      "withheldChunks": 1,
+      "copilotAnswer": "The returned evidence is insufficient to answer this question.",
+      "authenticationAndInvocationPassed": true,
+      "requestedNumericAnswerReturned": false,
+      "abstentionRatherThanGuessing": true,
+      "screenshot": "../screenshots/b-copilot-sso-insufficient.png"
+    },
+    "maintenanceQuestion": {
+      "conversationId": "f0000000-0000-4000-8000-00000000003b",
+      "confirmedToolQuestion": "What is the planned Q4 2026 preventive-maintenance date and duration for ETCH-07 chamber B? Return excerpts containing the planned PM date and duration.",
+      "auditTimestamp": "2026-10-07T07:36:48.071589+00:00",
+      "auditSequence": 30,
+      "requestId": "e0000000000000000000000000000006",
+      "userObjectId": "f0000000-0000-4000-8000-000000000031",
+      "queryHash": "11bb52a05ead3e6b",
+      "httpStatus": 200,
+      "returnedRef": "ref-000000000000000000000008",
+      "withheldChunks": 1,
+      "answer": "Planned start 2026-10-21, duration 18 hours",
+      "expectedFactsMatched": true,
+      "passed": true,
+      "scope": "Real administrator Copilot SSO invocation with correct facts and returned broker reference; not ordinary-user isolation.",
+      "screenshot": "../screenshots/b-copilot-sso-grounded.png"
+    },
+    "postAppBindingInvocation": {
+      "conversationId": "f0000000-0000-4000-8000-000000000014",
+      "appRestriction": "f0000000-0000-4000-8000-000000000017",
+      "auditSequence": 42,
+      "auditTimestamp": "2026-10-07T07:59:35.463912+00:00",
+      "requestId": "e000000000000000000000000000000b",
+      "userObjectId": "f0000000-0000-4000-8000-000000000031",
+      "queryHash": "812d219f9561ae2a",
+      "queryLength": 98,
+      "httpStatus": 200,
+      "answer": "Quarterly PM starting 2026-10-21, duration 18 hours",
+      "citedRef": "ref-000000000000000000000008",
+      "passed": true
+    }
+  },
+  "azureDeployment": {
+    "subscriptionId": "f0000000-0000-4000-8000-00000000003f",
+    "resourceGroup": "rg-example-knowledge",
+    "build": "de3",
+    "tag": "20261007-5",
+    "imageDigest": "sha256:REDACTED_IMAGE_DIGEST_01",
+    "activeRevision": "example-broker--0000002",
+    "health": "Healthy",
+    "publicHealthHttpStatus": 200,
+    "notices": {
+      "/demo/privacy": {
+        "httpStatus": 200,
+        "approvedTextExactMatch": true
+      },
+      "/demo/terms": {
+        "httpStatus": 200,
+        "approvedTextExactMatch": true
+      }
+    },
+    "failureHistory": [
+      "Single revision mode reactivated the previous lease holder while replacement was activating.",
+      "Rolling revision restart created overlapping replicas; one held the Blob lease and the other could not start."
+    ],
+    "recovery": "Retain Multiple mode; deactivate and drain all replicas; wait 75 seconds; activate one revision without rolling restart; verify its exact hostname; set explicit 100% public traffic.",
+    "activeRevisionsMode": "Multiple",
+    "activeRevisionCount": 1,
+    "minReplicas": 0,
+    "maxReplicas": 1,
+    "stateReset": false,
+    "populatedStateEvidence": "broker-populated-restart.json"
+  },
+  "remaining": [
+    "B wet-clean answer-quality limitation; a separate maintenance question passed",
+    "Independent ordinary-user and outsider authorization paths",
+    "Real expiry and index/cache removal",
+    "Follow-up GitHub upload approval"
+  ]
+}

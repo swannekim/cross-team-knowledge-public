@@ -1,0 +1,43 @@
+{
+  "_publicationNotice": "Sanitized historical record, not a new test or operational approval. Identifiers are placeholders; original private evidence is retained separately. Recorded statuses/times/results are historical, not current state. Sanitized bytes cannot verify original hashes.",
+  "date": "2026-10-07",
+  "scope": "Observed live checks; not signed-in Copilot or broker-user retrieval",
+  "managedIdentityDirectory": {
+    "location": "deployed container in subscription -2",
+    "reader": {
+      "enabled": true,
+      "audienceMember": true,
+      "guest": false
+    },
+    "outsider": {
+      "enabled": true,
+      "audienceMember": false,
+      "guest": false
+    },
+    "admin": {
+      "enabled": true,
+      "audienceMember": true,
+      "guest": false
+    }
+  },
+  "wrongAudienceEntraApplicationToken": {
+    "expected": 401,
+    "actual": 401,
+    "citationsReturned": false
+  },
+  "unpairedSurrogateRequest": {
+    "expected": 400,
+    "actual": 400,
+    "subsequentHealth": "ok"
+  },
+  "exchangeAudience": {
+    "libraryRootPermissionRole": "read",
+    "syntheticReaderRemovedFromEditGroup": true,
+    "effectiveSignedInPermissions": "not tested; MFA enrolment required"
+  },
+  "temporaryProvisioningApplication": {
+    "remainingAppRoleAssignments": 0,
+    "remainingCertificateCredentials": 0,
+    "caveat": "Previously issued tokens may remain valid until expiry"
+  }
+}

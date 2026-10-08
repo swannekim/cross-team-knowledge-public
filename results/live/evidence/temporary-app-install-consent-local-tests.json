@@ -1,0 +1,465 @@
+{
+  "_publicationNotice": "Sanitized historical record, not a new test or operational approval. Identifiers are placeholders; original private evidence is retained separately. Recorded statuses/times/results are historical, not current state. Sanitized bytes cannot verify original hashes.",
+  "recordedAt": "2026-10-07T23:19:42.7059332+00:00",
+  "result": "PASSED",
+  "scope": "Local PowerShell AST-extracted functions with mocked Graph/authentication/sleep, in-memory cleanup ledgers, and a real Save/deserialization round trip using a removed session-only synthetic ledger; no live Apply/Restore entrypoint executed.",
+  "cloudValidation": false,
+  "cloudChanges": false,
+  "privateLedgerReadOrWritten": false,
+  "credentialsRead": false,
+  "activeMfaWatchdogUnaffected": true,
+  "eventsSignaled": false,
+  "automationModified": false,
+  "concurrencyLimit": "Mocked fresh reads and optional ETag forwarding are tested. No claim of Graph atomic compare-and-swap when no ETag is supplied; serialize external consent writers.",
+  "source": {
+    "path": "deployment\\scripts\\Set-TemporaryAppInstallConsent.ps1",
+    "sha256": "DA3360A1DFC3630796AC0E3D62B296FFC6974AAC497BD22FA7221D20993D3521",
+    "syntax": "PASSED"
+  },
+  "runner": {
+    "path": "C:\\EXAMPLE\\private-evidence\\temporary-app-install-consent-local-tests.ps1",
+    "sha256": "D83850E4B238CA4D646B7FFEC977FEBF293A4BD7D4D575D2CD8038572B7CA398",
+    "command": "pwsh -NoProfile -File \"C:\\EXAMPLE\\private-evidence\\temporary-app-install-consent-local-tests.ps1\" -RepoRoot \"C:\\EXAMPLE\\cross-team-knowledge-public\""
+  },
+  "scenarioCount": 25,
+  "passedScenarios": 25,
+  "failedScenarios": 0,
+  "assertionCount": 71,
+  "passedAssertions": 71,
+  "scenarios": [
+    {
+      "assertions": [
+        {
+          "assertion": "The helper parses without executing its top-level entrypoint.",
+          "passed": true
+        },
+        {
+          "assertion": "Consent watchdog uses only its unique approved event name.",
+          "passed": true
+        },
+        {
+          "assertion": "Consent mutation mutex is independent of the MFA watchdog.",
+          "passed": true
+        },
+        {
+          "assertion": "The helper never references the existing MFA ledger, event, or policy mutation endpoints.",
+          "passed": true
+        }
+      ],
+      "status": "PASSED",
+      "name": "syntax-and-isolated-lifetime-identifiers"
+    },
+    {
+      "assertions": [
+        {
+          "assertion": "Absent grants have empty baseline arrays, not null-element arrays.",
+          "passed": true
+        },
+        {
+          "assertion": "Each exact target receives one POST with verified composite identity.",
+          "passed": true
+        },
+        {
+          "assertion": "Initial private intent ledger precedes all mutations; per-target saved intent is checked by each mock POST.",
+          "passed": true
+        },
+        {
+          "assertion": "Owned empty grants are deleted and verified absent.",
+          "passed": true
+        },
+        {
+          "assertion": "AllPrincipals and admin Principal grants remain canonically unchanged.",
+          "passed": true
+        },
+        {
+          "assertion": "No unrelated grant is ever mutated.",
+          "passed": true
+        }
+      ],
+      "status": "PASSED",
+      "name": "new-grants-apply-restore-intent-first"
+    },
+    {
+      "assertions": [
+        {
+          "assertion": "Ledger deserialization preserves approval precision and timezone as a string.",
+          "passed": true
+        },
+        {
+          "assertion": "Deserialized ledger validates and restores both mocked grants.",
+          "passed": true
+        },
+        {
+          "assertion": "Both live-ledger read sites explicitly preserve JSON date strings.",
+          "passed": true
+        }
+      ],
+      "status": "PASSED",
+      "name": "serialized-private-ledger-restores-precise-timestamps"
+    },
+    {
+      "assertions": [
+        {
+          "assertion": "Real Save-InstallConsentRecord writes its atomic ledger to a session-only test file.",
+          "passed": true
+        },
+        {
+          "assertion": "Actual restore-read pipeline retains exact approval/deadline strings and passes strict record validation after real Save.",
+          "passed": true
+        },
+        {
+          "assertion": "Actual restore-read pipeline retains exact approval/deadline strings and passes strict record validation after real Save.",
+          "passed": true
+        }
+      ],
+      "status": "PASSED",
+      "name": "real-save-and-both-restore-read-pipelines"
+    },
+    {
+      "assertions": [
+        {
+          "assertion": "First-principal failure does not postpone the second cleanup until retry.",
+          "passed": true
+        },
+        {
+          "assertion": "Only the failed principal is retried.",
+          "passed": true
+        },
+        {
+          "assertion": "Successful restoration retains the transient error in the persisted ledger.",
+          "passed": true
+        }
+      ],
+      "status": "PASSED",
+      "name": "first-principal-transient-failure-independent"
+    },
+    {
+      "assertions": [
+        {
+          "assertion": "Permanent cleanup failure is explicit and cannot claim success.",
+          "passed": true
+        },
+        {
+          "assertion": "Six bounded attempts for the failed principal do not abort the other cleanup.",
+          "passed": true
+        },
+        {
+          "assertion": "Bounded retry backoff is 5, 15, 30, 60, and 120 seconds.",
+          "passed": true
+        },
+        {
+          "assertion": "Final ledger records the outstanding target and every failed attempt.",
+          "passed": true
+        }
+      ],
+      "status": "PASSED",
+      "name": "permanent-failure-bounded-retries"
+    },
+    {
+      "assertions": [
+        {
+          "assertion": "A lost POST response is reconciled by exact composite identity without a second POST.",
+          "passed": true
+        },
+        {
+          "assertion": "Uncertain response is persisted even after successful reconciliation.",
+          "passed": true
+        },
+        {
+          "assertion": "Reconciled introduced grant is safely removed.",
+          "passed": true
+        }
+      ],
+      "status": "PASSED",
+      "name": "lost-post-response-reconciled-no-replay"
+    },
+    {
+      "assertions": [
+        {
+          "assertion": "Durable mutation intent survives losing both POST response and immediate reconciliation.",
+          "passed": true
+        },
+        {
+          "assertion": "Restore locates the target by composite identity without a captured grant ID or POST replay.",
+          "passed": true
+        }
+      ],
+      "status": "PASSED",
+      "name": "lost-post-and-reconcile-response-cleanup-from-intent"
+    },
+    {
+      "assertions": [
+        {
+          "assertion": "Preexisting approved scope is not recorded as introduced.",
+          "passed": true
+        },
+        {
+          "assertion": "Cleanup retains preexisting approved and unrelated concurrent scopes.",
+          "passed": true
+        },
+        {
+          "assertion": "A preexisting grant is never deleted.",
+          "passed": true
+        }
+      ],
+      "status": "PASSED",
+      "name": "preexisting-approved-and-concurrent-scopes-retained"
+    },
+    {
+      "assertions": [
+        {
+          "assertion": "New grant with an unrelated concurrent scope is patched, not deleted.",
+          "passed": true
+        },
+        {
+          "assertion": "Entire grant deletion is avoided when unrelated scope is present.",
+          "passed": true
+        }
+      ],
+      "status": "PASSED",
+      "name": "new-grant-concurrent-unrelated-scope-retained"
+    },
+    {
+      "assertions": [
+        {
+          "assertion": "Fresh pre-delete read catches a newly added unrelated scope and switches to PATCH.",
+          "passed": true
+        },
+        {
+          "assertion": "No stale empty-scope observation causes DELETE.",
+          "passed": true
+        }
+      ],
+      "status": "PASSED",
+      "name": "concurrent-scope-detected-immediately-before-delete"
+    },
+    {
+      "assertions": [
+        {
+          "assertion": "Service-provided ETag is forwarded on the mutation.",
+          "passed": true
+        }
+      ],
+      "status": "PASSED",
+      "name": "etag-forwarded-for-conditional-mutation"
+    },
+    {
+      "assertions": [
+        {
+          "assertion": "Already absent grants and repeated restoration require readback only, never new mutations.",
+          "passed": true
+        }
+      ],
+      "status": "PASSED",
+      "name": "already-absent-and-repeat-restore-idempotent"
+    },
+    {
+      "assertions": [
+        {
+          "assertion": "Ambiguous duplicate composite targets are not modified.",
+          "passed": true
+        },
+        {
+          "assertion": "First-target duplicates do not block independent second-target cleanup.",
+          "passed": true
+        }
+      ],
+      "status": "PASSED",
+      "name": "duplicates-fail-closed-but-second-cleanup-runs"
+    },
+    {
+      "assertions": [
+        {
+          "assertion": "Malformed restoration record fails before authentication or API access: tenant.",
+          "passed": true
+        },
+        {
+          "assertion": "Malformed restoration record fails before authentication or API access: principal.",
+          "passed": true
+        },
+        {
+          "assertion": "Malformed restoration record fails before authentication or API access: scope.",
+          "passed": true
+        },
+        {
+          "assertion": "Malformed restoration record fails before authentication or API access: grantIdentity.",
+          "passed": true
+        },
+        {
+          "assertion": "Malformed restoration record fails before authentication or API access: missingAddedScope.",
+          "passed": true
+        }
+      ],
+      "status": "PASSED",
+      "name": "invalid-record-target-and-ownership-fail-closed"
+    },
+    {
+      "assertions": [
+        {
+          "assertion": "Non-string, control-character, repeated-separator, or malformed scope input is rejected.",
+          "passed": true
+        },
+        {
+          "assertion": "Non-string, control-character, repeated-separator, or malformed scope input is rejected.",
+          "passed": true
+        },
+        {
+          "assertion": "Non-string, control-character, repeated-separator, or malformed scope input is rejected.",
+          "passed": true
+        },
+        {
+          "assertion": "Non-string, control-character, repeated-separator, or malformed scope input is rejected.",
+          "passed": true
+        },
+        {
+          "assertion": "Non-string, control-character, repeated-separator, or malformed scope input is rejected.",
+          "passed": true
+        },
+        {
+          "assertion": "Non-string, control-character, repeated-separator, or malformed scope input is rejected.",
+          "passed": true
+        },
+        {
+          "assertion": "An empty scope string is represented as an actual empty list.",
+          "passed": true
+        }
+      ],
+      "status": "PASSED",
+      "name": "malformed-scope-input-rejected"
+    },
+    {
+      "assertions": [
+        {
+          "assertion": "Malformed preflight target cannot create an intent ledger or mutation.",
+          "passed": true
+        }
+      ],
+      "status": "PASSED",
+      "name": "preflight-malformed-target-no-intent-no-write"
+    },
+    {
+      "assertions": [
+        {
+          "assertion": "Unrelated baseline drift prevents a misleading full-success claim.",
+          "passed": true
+        },
+        {
+          "assertion": "Introduced target grants are cleaned while concurrent unrelated changes are left untouched.",
+          "passed": true
+        }
+      ],
+      "status": "PASSED",
+      "name": "unrelated-drift-visible-not-reverted"
+    },
+    {
+      "assertions": [
+        {
+          "assertion": "Ledger failure is explicitly surfaced, not silently ignored.",
+          "passed": true
+        },
+        {
+          "assertion": "Both target cleanups continue despite ledger persistence errors.",
+          "passed": true
+        }
+      ],
+      "status": "PASSED",
+      "name": "ledger-failure-does-not-prevent-cleanup"
+    },
+    {
+      "assertions": [
+        {
+          "assertion": "First-target token acquisition failure does not abort second-target cleanup.",
+          "passed": true
+        }
+      ],
+      "status": "PASSED",
+      "name": "authentication-failure-independent"
+    },
+    {
+      "assertions": [
+        {
+          "assertion": "Already consented approved scopes are never introduced or removed.",
+          "passed": true
+        }
+      ],
+      "status": "PASSED",
+      "name": "all-approved-scopes-preexisting-no-mutation"
+    },
+    {
+      "assertions": [
+        {
+          "assertion": "A deadline reached during preflight prevents starting a new mutation.",
+          "passed": true
+        }
+      ],
+      "status": "PASSED",
+      "name": "deadline-rechecked-before-mutation"
+    },
+    {
+      "assertions": [
+        {
+          "assertion": "Second-principal application failure is surfaced after one attempt per target.",
+          "passed": true
+        },
+        {
+          "assertion": "Apply finally removes the first introduced grant and reconciles the rejected second intent.",
+          "passed": true
+        },
+        {
+          "assertion": "Only mocked event/mutex handles are released after cleanup finishes.",
+          "passed": true
+        }
+      ],
+      "status": "PASSED",
+      "name": "apply-failure-finally-restores-before-disposing"
+    },
+    {
+      "assertions": [
+        {
+          "assertion": "Exact approval timestamp, preview SHA256, and 09:00 KST deadline pass.",
+          "passed": true
+        },
+        {
+          "assertion": "Unapproved or unbounded Apply is rejected: hash.",
+          "passed": true
+        },
+        {
+          "assertion": "Unapproved or unbounded Apply is rejected: approval.",
+          "passed": true
+        },
+        {
+          "assertion": "Unapproved or unbounded Apply is rejected: expired.",
+          "passed": true
+        },
+        {
+          "assertion": "Unapproved or unbounded Apply is rejected: late.",
+          "passed": true
+        },
+        {
+          "assertion": "Unapproved or unbounded Apply is rejected: over90minutes.",
+          "passed": true
+        }
+      ],
+      "status": "PASSED",
+      "name": "approval-hash-and-bounded-deadline"
+    },
+    {
+      "assertions": [
+        {
+          "assertion": "Each Graph call has a 60-second timeout and no redirects.",
+          "passed": true
+        },
+        {
+          "assertion": "Available ETag becomes an If-Match request header.",
+          "passed": true
+        },
+        {
+          "assertion": "Uncertain POST failure is surfaced without any automatic replay.",
+          "passed": true
+        }
+      ],
+      "status": "PASSED",
+      "name": "http-request-timeout-no-post-retry-and-etag"
+    }
+  ]
+}

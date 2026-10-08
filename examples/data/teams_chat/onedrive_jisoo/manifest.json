@@ -1,0 +1,86 @@
+{
+  "_comment": "Synthetic OneDrive of the chat sender (Jisoo Lee). Teams stores chat attachments here.",
+  "tenantId": "9c0a7e11-4f2b-4d3c-8e5f-6a7b8c9d0e1f",
+  "site": {
+    "id": "contoso-my.sharepoint.com,1d2e3f40-5a6b-4c7d-8e9f-0a1b2c3d4e5f,2e3f4a5b-6c7d-4e8f-9a0b-1c2d3e4f5a6b",
+    "name": "jisoo_lee_contoso_com",
+    "displayName": "Jisoo Lee",
+    "webUrl": "https://contoso-my.sharepoint.com/personal/jisoo_lee_contoso_com"
+  },
+  "drive": {
+    "id": "b!amlzb28tb25lZHJpdmUtZmFrZS1kcml2ZS1pZC0wMDAwMDAwMDAwMDAwMDAwMDA",
+    "name": "OneDrive",
+    "driveType": "business",
+    "webUrl": "https://contoso-my.sharepoint.com/personal/jisoo_lee_contoso_com/Documents"
+  },
+  "labels": [
+    {
+      "id": "6e0e0000-1abe-4a1b-8e1a-000000000000",
+      "name": "Public"
+    },
+    {
+      "id": "6e0e0001-1abe-4a1b-8e1a-000000000001",
+      "name": "General"
+    },
+    {
+      "id": "6e0e0002-1abe-4a1b-8e1a-000000000002",
+      "name": "Confidential"
+    },
+    {
+      "id": "6e0e0003-1abe-4a1b-8e1a-000000000003",
+      "name": "Highly Confidential"
+    }
+  ],
+  "items": [
+    {
+      "id": "01NFUJV6RYG7SXLZ45BP2MBAHNNOVP2UT5",
+      "name": "ETCH-07_CH-B_particle_map_notes.txt",
+      "folderPath": "/Microsoft Teams Chat Files",
+      "contentFile": "files/Microsoft Teams Chat Files/ETCH-07_CH-B_particle_map_notes.txt",
+      "size": 627,
+      "mimeType": "text/plain",
+      "sensitivityLabelId": "6e0e0002-1abe-4a1b-8e1a-000000000002",
+      "sensitivityLabel": "Confidential",
+      "createdDateTime": "2026-09-11T16:29:40Z",
+      "lastModifiedDateTime": "2026-09-12T09:20:00Z",
+      "eTag": "\"{CBDAE64B-CFAB-4E7C-AE10-222AC2C0DB8C},2\"",
+      "cTag": "\"c:{CBDAE64B-CFAB-4E7C-AE10-222AC2C0DB8C},2\"",
+      "webUrl": "https://contoso-my.sharepoint.com/personal/jisoo_lee_contoso_com/Documents/Microsoft%20Teams%20Chat%20Files/ETCH-07_CH-B_particle_map_notes.txt",
+      "lastModifiedBy": {
+        "user": {
+          "id": "0a1b0c00-0000-4000-8000-0000000000f7",
+          "displayName": "Jisoo Lee",
+          "email": "jisoo.lee@contoso.com"
+        }
+      },
+      "permissions": [
+        {
+          "id": "Y2hhdC1maWxlLWxpbms",
+          "roles": [
+            "read"
+          ],
+          "link": {
+            "scope": "users",
+            "type": "view"
+          },
+          "grantedToIdentitiesV2": [
+            {
+              "user": {
+                "id": "0a11ce00-0000-4000-8000-0000000000a1",
+                "displayName": "Alice Kim",
+                "email": "alice@contoso.com"
+              }
+            },
+            {
+              "user": {
+                "id": "0a1b0c00-0000-4000-8000-0000000000f6",
+                "displayName": "Minho Park",
+                "email": "minho.park@contoso.com"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

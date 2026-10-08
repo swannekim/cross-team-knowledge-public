@@ -1,0 +1,121 @@
+{
+  "_publicationNotice": "Sanitized historical record, not a new test or operational approval. Identifiers are placeholders; original private evidence is retained separately. Recorded statuses/times/results are historical, not current state. Sanitized bytes cannot verify original hashes.",
+  "startedAt": "2026-10-07T08:34:50.5251096+00:00",
+  "identity": "Outsider@example.invalid",
+  "testRole": "outsider",
+  "selectedExistingUser": true,
+  "scope": "Real delegated Graph and broker API checks; not Copilot UI or ordinary-user proof when identity is admin.",
+  "authentication": "PASS",
+  "tests": [
+    {
+      "id": "ORIGINAL-METADATA-DENIED",
+      "observedAt": "2026-10-07T08:38:30.5974107+00:00",
+      "expectedStatus": [
+        403,
+        404
+      ],
+      "actualStatus": 403,
+      "passed": true,
+      "requestId": "f0000000-0000-4000-8000-00000000001d",
+      "errorCode": "accessDenied"
+    },
+    {
+      "id": "ORIGINAL-LIST-DENIED",
+      "observedAt": "2026-10-07T08:38:32.4608447+00:00",
+      "expectedStatus": [
+        403,
+        404
+      ],
+      "actualStatus": 403,
+      "passed": true,
+      "requestId": "f0000000-0000-4000-8000-00000000000a",
+      "errorCode": "accessDenied"
+    },
+    {
+      "id": "EXCHANGE-LIST-ACCESS",
+      "observedAt": "2026-10-07T08:38:34.0980727+00:00",
+      "expectedStatus": [
+        403,
+        404
+      ],
+      "actualStatus": 403,
+      "passed": true,
+      "requestId": "f0000000-0000-4000-8000-00000000000b",
+      "errorCode": "accessDenied"
+    },
+    {
+      "id": "A-DELEGATED-SEARCH",
+      "observedAt": "2026-10-07T08:38:37.7878791+00:00",
+      "actualStatus": 200,
+      "hitCount": 0,
+      "expected": "Successful query with zero scoped results",
+      "passed": true,
+      "requestId": "f0000000-0000-4000-8000-000000000041"
+    },
+    {
+      "id": "C-DELEGATED-SEARCH",
+      "observedAt": "2026-10-07T08:38:41.1895365+00:00",
+      "actualStatus": 200,
+      "hitCount": 0,
+      "expected": "Successful query with zero scoped results",
+      "passed": true,
+      "requestId": "f0000000-0000-4000-8000-00000000000f"
+    },
+    {
+      "id": "B-DELEGATED-ASK",
+      "observedAt": "2026-10-07T08:39:06.7273005+00:00",
+      "expectedStatus": [
+        403
+      ],
+      "actualStatus": 403,
+      "passed": true,
+      "requestId": "e0000000000000000000000000000009",
+      "errorCode": "not_in_audience",
+      "citationCount": 0,
+      "response": {
+        "error": {
+          "code": "not_in_audience",
+          "message": "caller is not a member of the contract audience"
+        },
+        "requestId": "e0000000000000000000000000000009",
+        "service": {
+          "mode": "live-synthetic-demo",
+          "authentication": "entra-rs256",
+          "directory": "microsoft-graph",
+          "deployment": "azure-blob",
+          "retrieval": "local-bm25",
+          "answerGeneration": "extractive-no-model",
+          "ingestion": "graph-snapshot-not-continuous",
+          "capturedAt": "2026-10-07T05:59:02Z",
+          "validUntil": "2026-10-08T05:59:02Z",
+          "purview": {
+            "mode": "disabled-demo",
+            "evaluation": "not evaluated",
+            "complianceClaim": false
+          }
+        }
+      }
+    },
+    {
+      "id": "B-DELEGATED-MCP",
+      "observedAt": "2026-10-07T08:39:09.5353281+00:00",
+      "expectedStatus": [
+        403
+      ],
+      "actualStatus": 403,
+      "passed": true,
+      "requestId": "e0000000000000000000000000000004",
+      "errorCode": -32003,
+      "response": {
+        "jsonrpc": "2.0",
+        "id": 1,
+        "error": {
+          "code": -32003,
+          "message": "caller is not authorized for this contract"
+        }
+      }
+    }
+  ],
+  "verifiedObjectId": "f0000000-0000-4000-8000-000000000005",
+  "completedAt": "2026-10-07T08:39:09.5366166+00:00"
+}

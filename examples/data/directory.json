@@ -1,0 +1,90 @@
+{
+  "_comment": "Synthetic, fictional Entra ID directory for the Contoso prototype. All GUIDs are fake.",
+  "tenantId": "9c0a7e11-4f2b-4d3c-8e5f-6a7b8c9d0e1f",
+  "tenantDomain": "contoso.onmicrosoft.com",
+  "groups": [
+    {
+      "id": "a0a0a0a0-1111-4111-8111-0000000000aa",
+      "displayName": "grp-team-a",
+      "description": "Team A - Process Engineering (source data owners)",
+      "securityEnabled": true
+    },
+    {
+      "id": "b0b0b0b0-2222-4222-8222-0000000000bb",
+      "displayName": "grp-team-b",
+      "description": "Team B - Yield Analytics (knowledge audience)",
+      "securityEnabled": true
+    },
+    {
+      "id": "c0c0c0c0-3333-4333-8333-0000000000cc",
+      "displayName": "grp-compliance",
+      "description": "Compliance office",
+      "securityEnabled": true
+    }
+  ],
+  "users": [
+    {
+      "id": "0a11ce00-0000-4000-8000-0000000000a1",
+      "alias": "alice",
+      "userPrincipalName": "alice@contoso.com",
+      "displayName": "Alice Kim",
+      "userType": "Member",
+      "memberOf": ["a0a0a0a0-1111-4111-8111-0000000000aa"],
+      "roles": ["dataOwner"]
+    },
+    {
+      "id": "0b0b0000-0000-4000-8000-0000000000b2",
+      "alias": "bob",
+      "userPrincipalName": "bob@contoso.com",
+      "displayName": "Bob Lee",
+      "userType": "Member",
+      "memberOf": ["b0b0b0b0-2222-4222-8222-0000000000bb"],
+      "roles": []
+    },
+    {
+      "id": "0ca401e0-0000-4000-8000-0000000000c3",
+      "alias": "carol",
+      "userPrincipalName": "carol@contoso.com",
+      "displayName": "Carol Choi",
+      "userType": "Member",
+      "memberOf": [],
+      "roles": []
+    },
+    {
+      "id": "0dafe000-0000-4000-8000-0000000000d4",
+      "alias": "dave",
+      "userPrincipalName": "dave_fabrikam.com#EXT#@contoso.onmicrosoft.com",
+      "displayName": "Dave Martin (Fabrikam)",
+      "userType": "Guest",
+      "memberOf": ["b0b0b0b0-2222-4222-8222-0000000000bb"],
+      "roles": []
+    },
+    {
+      "id": "0e41e000-0000-4000-8000-0000000000e5",
+      "alias": "erin",
+      "userPrincipalName": "erin@contoso.com",
+      "displayName": "Erin Park",
+      "userType": "Member",
+      "memberOf": ["c0c0c0c0-3333-4333-8333-0000000000cc"],
+      "roles": ["complianceOfficer"]
+    },
+    {
+      "id": "0a1b0c00-0000-4000-8000-0000000000f6",
+      "alias": "minho",
+      "userPrincipalName": "minho.park@contoso.com",
+      "displayName": "Minho Park",
+      "userType": "Member",
+      "memberOf": ["a0a0a0a0-1111-4111-8111-0000000000aa"],
+      "roles": []
+    },
+    {
+      "id": "0a1b0c00-0000-4000-8000-0000000000f7",
+      "alias": "jisoo",
+      "userPrincipalName": "jisoo.lee@contoso.com",
+      "displayName": "Jisoo Lee",
+      "userType": "Member",
+      "memberOf": ["a0a0a0a0-1111-4111-8111-0000000000aa"],
+      "roles": []
+    }
+  ]
+}

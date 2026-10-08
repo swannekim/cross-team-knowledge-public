@@ -1,0 +1,39 @@
+{
+  "status": "sanitized-public-release",
+  "notice": "Sanitized historical record, not a new test or operational approval. Identifiers are placeholders; original private evidence is retained separately. Recorded statuses/times/results are historical, not current state. Sanitized bytes cannot verify original hashes.",
+  "sourceScope": "Tracked HEAD files only; no original Git history, ignored files, credentials or private state.",
+  "attribution": "https://github.com/swannekim/cross-team-knowledge-public",
+  "placeholderConventions": {
+    "guids": "f0000000-0000-4000-8000-* are inert example identifiers, not deployment inputs.",
+    "domains": "*.example.invalid and example.invalid are reserved, nonoperational placeholders.",
+    "roles": "Reader, Outsider and Administrator replace actual test-account identities.",
+    "hashes": "Historical approval/evidence hashes are retained as historical assertions only; image identifiers are redacted."
+  },
+  "historicalOutcomesPreserved": true,
+  "originalPrivateEvidenceRetainedSeparately": true,
+  "screenshots": {
+    "retained": 18,
+    "opaqueRedactions": 9,
+    "allLabeledAndMetadataStripped": true
+  },
+  "deployment": "Explicitly configure and authorize your own isolated tenant before any live operation. No current deployment, approval or security exception is supplied.",
+  "localValidation": {
+    "date": "2026-10-08",
+    "command": "python -m unittest discover -s app -t app -v",
+    "environment": "PYTHONPATH set to this copy's app directory",
+    "passed": 211,
+    "failed": 0,
+    "seconds": 39.019,
+    "scope": "Existing offline tests only; historical test/evidence files were not regenerated.",
+    "powershellFilesParsed": 19,
+    "placeholderDeploymentGuardVerified": true,
+    "jsonAndExcalidrawFilesParsed": 56,
+    "localMarkdownLinksChecked": 248,
+    "historicalLiveEvidenceRecordsCompared": 25,
+    "targetMermaidSourcesMatched": 3,
+    "screenshotsOCRChecked": 18,
+    "newCloudTestsOrOperations": false
+  },
+  "licensing": "No new license or ownership assertion has been added.",
+  "publication": "Sanitization and local validation did not change the original private repository or any cloud resources."
+}

@@ -1,0 +1,24 @@
+{
+  "_publicationNotice": "Sanitized historical record, not a new test or operational approval. Identifiers are placeholders; original private evidence is retained separately. Recorded statuses/times/results are historical, not current state. Sanitized bytes cannot verify original hashes.",
+  "scope": "Actual populated policy state across approved notice deployment and fully drained lease-holder activation",
+  "beforeCounts": {
+    "meta": 2,
+    "rate": 1,
+    "coverage": 2,
+    "audit": 19
+  },
+  "afterCounts": {
+    "meta": 2,
+    "rate": 1,
+    "coverage": 2,
+    "audit": 22
+  },
+  "identityAndReferenceMetadataEqual": true,
+  "rateRowsEqual": true,
+  "coverageRowsEqual": true,
+  "previousAuditPrefixPreserved": true,
+  "previousImage": "REDACTED_IMAGE_DIGEST_02",
+  "newImage": "REDACTED_IMAGE_DIGEST_01",
+  "activeRevision": "example-broker--0000002",
+  "activeRevisionsMode": "Multiple, only one active revision; maxReplicas=1; explicit 100% traffic"
+}

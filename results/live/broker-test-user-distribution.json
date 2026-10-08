@@ -1,0 +1,146 @@
+{
+  "_publicationNotice": "Sanitized historical record, not a new test or operational approval. Identifiers are placeholders; original private evidence is retained separately. Recorded statuses/times/results are historical, not current state. Sanitized bytes cannot verify original hashes.",
+  "approvalTimeKst": "2026-10-07T22:02:52.455+09:00",
+  "approvedPreviewSha256": "1732c8dfd3c8fbb0d34f1c4d1ebcab6252237bd75df1857d0491ded8f1c0a891",
+  "packageSha256": "effa56ee65104c8bf84bc4c61d2eb4892e32835c14016acf53dc434b801940c8",
+  "recipients": [
+    "Reader@example.invalid",
+    "Outsider@example.invalid"
+  ],
+  "scope": "Existing personal broker app only. No tenant-wide publication, new acquired app ID, SSO broadening, original ACL changes or Outsider data-audience grant.",
+  "existingAppId": "f0000000-0000-4000-8000-000000000017",
+  "existingTitleId": "U_f0000000-0000-4000-8000-000000000002",
+  "copiedNativeShareLink": "https://m365.cloud.microsoft/chat/?titleId=U_f0000000-0000-4000-8000-000000000002",
+  "shareLinkOrigin": "Verified example administrator, Copilot Agents > existing broker > About > Share. This copied a link; no audience grant or installation was observed.",
+  "navigationCaveat": "The legacy m365.cloud.microsoft entry point selected a cached corporate account despite login_hint. No test question was sent there. The equivalent titleId on copilot.cloud.microsoft with Outsider login_hint resolved under the verified Alan Steiner account.",
+  "status": "BLOCKED_CATALOG: both genuine selected users received 404 for the existing app; no installation POST sent. Temporary added consent fully restored.",
+  "installedForTestUsers": [],
+  "attempts": [
+    {
+      "identity": "Outsider@example.invalid",
+      "timeKstApproximate": "2026-10-07T22:16:00+09:00",
+      "entryPoint": "https://copilot.cloud.microsoft/chat/?titleId=U_f0000000-0000-4000-8000-000000000002&login_hint=Outsider%40example.invalid",
+      "resolvedPage": "https://copilot.cloud.microsoft/chat/agentstore?titleId=U_f0000000-0000-4000-8000-000000000002",
+      "observedMessage": "We couldn't find this agent",
+      "observedDetail": "This link isn't working and can't be fixed by trying it again. Check with the person who shared the link to confirm it's correct.",
+      "addButtonDisabled": true,
+      "installed": false,
+      "brokerInvoked": false,
+      "screenshot": "screenshots/b-outsider-existing-app-unavailable.png"
+    },
+    {
+      "identity": "Reader@example.invalid",
+      "timeKstApproximate": "2026-10-07T22:18:00+09:00",
+      "entryPoint": "https://copilot.cloud.microsoft/chat/?titleId=U_f0000000-0000-4000-8000-000000000002&login_hint=Reader%40example.invalid",
+      "resolvedPage": "https://copilot.cloud.microsoft/chat/agentstore?titleId=U_f0000000-0000-4000-8000-000000000002",
+      "observedMessage": "We couldn't find this agent",
+      "addButtonDisabled": true,
+      "installed": false,
+      "brokerInvoked": false,
+      "screenshot": "screenshots/b-reader-existing-app-unavailable.png",
+      "directAgentRoute": {
+        "url": "https://copilot.cloud.microsoft/chat/agent/U_f0000000-0000-4000-8000-000000000002.kxSyntheticKnowledge",
+        "result": "Redirected to generic /chat without opening the B agent; no question submitted"
+      }
+    }
+  ],
+  "adminCatalogueProbe": {
+    "method": "GET",
+    "path": "/v1.0/appCatalogs/teamsApps/f0000000-0000-4000-8000-000000000017",
+    "httpStatus": 403,
+    "errorCode": "Forbidden",
+    "reason": "Administrator token lacks a required AppCatalog/directory scope for this endpoint",
+    "requestId": "f0000000-0000-4000-8000-000000000001",
+    "scope": "Read-only diagnostic permission failure, not proof the app is absent and not a broker authorization result",
+    "additionalPermissionGranted": false
+  },
+  "testInterpretation": "Two distribution-UI failures followed by two genuine-user Graph catalog 404s. No installation POST or new broker Copilot invocation occurred. These are distribution/preflight outcomes, not broker-policy denials or proof of global app absence.",
+  "personalInstallApiAttempts": [
+    {
+      "identity": "Reader@example.invalid",
+      "evidence": "evidence/broker-install-reader-20261008.json",
+      "delegatedIdentityVerified": true,
+      "catalogHttpStatus": 404,
+      "catalogErrorCode": "NotFound",
+      "observedAtUtc": "2026-10-07T23:12:52.6946681+00:00",
+      "requestId": "f0000000-0000-4000-8000-00000000002b",
+      "installationPostSent": false,
+      "brokerInvoked": false
+    },
+    {
+      "identity": "Outsider@example.invalid",
+      "evidence": "evidence/broker-install-outsider-20261008.json",
+      "delegatedIdentityVerified": true,
+      "catalogHttpStatus": 404,
+      "catalogErrorCode": "NotFound",
+      "observedAtUtc": "2026-10-07T23:16:05.2346658+00:00",
+      "requestId": "f0000000-0000-4000-8000-000000000038",
+      "installationPostSent": false,
+      "brokerInvoked": false
+    }
+  ],
+  "teamsManifestLinkAttempt": {
+    "url": "https://teams.microsoft.com/l/app/f0000000-0000-4000-8000-000000000024?tenantId=f0000000-0000-4000-8000-000000000019",
+    "result": "INCOMPLETE: Teams opened with its separate administrator session. Sign-out was cancelled to preserve offline drafts. An isolated Reader browser sign-in was then attempted, but the browser/context closed before a Teams installation outcome could be observed.",
+    "testUserInstallationVerified": false,
+    "existingBrowserSignOutCompleted": false,
+    "offlineDraftsRemoved": false
+  },
+  "documentedAlternatives": {
+    "personalInstallApi": "POST /users/{user-id}/teamwork/installedApps can reference an existing teamsApp ID. A new installation ID is not a new app ID. Eligibility of this exact sideload remains unverified.",
+    "wiqd": "Users-only sharing is documented for supported shared WIQD projects, not verified adoption of this existing personal sideload. No CLI was installed or provision command run.",
+    "newAppIdsRequired": "NOT ESTABLISHED",
+    "nextPermissionProposal": "Approved 8 October 07:53 KST; applied 08:07 KST and fully removed/read back by 08:21:38 KST after both selected-user catalog preflights returned 404.",
+    "sources": [
+      "https://learn.microsoft.com/en-us/graph/api/userteamwork-post-installedapps?view=graph-rest-1.0",
+      "https://learn.microsoft.com/en-us/graph/api/resources/teamsapp?view=graph-rest-1.0",
+      "https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/publish",
+      "https://learn.microsoft.com/en-us/microsoftteams/platform/concepts/build-and-test/deep-link-application"
+    ]
+  },
+  "temporaryInstallConsent": {
+    "approvedAtKst": "2026-10-08T07:53:44.262+09:00",
+    "previewSha256": "d5d266f31866190c7bb501a5bd24bb9194ffeb1d300c4d01b1f8e2398a7f590f",
+    "scopes": [
+      "AppCatalog.Read.All",
+      "TeamsAppInstallation.ReadWriteForUser"
+    ],
+    "consentType": "Principal",
+    "status": "RESTORED",
+    "latestRestoreTargetKst": "2026-10-08T09:00:00+09:00",
+    "backupAutomationId": "REDACTED-CONSENT-BACKUP-ID",
+    "watchdogShellId": "REDACTED-CONSENT-WATCHDOG",
+    "watchdogExitCode": 0,
+    "appliedAtUtc": {
+      "Reader": "2026-10-07T23:07:08.3577518+00:00",
+      "Outsider": "2026-10-07T23:07:11.1814104+00:00"
+    },
+    "restoredAtUtc": "2026-10-07T23:21:38.1924058+00:00",
+    "restoreVerification": {
+      "targetPrincipalGrantsRemaining": 0,
+      "unrelatedGrantsUnchanged": true,
+      "independentFreshGraphReadback": true,
+      "baselineScopes": "User.Read Files.Read.All Sites.Read.All ExternalItem.Read.All",
+      "baselineAllPrincipalsGrantPreserved": true,
+      "baselineAdministratorPrincipalGrantPreserved": true
+    },
+    "initialEarlyRestoreFailure": {
+      "message": "Invalid consent restoration record; refusing mutation.",
+      "stage": "Local deserialized-ledger validation before signaling the active watchdog",
+      "cause": "PowerShell default JSON date conversion changed strings into DateTime values; subsequent conversion lost the exact timestamp representation.",
+      "correction": "Both restore-ledger reads use ConvertFrom-Json -AsHashtable -DateKind String. A real synthetic save/read roundtrip regression was added.",
+      "retryResult": "Fresh -Restore signaled the existing watchdog; both introduced grants were deleted and independently verified absent."
+    },
+    "existingGrantsReadback": "Before application and after restoration, the existing AllPrincipals and administrator Principal Graph grants retained User.Read Files.Read.All Sites.Read.All ExternalItem.Read.All. The two temporary selected-user Principal grants were verified present during the attempt and absent afterward.",
+    "scopeLimitation": "The scopes are broader than the B app. Operations are pinned to the two approved users and existing broker app ID; no application permissions, tenant-wide grant, new app, SSO change or data-audience change is authorized.",
+    "tokenCaveat": "Removing consent does not revoke previously issued access tokens or sessions."
+  },
+  "changes": {
+    "tenantCataloguePublication": false,
+    "ssoRegistration": false,
+    "newAppId": false,
+    "dataAudience": false,
+    "brokerPolicyOrCountersReset": false,
+    "githubPush": false
+  }
+}

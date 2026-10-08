@@ -1,0 +1,18 @@
+ETCH CHAMBER SEASONING GUIDELINE (GL-ETCH-007, revision 5)
+Applies to: ETCH-05, ETCH-06 and ETCH-07, all chambers
+Owner: Etch module, Process Engineering
+
+1. Purpose
+Seasoning conditions the chamber walls after a wet clean or preventive maintenance so that the first production wafers see a stable plasma and a low particle level.
+
+2. Standard sequence
+After any preventive maintenance that opens the chamber, run 25 bare-silicon seasoning wafers with the SEASON_PolyStd recipe (CF4/O2/HBr chemistry, 60 seconds each). After a wet clean only, 15 seasoning wafers are sufficient.
+
+3. Release criteria
+Run two particle monitor wafers after seasoning. Release the chamber only if the adder count is below 10 particles of 0.12 um or larger per wafer, and if the etch-rate monitor is within 3% of the chamber baseline.
+
+4. Special cases
+When the upper liner or the focus ring is replaced with a part from a new supplier lot, extend seasoning by 10 wafers and repeat the particle check. Record the seasoning count in the tool log.
+
+5. Change history
+Revision 5 (2026-09-20): added the liner-replacement rule after excursion YE-0412.

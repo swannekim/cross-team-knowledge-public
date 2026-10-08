@@ -1,0 +1,24 @@
+{
+  "_publicationNotice": "Sanitized historical record, not a new test or operational approval. Identifiers are placeholders; original private evidence is retained separately. Recorded statuses/times/results are historical, not current state. Sanitized bytes cannot verify original hashes.",
+  "date": "2026-10-08",
+  "scope": "Targeted local regression run before publishing the accumulated code and reports; not a full suite or live service test.",
+  "command": "python -m unittest arch_b_broker.tests.test_agent_package arch_b_broker.tests.test_live",
+  "result": "PASSED",
+  "testsRun": 52,
+  "durationSeconds": 6.572,
+  "suites": [
+    {
+      "module": "arch_b_broker.tests.test_agent_package",
+      "tests": 17
+    },
+    {
+      "module": "arch_b_broker.tests.test_live",
+      "tests": 35
+    }
+  ],
+  "failures": 0,
+  "errors": 0,
+  "dependencyChanges": false,
+  "cloudChanges": false,
+  "previousFullSuiteEvidence": "../../test_results.json"
+}

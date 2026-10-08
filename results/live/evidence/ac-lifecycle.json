@@ -1,0 +1,16 @@
+{
+  "_publicationNotice": "Sanitized historical record, not a new test or operational approval. Identifiers are placeholders; original private evidence is retained separately. Recorded statuses/times/results are historical, not current state. Sanitized bytes cannot verify original hashes.",
+  "preExpirySweepDeleted": 0,
+  "C": 6,
+  "repeatWithdrawDeleted": 0,
+  "expiryRemovalTest": "not run before actual deadline",
+  "finalReconcileDeleted": 0,
+  "A": 6,
+  "expiry": "2026-10-08T05:59:02Z",
+  "withdrawReadback404": true,
+  "scope": "Live Graph API publication and lifecycle; not Copilot search latency",
+  "withdrawDeleted": 2,
+  "republishOutputs": 12,
+  "approvedBytesUnchanged": true,
+  "committed": 12
+}

@@ -1,0 +1,9 @@
+ETCH-07 CH-B particle map notes (2026-09-12)
+
+Monitor wafers PMW-0912-01 and PMW-0912-02 were run after only 10 seasoning wafers.
+Adders of 0.12 um and larger: 41 and 38 per wafer; 92% of them within 5 mm of the wafer edge.
+EDX on 12 reviewed defects: fluorine and carbon rich, consistent with fluorocarbon film flakes.
+Clustering at the 3 o'clock and 9 o'clock positions matches the upper liner seam locations.
+
+After 25 additional seasoning wafers: 4 adders per wafer and no edge clustering.
+Recommendation: treat a liner replacement as a long seasoning event (35 wafers) and add a monitor-wafer gate before chamber release.

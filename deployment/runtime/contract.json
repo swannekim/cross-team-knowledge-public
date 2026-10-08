@@ -1,0 +1,23 @@
+{
+  "contractId": "KX-DEMO-20261007",
+  "title": "Sanitized historical example contract; configure and approve your own deployment before use",
+  "displayName": "Synthetic KX demo",
+  "sourceTeam": "KX synthetic source",
+  "audienceTeam": "KX synthetic readers",
+  "sourceSite": "https://sharepoint.example.invalid/sites/Example-Source",
+  "includePaths": ["/Shareable"],
+  "excludePaths": ["/Shareable/Drafts"],
+  "maxLabel": "Confidential",
+  "audienceGroupIds": ["f0000000-0000-4000-8000-000000000016"],
+  "excludeGuests": true,
+  "purpose": "yield-excursion-analysis",
+  "derivativeTypes": ["summary", "redactedExtract"],
+  "ttlDays": 1,
+  "approvedBy": "admin@example.invalid",
+  "approvedAt": "2026-10-07T04:59:40Z",
+  "maxExcerptChars": 300,
+  "exfiltrationCoverageThreshold": 0.4,
+  "rateLimitPerMinute": 10,
+  "status": "active",
+  "teamsChatSources": []
+}

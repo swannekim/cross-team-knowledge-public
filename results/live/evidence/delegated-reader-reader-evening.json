@@ -1,0 +1,76 @@
+{
+  "_publicationNotice": "Sanitized historical record, not a new test or operational approval. Identifiers are placeholders; original private evidence is retained separately. Recorded statuses/times/results are historical, not current state. Sanitized bytes cannot verify original hashes.",
+  "startedAt": "2026-10-07T11:57:36.9617841+00:00",
+  "identity": "Reader@example.invalid",
+  "testRole": "reader",
+  "selectedExistingUser": true,
+  "scope": "Real delegated Graph and broker API checks; not Copilot UI or ordinary-user proof when identity is admin.",
+  "authentication": "PASS",
+  "tests": [
+    {
+      "id": "ORIGINAL-METADATA-DENIED",
+      "observedAt": "2026-10-07T11:59:55.0351337+00:00",
+      "expectedStatus": [
+        403,
+        404
+      ],
+      "actualStatus": 403,
+      "passed": true,
+      "requestId": "f0000000-0000-4000-8000-000000000037",
+      "errorCode": "accessDenied"
+    },
+    {
+      "id": "ORIGINAL-LIST-DENIED",
+      "observedAt": "2026-10-07T12:00:06.8072370+00:00",
+      "expectedStatus": [
+        403,
+        404
+      ],
+      "actualStatus": 403,
+      "passed": true,
+      "requestId": "f0000000-0000-4000-8000-000000000023",
+      "errorCode": "accessDenied"
+    },
+    {
+      "id": "EXCHANGE-LIST-ACCESS",
+      "observedAt": "2026-10-07T12:00:09.9236821+00:00",
+      "expectedStatus": [
+        200
+      ],
+      "actualStatus": 200,
+      "passed": true,
+      "requestId": "f0000000-0000-4000-8000-000000000020"
+    },
+    {
+      "id": "A-DELEGATED-SEARCH",
+      "observedAt": "2026-10-07T12:00:13.3313374+00:00",
+      "actualStatus": 200,
+      "hitCount": 1,
+      "expected": "At least one scoped synthetic result",
+      "passed": true,
+      "requestId": "f0000000-0000-4000-8000-000000000006"
+    },
+    {
+      "id": "C-DELEGATED-SEARCH",
+      "observedAt": "2026-10-07T12:00:17.5445282+00:00",
+      "actualStatus": 200,
+      "hitCount": 1,
+      "expected": "At least one scoped synthetic result",
+      "passed": true,
+      "requestId": "f0000000-0000-4000-8000-00000000001f"
+    }
+  ],
+  "verifiedObjectId": "f0000000-0000-4000-8000-00000000001a",
+  "exchangePublishedCardsSeen": 6,
+  "brokerAuthenticationFailure": {
+    "claimsChallengePresent": false,
+    "correlationId": "f0000000-0000-4000-8000-00000000003d",
+    "error": "invalid_grant",
+    "errorCodes": [
+      50076
+    ],
+    "traceId": "f0000000-0000-4000-8000-00000000002c",
+    "timestamp": "2026-10-07 12:00:15Z"
+  },
+  "failure": "Broker token acquisition failed: invalid_grant; codes=50076"
+}

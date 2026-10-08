@@ -1,0 +1,96 @@
+{
+  "_publicationNotice": "Sanitized historical record, not a new test or operational approval. Identifiers are placeholders; original private evidence is retained separately. Recorded statuses/times/results are historical, not current state. Sanitized bytes cannot verify original hashes.",
+  "date": "2026-10-07",
+  "timeZone": "Asia/Seoul",
+  "tenantId": "f0000000-0000-4000-8000-000000000019",
+  "data": "Previously approved synthetic fixtures only",
+  "reader": {
+    "upn": "Reader@example.invalid",
+    "objectId": "f0000000-0000-4000-8000-00000000001a",
+    "identityVerification": "At approximately 21:19 KST, the interactive Copilot account manager showed the exact Reader UPN and a View account URL with the expected tenant ID.",
+    "browserRecovery": "Earlier pages rendered but were not interactive. Closing the session-managed browser and signing in again restored the composer. No general network or Conditional Access root cause was established.",
+    "attempts": [
+      {
+        "id": "Reader-MIXED-SOURCES",
+        "conversationId": "f0000000-0000-4000-8000-00000000000e",
+        "timeKstApproximate": "21:20",
+        "prompt": "Find the approved GL-ETCH-007 revision 5 knowledge card in Example-Exchange (contract KX-Synthetic-20261007). How many seasoning wafers are required after a wet clean only? What are the chamber release criteria? Use the shared card and cite it.",
+        "sourceSelection": "Microsoft 365 data and KX synthetic derived knowledge enabled",
+        "observedAnswer": "15 seasoning wafers after a wet clean only; adder count below 10 particles of 0.12 micrometres or larger per wafer; etch-rate monitor within 3% of chamber baseline.",
+        "nativeCitationType": "External",
+        "nativeCitationTitle": "[Synthetic] ETCH CHAMBER SEASONING GUIDELINE (GL-ETCH-007, revision 5) (summary)",
+        "nativeCitationUrl": "https://broker.example.invalid/access-request?ref=ref-000000000000000000000005",
+        "citationVerification": "Read native citation metadata and observed a new browser tab opening this exact URL after clicking the citation.",
+        "architectureA": "PASS: ordinary-reader native Copilot answer and actual connector provenance; not a hard-scoped personal-agent test",
+        "architectureC": "NOT A C PASS: intended SharePoint question used the A connector instead",
+        "screenshot": "../screenshots/a-copilot-reader-grounded.png"
+      },
+      {
+        "id": "Reader-C-NAMED-CARD",
+        "conversationId": "f0000000-0000-4000-8000-000000000011",
+        "timeKstApproximate": "21:28",
+        "sourceSelection": {
+          "Microsoft 365 data": true,
+          "KX synthetic derived knowledge": false
+        },
+        "prompt": "Find the approved GL-ETCH-007 revision 5 knowledge card in the SharePoint site Example-Exchange (contract KX-Synthetic-20261007). How many seasoning wafers are required after a wet clean only? What are the chamber release criteria? Cite the SharePoint card.",
+        "result": "FAIL: no matching SharePoint card; no answer or citation",
+        "safeAbstention": true,
+        "screenshot": "../screenshots/c-copilot-reader-no-results.png"
+      },
+      {
+        "id": "Reader-C-VIEWER-URL",
+        "conversationId": "f0000000-0000-4000-8000-000000000011",
+        "timeKstApproximate": "21:31",
+        "sourceSelection": "Same Microsoft 365-only selection",
+        "prompt": "Use this exact approved SharePoint card: https://sharepoint.example.invalid/sites/Example-Exchange/_layouts/15/viewer.aspx?sourcedoc={f0000000-0000-4000-8000-000000000009} . Read it and answer the wet-clean-only seasoning wafer count and chamber release criteria. Cite the card; do not use external connector content or guess.",
+        "result": "FAIL: exact-URL enterprise lookup did not retrieve the card; no answer or citation",
+        "safeAbstention": true
+      },
+      {
+        "id": "Reader-C-DIRECT-URL",
+        "conversationId": "f0000000-0000-4000-8000-000000000011",
+        "timeKstApproximate": "21:32",
+        "sourceSelection": "Same Microsoft 365-only selection",
+        "prompt": "The direct card URL is https://sharepoint.example.invalid/sites/Example-Exchange/Shared%20Documents/example-item-0005.txt . Read only this approved card and answer the same questions with its citation. If it cannot be retrieved, report that limitation.",
+        "result": "FAIL: exact direct-file lookup returned no results; no answer or citation",
+        "safeAbstention": true,
+        "screenshot": "../screenshots/c-copilot-reader-direct-url-failed.png"
+      }
+    ],
+    "originalAccessEvidence": "delegated-reader-reader-evening.json: genuine Reader source metadata and listing both HTTP 403",
+    "browserOriginalOpen": {
+      "result": "NOT CREDITED AS Reader",
+      "reason": "The separate SharePoint site session continued to display Administrator, including after account-selection attempts. Its AccessDenied page must not be attributed to Reader.",
+      "accessRequestSubmitted": false
+    },
+    "brokerCopilot": "NOT RUN: existing broker app remained unavailable. The 8 October genuine-user Graph catalog preflight returned 404 before any installation POST; see broker-install-reader-20261008.json.",
+    "brokerEveningApi": "NOT RUN after Graph tests: broker token issuance failed AADSTS50076; earlier API successes remain separate"
+  },
+  "outsider": {
+    "upn": "Outsider@example.invalid",
+    "objectId": "f0000000-0000-4000-8000-000000000005",
+    "status": "PASS: one joint A/C native Copilot negative scenario; no accessible evidence or factual answer returned",
+    "identityVerification": "At approximately 21:34 KST, the interactive account manager displayed the exact Outsider UPN and expected tenant ID in its View account link.",
+    "conversationId": "f0000000-0000-4000-8000-000000000010",
+    "timeKstApproximate": "21:36",
+    "sourceSelection": {
+      "Microsoft 365 data": true,
+      "KX synthetic derived knowledge": true
+    },
+    "prompt": "Find the approved GL-ETCH-007 revision 5 knowledge under contract KX-Synthetic-20261007, either in KX synthetic derived knowledge or the SharePoint site Example-Exchange. How many seasoning wafers are required after a wet clean only, and what are the chamber release criteria? Cite accessible evidence. If no accessible source is found, say so; do not guess or use general knowledge.",
+    "observedAnswer": "No accessible source found. Copilot reported no connector results, including a broader contract-scoped search, and no accessible SharePoint files. It did not supply the requested wafer count or release criteria.",
+    "nativeCitationCount": 0,
+    "safeAbstention": true,
+    "screenshot": "../screenshots/ac-copilot-outsider-no-evidence.png",
+    "scope": "Observed user-visible result for this prompt, not an independent trace of every internal retrieval or a general isolation guarantee.",
+    "brokerCopilot": "NOT RUN: existing broker app remained unavailable. The 8 October genuine-user Graph catalog preflight returned 404 before any installation POST; see broker-install-outsider-20261008.json.",
+    "earlierApiEvidence": "delegated-outsider-outsider.json"
+  },
+  "limitations": [
+    "Reader Graph Search success does not imply C Copilot retrieval success.",
+    "No original ACL, derivative payload, audience scope, broker policy or disclosure counter was changed to force a successful answer.",
+    "No tenant-wide agent publication or additional personal installation was performed.",
+    "No general isolation, guest, revocation or expiry guarantee follows from these cases."
+  ]
+}

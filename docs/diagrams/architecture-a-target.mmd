@@ -1,0 +1,45 @@
+---
+title: Architecture A - Connector-derived index (target design)
+---
+flowchart LR
+  subgraph SRC["Team A source - ACL unchanged"]
+    SP["SharePoint library 'Shareable'<br/>opt-in column ShareForKnowledge"]
+    CH["Channel files<br/>team site library"]
+  end
+  subgraph AZ["Customer Azure subscription - private networking"]
+    TR["Change trigger<br/>Graph webhook + 15-min delta"]
+    CR["Crawler<br/>Functions or Container Apps job"]
+    PG{"Policy gate<br/>contract, label, opt-in"}
+    DV["Derivation<br/>injection guard, redaction, summary, chunks"]
+    AP{"Approve exact derivative<br/>source version + audience"}
+    AO["Azure OpenAI<br/>approved subscription"]
+    ST[("State + audit<br/>Table or Cosmos DB, Log Analytics")]
+    LC["Scheduled lifecycle worker<br/>source change, opt-out, expiry"]
+  end
+  subgraph M365["Microsoft 365 - Work IQ reach"]
+    CONN[("Copilot connector<br/>approved derivatives + audience ACL<br/>Copilot visibility enabled")]
+    COP["Copilot Chat - work"]
+    DA["Declarative agent<br/>Cross-team Knowledge"]
+    API["Retrieval API / Work IQ API"]
+  end
+  AR["Access-request page<br/>citation target"]
+  UB(["Team B user<br/>Copilot licence + KX group"])
+  SP --> TR
+  CH --> TR
+  TR --> CR
+  CR -->|Sites.Selected read| SP
+  CR -->|Sites.Selected read| CH
+  CR --> PG --> DV
+  DV <--> AO
+  DV --> AP
+  AP -->|approved PUT externalItem| CONN
+  TR --> LC
+  LC -->|withdraw invalid or expired items| CONN
+  CR --> ST
+  CONN --> COP
+  CONN --> DA
+  CONN --> API
+  UB --> COP
+  UB --> DA
+  UB -->|delegated access| API
+  COP -.->|citation url| AR

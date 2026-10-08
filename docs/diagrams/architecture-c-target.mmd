@@ -1,0 +1,34 @@
+---
+title: Architecture C - Approved SharePoint publishing (target design)
+---
+flowchart LR
+  subgraph SRC["Team A source - ACL unchanged"]
+    LIB["Source library<br/>ShareForKnowledge opt-in"]
+  end
+  subgraph ORC["Orchestration"]
+    REQ["Audience-visible request intake<br/>approved L0 metadata only"]
+    PA["Power Automate<br/>approvals, notifications"]
+    FN["Derivation Function<br/>managed identity"]
+    AO["Azure OpenAI"]
+    LC["Scheduled lifecycle worker<br/>source change, opt-out, expiry"]
+  end
+  subgraph KX["Knowledge Exchange site - audience read-only"]
+    CARD["Approved knowledge cards<br/>configured labels / retention<br/>provenance + expiry metadata"]
+    AG["Native Copilot or scoped agent<br/>user-permission-aware retrieval"]
+  end
+  UB(["Team B user"])
+  LIB -.->|change notification| PA
+  UB --> REQ
+  REQ --> PA
+  PA -->|request derivation| FN
+  FN -->|Sites.Selected read| LIB
+  FN <--> AO
+  FN -->|draft output and hash| PA
+  PA -->|approve exact output, source version and audience| FN
+  FN -->|verify approval then Sites.Selected write| CARD
+  PA --> LC
+  LC -->|withdraw invalid or expired cards| CARD
+  UB --> AG
+  AG -->|delegated retrieval| CARD
+  CARD -->|ACL-trimmed derived content| AG
+  AG -->|answer + card citation| UB

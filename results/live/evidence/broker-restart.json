@@ -1,0 +1,19 @@
+{
+  "_publicationNotice": "Sanitized historical record, not a new test or operational approval. Identifiers are placeholders; original private evidence is retained separately. Recorded statuses/times/results are historical, not current state. Sanitized bytes cannot verify original hashes.",
+  "scope": "Actual Azure restart; prior requests were unauthenticated, so no real-user rate/coverage claims",
+  "bindingPreserved": true,
+  "referenceKeyPreserved": true,
+  "priorAuditPrefixPreserved": true,
+  "beforeCounts": {
+    "rate": 0,
+    "coverage": 0,
+    "audit": 4
+  },
+  "afterCounts": {
+    "rate": 0,
+    "coverage": 0,
+    "audit": 8
+  },
+  "beforeStarts": 1,
+  "afterStarts": 2
+}

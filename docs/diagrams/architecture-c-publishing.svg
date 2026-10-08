@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1460" height="1060" viewBox="0 0 1460 1060" role="img" aria-labelledby="title description">
+<title id="title">C | Approved SharePoint knowledge cards</title>
+<desc id="description">Implemented synthetic demo, 7-8 October 2026. Not a production target or a new test result.</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#495057"/></marker></defs>
+<rect width="1460" height="1060" fill="#ffffff"/>
+<text x="40" y="36" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="700" fill="#000000" dominant-baseline="text-before-edge" data-max-width="1380">
+<tspan x="40" dy="0">C | Approved SharePoint knowledge cards</tspan>
+</text>
+<text x="40" y="94" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="400" fill="#000000" dominant-baseline="text-before-edge" data-max-width="1380">
+<tspan x="40" dy="0">Implemented synthetic demo | 7-8 October 2026 | Original-file permissions are not widened</tspan>
+</text>
+<g data-node="Private source site"><rect x="40" y="190" width="360" height="230" rx="12" fill="#CFE4FA" stroke="#0078D4" stroke-width="2"/>
+<text x="60" y="210" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="700" fill="#000000" dominant-baseline="text-before-edge" data-max-width="320">
+<tspan x="60" dy="0">Private source site</tspan>
+</text>
+<text x="60" y="256" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="400" fill="#000000" dominant-baseline="text-before-edge" data-max-width="320">
+<tspan x="60" dy="0">Example-Source</tspan>
+<tspan x="60" dy="26.599999999999998">Synthetic source files</tspan>
+<tspan x="60" dy="26.599999999999998">Pipeline: Sites.Selected READ</tspan>
+<tspan x="60" dy="26.599999999999998">No user grant to originals</tspan>
+</text>
+</g>
+<g data-node="Derive + approve"><rect x="550" y="190" width="360" height="230" rx="12" fill="#FFF4CE" stroke="#C75B00" stroke-width="2"/>
+<text x="570" y="210" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="700" fill="#000000" dominant-baseline="text-before-edge" data-max-width="320">
+<tspan x="570" dy="0">Derive + approve</tspan>
+</text>
+<text x="570" y="256" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="400" fill="#000000" dominant-baseline="text-before-edge" data-max-width="320">
+<tspan x="570" dy="0">Operator-run Python pipeline</tspan>
+<tspan x="570" dy="26.599999999999998">Eligibility / exact-hash checks</tspan>
+<tspan x="570" dy="26.599999999999998">6 approved TXT cards</tspan>
+<tspan x="570" dy="26.599999999999998">Approved bytes + audience</tspan>
+</text>
+</g>
+<g data-node="SharePoint Exchange site"><rect x="1060" y="190" width="360" height="230" rx="12" fill="#E8DAEF" stroke="#5C2D91" stroke-width="2"/>
+<text x="1080" y="210" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="700" fill="#000000" dominant-baseline="text-before-edge" data-max-width="320">
+<tspan x="1080" dy="0">SharePoint Exchange site</tspan>
+</text>
+<text x="1080" y="256" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="400" fill="#000000" dominant-baseline="text-before-edge" data-max-width="320">
+<tspan x="1080" dy="0">Example-Exchange</tspan>
+<tspan x="1080" dy="26.599999999999998">Pipeline: selected-site WRITE</tspan>
+<tspan x="1080" dy="26.599999999999998">Library-root READ: KX Readers</tspan>
+<tspan x="1080" dy="26.599999999999998">Provenance / expiry columns</tspan>
+</text>
+</g>
+<polyline points="400,305 550,305" fill="none" stroke="#495057" stroke-width="2.5" marker-end="url(#arrow)"/>
+<text x="418" y="241" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="400" fill="#000000" dominant-baseline="text-before-edge" data-max-width="130">
+<tspan x="418" dy="0">App-only</tspan>
+<tspan x="418" dy="23.799999999999997">source read</tspan>
+</text>
+<polyline points="910,305 1060,305" fill="none" stroke="#495057" stroke-width="2.5" marker-end="url(#arrow)"/>
+<text x="932" y="241" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="400" fill="#000000" dominant-baseline="text-before-edge" data-max-width="125">
+<tspan x="932" dy="0">Publish</tspan>
+<tspan x="932" dy="23.799999999999997">6 cards</tspan>
+</text>
+<g data-node="Outside the audience"><rect x="40" y="590" width="360" height="230" rx="12" fill="#F3F2F1" stroke="#495057" stroke-width="2"/>
+<text x="60" y="610" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="700" fill="#000000" dominant-baseline="text-before-edge" data-max-width="320">
+<tspan x="60" dy="0">Outside the audience</tspan>
+</text>
+<text x="60" y="656" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="400" fill="#000000" dominant-baseline="text-before-edge" data-max-width="320">
+<tspan x="60" dy="0">Outsider: no KX Readers grant</tspan>
+<tspan x="60" dy="26.599999999999998">Exchange API: 403</tspan>
+<tspan x="60" dy="26.599999999999998">Scoped Search: 0 hits</tspan>
+<tspan x="60" dy="26.599999999999998">Joint A/C query: no evidence</tspan>
+</text>
+</g>
+<g data-node="Authorized reader"><rect x="550" y="590" width="360" height="230" rx="12" fill="#DFF4F5" stroke="#0C8599" stroke-width="2"/>
+<text x="570" y="610" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="700" fill="#000000" dominant-baseline="text-before-edge" data-max-width="320">
+<tspan x="570" dy="0">Authorized reader</tspan>
+</text>
+<text x="570" y="656" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="400" fill="#000000" dominant-baseline="text-before-edge" data-max-width="320">
+<tspan x="570" dy="0">Reader: KX Readers member</tspan>
+<tspan x="570" dy="26.599999999999998">Lists 6 cards; later Search hit</tspan>
+<tspan x="570" dy="26.599999999999998">Original metadata / list: 403</tspan>
+<tspan x="570" dy="26.599999999999998">No original-file permission</tspan>
+</text>
+</g>
+<g data-node="Native SharePoint grounding"><rect x="1060" y="590" width="360" height="230" rx="12" fill="#DFF4F5" stroke="#0C8599" stroke-width="2"/>
+<text x="1080" y="610" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="700" fill="#000000" dominant-baseline="text-before-edge" data-max-width="320">
+<tspan x="1080" dy="0">Native SharePoint grounding</tspan>
+</text>
+<text x="1080" y="656" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="400" fill="#000000" dominant-baseline="text-before-edge" data-max-width="320">
+<tspan x="1080" dy="0">Microsoft 365 Copilot</tspan>
+<tspan x="1080" dy="26.599999999999998">Admin: cited answer passed</tspan>
+<tspan x="1080" dy="26.599999999999998">Reader: 3 SharePoint-only</tspan>
+<tspan x="1080" dy="26.599999999999998">retrieval attempts failed</tspan>
+</text>
+</g>
+<polyline points="910,705 1060,705" fill="none" stroke="#495057" stroke-width="2.5" marker-end="url(#arrow)"/>
+<text x="930" y="643" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="400" fill="#000000" dominant-baseline="text-before-edge" data-max-width="125">
+<tspan x="930" dy="0">Delegated</tspan>
+<tspan x="930" dy="23.799999999999997">query</tspan>
+</text>
+<polyline points="1240,590 1240,420" fill="none" stroke="#495057" stroke-width="2.5" marker-end="url(#arrow)" marker-start="url(#arrow)" stroke-dasharray="8 6"/>
+<text x="1260" y="473" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="400" fill="#000000" dominant-baseline="text-before-edge" data-max-width="160">
+<tspan x="1260" dy="0">Native</tspan>
+<tspan x="1260" dy="23.799999999999997">retrieval:</tspan>
+<tspan x="1260" dy="23.799999999999997">mixed results</tspan>
+</text>
+<polyline points="730,590 730,505 220,505 220,420" fill="none" stroke="#495057" stroke-width="2.5" marker-end="url(#arrow)" stroke-dasharray="8 6"/>
+<text x="300" y="460" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="400" fill="#000000" dominant-baseline="text-before-edge" data-max-width="400">
+<tspan x="300" dy="0">Original-file APIs denied (403)</tspan>
+</text>
+<g data-node="Evidence boundary"><rect x="40" y="885" width="1380" height="135" rx="12" fill="#F3F2F1" stroke="#495057" stroke-width="2"/>
+<text x="60" y="905" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="700" fill="#000000" dominant-baseline="text-before-edge" data-max-width="1340">
+<tspan x="60" dy="0">Evidence boundary</tspan>
+</text>
+<text x="60" y="951" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="400" fill="#000000" dominant-baseline="text-before-edge" data-max-width="1340">
+<tspan x="60" dy="0">Card listing or a Search hit does not establish a Copilot answer. Reader edit denial remains untested.</tspan>
+<tspan x="60" dy="26.599999999999998">Custom metadata is not MIP/DLP/retention enforcement. A/C expiry removal requires an operator-run sweep.</tspan>
+</text>
+</g>
+</svg>

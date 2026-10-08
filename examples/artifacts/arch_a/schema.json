@@ -1,0 +1,103 @@
+{
+  "baseType": "microsoft.graph.externalItem",
+  "properties": [
+    {
+      "name": "title",
+      "type": "String",
+      "isSearchable": true,
+      "isQueryable": true,
+      "isRetrievable": true,
+      "isRefinable": false,
+      "labels": [
+        "title"
+      ]
+    },
+    {
+      "name": "url",
+      "type": "String",
+      "isSearchable": false,
+      "isQueryable": false,
+      "isRetrievable": true,
+      "isRefinable": false,
+      "labels": [
+        "url"
+      ]
+    },
+    {
+      "name": "lastModifiedDateTime",
+      "type": "DateTime",
+      "isSearchable": false,
+      "isQueryable": true,
+      "isRetrievable": true,
+      "isRefinable": true,
+      "labels": [
+        "lastModifiedDateTime"
+      ]
+    },
+    {
+      "name": "containerName",
+      "type": "String",
+      "isSearchable": false,
+      "isQueryable": true,
+      "isRetrievable": true,
+      "isRefinable": true,
+      "labels": [
+        "containerName"
+      ]
+    },
+    {
+      "name": "sourceTeam",
+      "type": "String",
+      "isSearchable": false,
+      "isQueryable": true,
+      "isRetrievable": true,
+      "isRefinable": true,
+      "labels": []
+    },
+    {
+      "name": "sensitivity",
+      "type": "String",
+      "isSearchable": false,
+      "isQueryable": true,
+      "isRetrievable": true,
+      "isRefinable": true,
+      "labels": []
+    },
+    {
+      "name": "derivativeType",
+      "type": "String",
+      "isSearchable": false,
+      "isQueryable": true,
+      "isRetrievable": true,
+      "isRefinable": true,
+      "labels": []
+    },
+    {
+      "name": "contractId",
+      "type": "String",
+      "isSearchable": false,
+      "isQueryable": true,
+      "isRetrievable": true,
+      "isRefinable": true,
+      "labels": []
+    },
+    {
+      "name": "validUntil",
+      "type": "DateTime",
+      "isSearchable": false,
+      "isQueryable": true,
+      "isRetrievable": true,
+      "isRefinable": true,
+      "labels": []
+    },
+    {
+      "name": "sourceFingerprint",
+      "type": "String",
+      "isSearchable": false,
+      "isQueryable": true,
+      "isRetrievable": true,
+      "isRefinable": false,
+      "labels": []
+    }
+  ]
+}

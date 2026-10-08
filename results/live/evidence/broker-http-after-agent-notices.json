@@ -1,0 +1,83 @@
+{
+  "_publicationNotice": "Sanitized historical record, not a new test or operational approval. Identifiers are placeholders; original private evidence is retained separately. Recorded statuses/times/results are historical, not current state. Sanitized bytes cannot verify original hashes.",
+  "tests": [
+    {
+      "expected": 200,
+      "id": "B-LIVE-HEALTH",
+      "durationMs": 398,
+      "passed": true,
+      "observedAt": "2026-10-07T07:55:42.7290887+00:00",
+      "actual": 200,
+      "health": {
+        "status": "ok",
+        "checks": {
+          "persistenceReady": true,
+          "contractActive": true,
+          "snapshotFresh": true,
+          "configurationUnchanged": true
+        },
+        "directoryProbe": "not-performed",
+        "service": {
+          "mode": "live-synthetic-demo",
+          "authentication": "entra-rs256",
+          "directory": "microsoft-graph",
+          "deployment": "azure-blob",
+          "retrieval": "local-bm25",
+          "answerGeneration": "extractive-no-model",
+          "ingestion": "graph-snapshot-not-continuous",
+          "capturedAt": "2026-10-07T05:59:02Z",
+          "validUntil": "2026-10-08T05:59:02Z",
+          "purview": {
+            "mode": "disabled-demo",
+            "evaluation": "not evaluated",
+            "complianceClaim": false
+          }
+        }
+      }
+    },
+    {
+      "expected": 401,
+      "id": "B-LIVE-NO-TOKEN",
+      "durationMs": 252,
+      "passed": true,
+      "observedAt": "2026-10-07T07:55:43.0035314+00:00",
+      "actual": 401
+    },
+    {
+      "expected": 401,
+      "id": "B-LIVE-MALFORMED-TOKEN",
+      "durationMs": 234,
+      "passed": true,
+      "observedAt": "2026-10-07T07:55:43.2406488+00:00",
+      "actual": 401
+    },
+    {
+      "expected": 401,
+      "id": "B-LIVE-MCP-NO-TOKEN",
+      "durationMs": 230,
+      "passed": true,
+      "observedAt": "2026-10-07T07:55:43.4730710+00:00",
+      "actual": 401
+    },
+    {
+      "passed": true,
+      "expected": 200,
+      "actual": 200,
+      "durationMs": 191,
+      "observedAt": "2026-10-07T07:55:43.6653894+00:00",
+      "referenceNotReflected": true,
+      "id": "B-LIVE-CITATION"
+    },
+    {
+      "expected": 404,
+      "id": "B-LIVE-NOT-FOUND",
+      "durationMs": 189,
+      "passed": true,
+      "observedAt": "2026-10-07T07:55:43.8595625+00:00",
+      "actual": 404
+    }
+  ],
+  "signedInTests": "NOT EVALUATED BY THIS RUN: see separate delegated-user and Copilot evidence",
+  "scope": "Unauthenticated HTTP and health only; not signed-in audience isolation or Copilot validation",
+  "endpoint": "https://broker.example.invalid"
+}

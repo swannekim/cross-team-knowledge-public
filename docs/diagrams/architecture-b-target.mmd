@@ -1,0 +1,52 @@
+---
+title: Architecture B - Knowledge broker (target design)
+---
+flowchart LR
+  subgraph SRC["Team A source - ACL unchanged"]
+    SP["SharePoint / channel libraries"]
+  end
+  subgraph AZ["Customer Azure subscription"]
+    ING["Ingestion job<br/>approved source and disclosure contract"]
+    AIS[("Azure AI Search<br/>private endpoint + chunk metadata")]
+    BRK["Broker API / APIM ingress<br/>reachable by the selected client<br/>validate delegated identity"]
+    PDP{"Policy decision point<br/>audience, purpose, label, rate, coverage"}
+    RET["Authorized retrieval<br/>contract + audience + expiry filters"]
+    LLM["Azure OpenAI<br/>grounded answer composer<br/>private endpoint"]
+    OUT{"Output gate<br/>redaction, caps, groundedness"}
+    COMMIT["Persist allowed disclosure<br/>before releasing response"]
+    STATE[("Durable rate / coverage state")]
+    AUD[("Audit<br/>Log Analytics + immutable blob")]
+    RESP["Derived answer + opaque citations"]
+    DENY["Explicit denial or abstention"]
+  end
+  subgraph PV["Microsoft Purview hooks - validate before production"]
+    PC["protectionScopes/compute<br/>processContent"]
+  end
+  subgraph M365["Microsoft 365"]
+    DA["Declarative agent<br/>API plugin + Entra SSO<br/>MCP only where supported"]
+    CS["Alternative: Copilot Studio<br/>MCP or REST tool"]
+  end
+  UB(["Team B user"])
+  ING -->|Sites.Selected read| SP
+  ING --> AIS
+  UB --> DA
+  UB --> CS
+  DA -->|user token| BRK
+  CS -->|user token| BRK
+  BRK --> PDP
+  PDP <-->|prompt policy| PC
+  PDP <-->|limits and reservations| STATE
+  PDP -->|allow| RET
+  PDP -->|deny| DENY
+  RET -->|filtered query| AIS
+  AIS -->|authorized passages| LLM
+  LLM --> OUT
+  OUT <-->|response policy| PC
+  OUT -->|allowed content only| COMMIT
+  COMMIT <-->|durable state update| STATE
+  COMMIT -->|after commit| RESP
+  OUT -->|blocked or insufficient| DENY
+  PDP --> AUD
+  OUT --> AUD
+  RESP -->|through the client| UB
+  DENY -->|through the client| UB

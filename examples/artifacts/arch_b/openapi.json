@@ -1,0 +1,412 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Contoso Knowledge Broker API",
+    "version": "1.1.0",
+    "description": "Policy-enforced, audited access to derived Process Engineering knowledge for Yield Analytics. Returns redacted excerpts with opaque citations; originals are never shared."
+  },
+  "servers": [
+    {
+      "url": "https://broker.contoso.com"
+    }
+  ],
+  "paths": {
+    "/ask": {
+      "post": {
+        "operationId": "askKnowledge",
+        "summary": "Ask a question about shared Process Engineering knowledge",
+        "description": "Answers with redacted, capped excerpts and opaque citations under sharing contract policy.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AskRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Answer with citations",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AskResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Missing or invalid token",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Denied by policy (audience, guest, purpose, exfiltration guard, Purview)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Rate limit exceeded (see Retry-After)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "entraOAuth": [
+              "api://contoso-knowledge-broker/Knowledge.Ask"
+            ]
+          }
+        ]
+      }
+    },
+    "/search": {
+      "post": {
+        "operationId": "searchKnowledge",
+        "summary": "Search shared Process Engineering knowledge",
+        "description": "Returns matching sources as citations with short redacted snippets and opaque references.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Search results",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SearchResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Missing or invalid token",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Denied by policy (audience, guest, purpose, exfiltration guard, Purview)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Rate limit exceeded (see Retry-After)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "entraOAuth": [
+              "api://contoso-knowledge-broker/Knowledge.Ask"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "AskRequest": {
+        "type": "object",
+        "required": [
+          "question",
+          "purpose"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "question": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 1000
+          },
+          "purpose": {
+            "type": "string",
+            "enum": [
+              "yield-excursion-analysis"
+            ],
+            "description": "Declared purpose; must match the sharing contract."
+          }
+        }
+      },
+      "SearchRequest": {
+        "type": "object",
+        "required": [
+          "query",
+          "purpose"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "query": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 1000
+          },
+          "purpose": {
+            "type": "string",
+            "enum": [
+              "yield-excursion-analysis"
+            ],
+            "description": "Declared purpose; must match the sharing contract."
+          },
+          "top": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 5,
+            "default": 5
+          }
+        }
+      },
+      "Citation": {
+        "type": "object",
+        "required": [
+          "ref",
+          "title",
+          "sourceTeam",
+          "sensitivity",
+          "sensitivityLabelId",
+          "accessRequestUrl",
+          "excerpt"
+        ],
+        "properties": {
+          "ref": {
+            "type": "string",
+            "description": "Opaque source reference (never the original URL).",
+            "pattern": "^ref-[0-9a-f]{24}$"
+          },
+          "title": {
+            "type": "string"
+          },
+          "sourceTeam": {
+            "type": "string"
+          },
+          "sensitivity": {
+            "type": "string",
+            "enum": [
+              "Public",
+              "General",
+              "Confidential"
+            ]
+          },
+          "sensitivityLabelId": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true,
+            "description": "Microsoft Purview sensitivity label id of the source."
+          },
+          "accessRequestUrl": {
+            "type": "string",
+            "format": "uri"
+          },
+          "excerpt": {
+            "type": "string",
+            "maxLength": 300,
+            "description": "Redacted verbatim excerpt (capped)."
+          },
+          "contentWarnings": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "SearchCitation": {
+        "type": "object",
+        "required": [
+          "ref",
+          "title",
+          "sourceTeam",
+          "sensitivity",
+          "sensitivityLabelId",
+          "accessRequestUrl",
+          "snippet"
+        ],
+        "properties": {
+          "ref": {
+            "type": "string",
+            "description": "Opaque source reference (never the original URL).",
+            "pattern": "^ref-[0-9a-f]{24}$"
+          },
+          "title": {
+            "type": "string"
+          },
+          "sourceTeam": {
+            "type": "string"
+          },
+          "sensitivity": {
+            "type": "string",
+            "enum": [
+              "Public",
+              "General",
+              "Confidential"
+            ]
+          },
+          "sensitivityLabelId": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true,
+            "description": "Microsoft Purview sensitivity label id of the source."
+          },
+          "accessRequestUrl": {
+            "type": "string",
+            "format": "uri"
+          },
+          "snippet": {
+            "type": "string",
+            "maxLength": 160
+          }
+        }
+      },
+      "AskResponse": {
+        "type": "object",
+        "required": [
+          "requestId",
+          "answer",
+          "citations",
+          "policy"
+        ],
+        "properties": {
+          "requestId": {
+            "type": "string"
+          },
+          "answer": {
+            "type": "string"
+          },
+          "citations": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Citation"
+            }
+          },
+          "policy": {
+            "type": "object"
+          },
+          "notice": {
+            "type": "string"
+          }
+        }
+      },
+      "SearchResponse": {
+        "type": "object",
+        "required": [
+          "requestId",
+          "citations"
+        ],
+        "properties": {
+          "requestId": {
+            "type": "string"
+          },
+          "citations": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SearchCitation"
+            }
+          },
+          "policy": {
+            "type": "object"
+          }
+        }
+      },
+      "Error": {
+        "type": "object",
+        "required": [
+          "error"
+        ],
+        "properties": {
+          "error": {
+            "type": "object",
+            "required": [
+              "code",
+              "message"
+            ],
+            "properties": {
+              "code": {
+                "type": "string"
+              },
+              "message": {
+                "type": "string"
+              }
+            }
+          },
+          "requestId": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "entraOAuth": {
+        "type": "oauth2",
+        "flows": {
+          "authorizationCode": {
+            "authorizationUrl": "https://login.microsoftonline.com/9c0a7e11-4f2b-4d3c-8e5f-6a7b8c9d0e1f/oauth2/v2.0/authorize",
+            "tokenUrl": "https://login.microsoftonline.com/9c0a7e11-4f2b-4d3c-8e5f-6a7b8c9d0e1f/oauth2/v2.0/token",
+            "scopes": {
+              "api://contoso-knowledge-broker/Knowledge.Ask": "Ask the Knowledge Broker on behalf of the signed-in user"
+            }
+          }
+        }
+      }
+    }
+  }
+}

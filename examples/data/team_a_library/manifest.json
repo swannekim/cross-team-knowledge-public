@@ -1,0 +1,396 @@
+{
+  "_comment": "Synthetic Graph driveItem metadata for the fictional Process Engineering library.",
+  "tenantId": "9c0a7e11-4f2b-4d3c-8e5f-6a7b8c9d0e1f",
+  "site": {
+    "id": "contoso.sharepoint.com,5b1f0c3e-6a2d-4e8b-9f1c-2d3e4f5a6b7c,7c8d9e0f-1a2b-4c3d-8e4f-5a6b7c8d9e0f",
+    "name": "ProcessEng",
+    "displayName": "Process Engineering",
+    "webUrl": "https://contoso.sharepoint.com/sites/ProcessEng"
+  },
+  "drive": {
+    "id": "b!cHJvY2Vzc2VuZy1zaXRlLWZha2UtZHJpdmUtaWQtMDAwMDAwMDAwMDAwMDAwMA",
+    "name": "Documents",
+    "driveType": "documentLibrary",
+    "webUrl": "https://contoso.sharepoint.com/sites/ProcessEng/Shared%20Documents"
+  },
+  "labels": [
+    {
+      "id": "6e0e0000-1abe-4a1b-8e1a-000000000000",
+      "name": "Public"
+    },
+    {
+      "id": "6e0e0001-1abe-4a1b-8e1a-000000000001",
+      "name": "General"
+    },
+    {
+      "id": "6e0e0002-1abe-4a1b-8e1a-000000000002",
+      "name": "Confidential"
+    },
+    {
+      "id": "6e0e0003-1abe-4a1b-8e1a-000000000003",
+      "name": "Highly Confidential"
+    }
+  ],
+  "items": [
+    {
+      "id": "01D5UTPVYZPZE74B24GDFDBRN4YL2PJBXY",
+      "name": "ER-2291_poly_gate_etch_recipe_change.md",
+      "folderPath": "/Shareable/Etch",
+      "contentFile": "files/Shareable/Etch/ER-2291_poly_gate_etch_recipe_change.md",
+      "size": 2054,
+      "mimeType": "text/markdown",
+      "sensitivityLabelId": "6e0e0002-1abe-4a1b-8e1a-000000000002",
+      "sensitivityLabel": "Confidential",
+      "createdDateTime": "2026-08-30T02:10:00Z",
+      "lastModifiedDateTime": "2026-09-08T06:45:00Z",
+      "eTag": "\"{213B1412-D1F3-4C7F-929C-6CC6DB3A3217},4\"",
+      "cTag": "\"c:{213B1412-D1F3-4C7F-929C-6CC6DB3A3217},4\"",
+      "webUrl": "https://contoso.sharepoint.com/sites/ProcessEng/Shared%20Documents/Shareable/Etch/ER-2291_poly_gate_etch_recipe_change.md",
+      "lastModifiedBy": {
+        "user": {
+          "id": "0a11ce00-0000-4000-8000-0000000000a1",
+          "displayName": "Alice Kim",
+          "email": "alice@contoso.com"
+        }
+      },
+      "permissions": [
+        {
+          "id": "c2l0ZS1ncnAtdGVhbS1h",
+          "roles": [
+            "write"
+          ],
+          "grantedToV2": {
+            "group": {
+              "id": "a0a0a0a0-1111-4111-8111-0000000000aa",
+              "displayName": "grp-team-a"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "01IUVO4EMFROKBAIRF5UCZ77JFHRZMABRX",
+      "name": "GL-ETCH-007_chamber_seasoning_guideline.txt",
+      "folderPath": "/Shareable/Etch",
+      "contentFile": "files/Shareable/Etch/GL-ETCH-007_chamber_seasoning_guideline.txt",
+      "size": 1127,
+      "mimeType": "text/plain",
+      "sensitivityLabelId": "6e0e0001-1abe-4a1b-8e1a-000000000001",
+      "sensitivityLabel": "General",
+      "createdDateTime": "2025-03-02T01:00:00Z",
+      "lastModifiedDateTime": "2026-09-20T03:00:00Z",
+      "eTag": "\"{49560D4B-9950-4C4F-B65E-9B942B650786},5\"",
+      "cTag": "\"c:{49560D4B-9950-4C4F-B65E-9B942B650786},5\"",
+      "webUrl": "https://contoso.sharepoint.com/sites/ProcessEng/Shared%20Documents/Shareable/Etch/GL-ETCH-007_chamber_seasoning_guideline.txt",
+      "lastModifiedBy": {
+        "user": {
+          "id": "0a11ce00-0000-4000-8000-0000000000a1",
+          "displayName": "Alice Kim",
+          "email": "alice@contoso.com"
+        }
+      },
+      "permissions": [
+        {
+          "id": "c2l0ZS1ncnAtdGVhbS1h",
+          "roles": [
+            "write"
+          ],
+          "grantedToV2": {
+            "group": {
+              "id": "a0a0a0a0-1111-4111-8111-0000000000aa",
+              "displayName": "grp-team-a"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "0157352Z7GGBHWEYQPU763L7XYVQOJ33DQ",
+      "name": "YE-0412_NX7_yield_excursion_RCA.md",
+      "folderPath": "/Shareable/Yield",
+      "contentFile": "files/Shareable/Yield/YE-0412_NX7_yield_excursion_RCA.md",
+      "size": 3695,
+      "mimeType": "text/markdown",
+      "sensitivityLabelId": "6e0e0002-1abe-4a1b-8e1a-000000000002",
+      "sensitivityLabel": "Confidential",
+      "createdDateTime": "2026-09-13T12:00:00Z",
+      "lastModifiedDateTime": "2026-09-16T08:20:00Z",
+      "eTag": "\"{92BDC666-8C84-4CCE-AC73-07DCDEC19D71},3\"",
+      "cTag": "\"c:{92BDC666-8C84-4CCE-AC73-07DCDEC19D71},3\"",
+      "webUrl": "https://contoso.sharepoint.com/sites/ProcessEng/Shared%20Documents/Shareable/Yield/YE-0412_NX7_yield_excursion_RCA.md",
+      "lastModifiedBy": {
+        "user": {
+          "id": "0a1b0c00-0000-4000-8000-0000000000f7",
+          "displayName": "Jisoo Lee",
+          "email": "jisoo.lee@contoso.com"
+        }
+      },
+      "permissions": [
+        {
+          "id": "c2l0ZS1ncnAtdGVhbS1h",
+          "roles": [
+            "write"
+          ],
+          "grantedToV2": {
+            "group": {
+              "id": "a0a0a0a0-1111-4111-8111-0000000000aa",
+              "displayName": "grp-team-a"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "01UOAQQFFYHK6KV4PUTWDFFZTFOMMTIIDW",
+      "name": "tool_PM_schedule_Q4_2026.html",
+      "folderPath": "/Shareable/Maintenance",
+      "contentFile": "files/Shareable/Maintenance/tool_PM_schedule_Q4_2026.html",
+      "size": 1519,
+      "mimeType": "text/html",
+      "sensitivityLabelId": "6e0e0001-1abe-4a1b-8e1a-000000000001",
+      "sensitivityLabel": "General",
+      "createdDateTime": "2026-09-22T00:30:00Z",
+      "lastModifiedDateTime": "2026-09-25T01:00:00Z",
+      "eTag": "\"{2AC9DE62-E267-40D2-A5E0-18B98F427A80},2\"",
+      "cTag": "\"c:{2AC9DE62-E267-40D2-A5E0-18B98F427A80},2\"",
+      "webUrl": "https://contoso.sharepoint.com/sites/ProcessEng/Shared%20Documents/Shareable/Maintenance/tool_PM_schedule_Q4_2026.html",
+      "lastModifiedBy": {
+        "user": {
+          "id": "0a1b0c00-0000-4000-8000-0000000000f6",
+          "displayName": "Minho Park",
+          "email": "minho.park@contoso.com"
+        }
+      },
+      "permissions": [
+        {
+          "id": "c2l0ZS1ncnAtdGVhbS1h",
+          "roles": [
+            "write"
+          ],
+          "grantedToV2": {
+            "group": {
+              "id": "a0a0a0a0-1111-4111-8111-0000000000aa",
+              "displayName": "grp-team-a"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "01Z45JHKB4EQBFA57VOT5NLO6BNQFGEFLO",
+      "name": "SQ-118_photoresist_supplier_quality_issue.txt",
+      "folderPath": "/Shareable/Supplier",
+      "contentFile": "files/Shareable/Supplier/SQ-118_photoresist_supplier_quality_issue.txt",
+      "size": 1641,
+      "mimeType": "text/plain",
+      "sensitivityLabelId": "6e0e0002-1abe-4a1b-8e1a-000000000002",
+      "sensitivityLabel": "Confidential",
+      "createdDateTime": "2026-08-27T04:00:00Z",
+      "lastModifiedDateTime": "2026-09-05T07:30:00Z",
+      "eTag": "\"{D320A337-535F-4851-8D98-B7D75D6CBC6F},6\"",
+      "cTag": "\"c:{D320A337-535F-4851-8D98-B7D75D6CBC6F},6\"",
+      "webUrl": "https://contoso.sharepoint.com/sites/ProcessEng/Shared%20Documents/Shareable/Supplier/SQ-118_photoresist_supplier_quality_issue.txt",
+      "lastModifiedBy": {
+        "user": {
+          "id": "0a11ce00-0000-4000-8000-0000000000a1",
+          "displayName": "Alice Kim",
+          "email": "alice@contoso.com"
+        }
+      },
+      "permissions": [
+        {
+          "id": "c2l0ZS1ncnAtdGVhbS1h",
+          "roles": [
+            "write"
+          ],
+          "grantedToV2": {
+            "group": {
+              "id": "a0a0a0a0-1111-4111-8111-0000000000aa",
+              "displayName": "grp-team-a"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "01P36EHITR3VVI5IJW6QPZVIW3QV6TQWPX",
+      "name": "MET-CDSEM-02_calibration_runbook.md",
+      "folderPath": "/Shareable/Metrology",
+      "contentFile": "files/Shareable/Metrology/MET-CDSEM-02_calibration_runbook.md",
+      "size": 1198,
+      "mimeType": "text/markdown",
+      "sensitivityLabelId": "6e0e0001-1abe-4a1b-8e1a-000000000001",
+      "sensitivityLabel": "General",
+      "createdDateTime": "2026-02-11T03:00:00Z",
+      "lastModifiedDateTime": "2026-07-18T05:00:00Z",
+      "eTag": "\"{523F415C-C94C-435A-9222-C52510F2C4CF},7\"",
+      "cTag": "\"c:{523F415C-C94C-435A-9222-C52510F2C4CF},7\"",
+      "webUrl": "https://contoso.sharepoint.com/sites/ProcessEng/Shared%20Documents/Shareable/Metrology/MET-CDSEM-02_calibration_runbook.md",
+      "lastModifiedBy": {
+        "user": {
+          "id": "0a1b0c00-0000-4000-8000-0000000000f6",
+          "displayName": "Minho Park",
+          "email": "minho.park@contoso.com"
+        }
+      },
+      "permissions": [
+        {
+          "id": "c2l0ZS1ncnAtdGVhbS1h",
+          "roles": [
+            "write"
+          ],
+          "grantedToV2": {
+            "group": {
+              "id": "a0a0a0a0-1111-4111-8111-0000000000aa",
+              "displayName": "grp-team-a"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "014R4BDER4WH2WSPA4LLBZ2YRQX4I6EIRD",
+      "name": "ETCH-07_FDC_event_log_2026Q3.txt",
+      "folderPath": "/Shareable/Logs",
+      "contentFile": "files/Shareable/Logs/ETCH-07_FDC_event_log_2026Q3.txt",
+      "size": 4536062,
+      "mimeType": "text/plain",
+      "sensitivityLabelId": "6e0e0001-1abe-4a1b-8e1a-000000000001",
+      "sensitivityLabel": "General",
+      "createdDateTime": "2026-10-01T00:20:00Z",
+      "lastModifiedDateTime": "2026-10-01T00:30:00Z",
+      "eTag": "\"{70DF83BD-D31B-41AC-9BEB-8ACF94CB714B},1\"",
+      "cTag": "\"c:{70DF83BD-D31B-41AC-9BEB-8ACF94CB714B},1\"",
+      "webUrl": "https://contoso.sharepoint.com/sites/ProcessEng/Shared%20Documents/Shareable/Logs/ETCH-07_FDC_event_log_2026Q3.txt",
+      "lastModifiedBy": {
+        "user": {
+          "id": "0a1b0c00-0000-4000-8000-0000000000f6",
+          "displayName": "Minho Park",
+          "email": "minho.park@contoso.com"
+        }
+      },
+      "permissions": [
+        {
+          "id": "c2l0ZS1ncnAtdGVhbS1h",
+          "roles": [
+            "write"
+          ],
+          "grantedToV2": {
+            "group": {
+              "id": "a0a0a0a0-1111-4111-8111-0000000000aa",
+              "displayName": "grp-team-a"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "014G5Z6MFBVSQJKPXFCRI3RUNXCDJZWFH7",
+      "name": "NX7_gate_stack_process_window_TRADE_SECRET.md",
+      "folderPath": "/Shareable/Strategy",
+      "contentFile": "files/Shareable/Strategy/NX7_gate_stack_process_window_TRADE_SECRET.md",
+      "size": 538,
+      "mimeType": "text/markdown",
+      "sensitivityLabelId": "6e0e0003-1abe-4a1b-8e1a-000000000003",
+      "sensitivityLabel": "Highly Confidential",
+      "createdDateTime": "2026-05-02T09:00:00Z",
+      "lastModifiedDateTime": "2026-06-12T09:00:00Z",
+      "eTag": "\"{3EB5C075-551C-445F-94C9-929AC303F42A},2\"",
+      "cTag": "\"c:{3EB5C075-551C-445F-94C9-929AC303F42A},2\"",
+      "webUrl": "https://contoso.sharepoint.com/sites/ProcessEng/Shared%20Documents/Shareable/Strategy/NX7_gate_stack_process_window_TRADE_SECRET.md",
+      "lastModifiedBy": {
+        "user": {
+          "id": "0a11ce00-0000-4000-8000-0000000000a1",
+          "displayName": "Alice Kim",
+          "email": "alice@contoso.com"
+        }
+      },
+      "permissions": [
+        {
+          "id": "c2l0ZS1ncnAtdGVhbS1h",
+          "roles": [
+            "write"
+          ],
+          "grantedToV2": {
+            "group": {
+              "id": "a0a0a0a0-1111-4111-8111-0000000000aa",
+              "displayName": "grp-team-a"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "01NDYOLLSGYMNWTPLN6FVLI7G4HTTM6TNH",
+      "name": "team_a_staffing_and_review_notes.md",
+      "folderPath": "/Internal/HR",
+      "contentFile": "files/Internal/HR/team_a_staffing_and_review_notes.md",
+      "size": 271,
+      "mimeType": "text/markdown",
+      "sensitivityLabelId": "6e0e0001-1abe-4a1b-8e1a-000000000001",
+      "sensitivityLabel": "General",
+      "createdDateTime": "2026-08-20T09:00:00Z",
+      "lastModifiedDateTime": "2026-09-01T09:00:00Z",
+      "eTag": "\"{C3059259-CA30-4D73-A194-B99F6F96EE03},3\"",
+      "cTag": "\"c:{C3059259-CA30-4D73-A194-B99F6F96EE03},3\"",
+      "webUrl": "https://contoso.sharepoint.com/sites/ProcessEng/Shared%20Documents/Internal/HR/team_a_staffing_and_review_notes.md",
+      "lastModifiedBy": {
+        "user": {
+          "id": "0a11ce00-0000-4000-8000-0000000000a1",
+          "displayName": "Alice Kim",
+          "email": "alice@contoso.com"
+        }
+      },
+      "permissions": [
+        {
+          "id": "c2l0ZS1ncnAtdGVhbS1h",
+          "roles": [
+            "write"
+          ],
+          "grantedToV2": {
+            "group": {
+              "id": "a0a0a0a0-1111-4111-8111-0000000000aa",
+              "displayName": "grp-team-a"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "01TROYCG72YTI5RKIA65AZ5SZGB6G4UOZT",
+      "name": "WIP_NX8_litho_overlay_budget_DRAFT.md",
+      "folderPath": "/Shareable/Drafts",
+      "contentFile": "files/Shareable/Drafts/WIP_NX8_litho_overlay_budget_DRAFT.md",
+      "size": 256,
+      "mimeType": "text/markdown",
+      "sensitivityLabelId": "6e0e0001-1abe-4a1b-8e1a-000000000001",
+      "sensitivityLabel": "General",
+      "createdDateTime": "2026-10-02T08:00:00Z",
+      "lastModifiedDateTime": "2026-10-02T09:00:00Z",
+      "eTag": "\"{882129D7-F07E-43C6-8D14-37DD898A82ED},1\"",
+      "cTag": "\"c:{882129D7-F07E-43C6-8D14-37DD898A82ED},1\"",
+      "webUrl": "https://contoso.sharepoint.com/sites/ProcessEng/Shared%20Documents/Shareable/Drafts/WIP_NX8_litho_overlay_budget_DRAFT.md",
+      "lastModifiedBy": {
+        "user": {
+          "id": "0a1b0c00-0000-4000-8000-0000000000f7",
+          "displayName": "Jisoo Lee",
+          "email": "jisoo.lee@contoso.com"
+        }
+      },
+      "permissions": [
+        {
+          "id": "c2l0ZS1ncnAtdGVhbS1h",
+          "roles": [
+            "write"
+          ],
+          "grantedToV2": {
+            "group": {
+              "id": "a0a0a0a0-1111-4111-8111-0000000000aa",
+              "displayName": "grp-team-a"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

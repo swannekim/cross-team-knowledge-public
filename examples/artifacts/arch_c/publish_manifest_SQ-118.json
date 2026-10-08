@@ -1,0 +1,112 @@
+{
+  "publishedToKnowledgeExchange": {
+    "site": "https://contoso.sharepoint.com/sites/KnowledgeExchange",
+    "library": "Shared Documents/Knowledge Cards",
+    "siteMembers": [
+      "b0b0b0b0-2222-4222-8222-0000000000bb"
+    ],
+    "allowGuests": false,
+    "listItem": {
+      "id": "01KXEC202D1D5EA74B8C783CD5DBE280E5",
+      "fileName": "KC-supplier-quality-issue-sq-118-photoresist-lot-contamination-a5532ca2.md",
+      "webUrl": "https://contoso.sharepoint.com/sites/KnowledgeExchange/Shared%20Documents/Knowledge%20Cards/KC-supplier-quality-issue-sq-118-photoresist-lot-contamination-a5532ca2.md",
+      "lastModifiedDateTime": "2026-10-07T01:00:00Z",
+      "fields": {
+        "Title": "SUPPLIER QUALITY ISSUE SQ-118 - Photoresist lot contamination",
+        "SourceFingerprint": "sha256:86d05d134d37f704a1b545ee253d93cc3fd01eeb638e743e91e6399d89acce89",
+        "ExpiryDate": "2026-11-06T01:00:00Z",
+        "ApprovalId": "APR-F272A4FE7BCB",
+        "RetentionLabel": "KX-Derived-30d",
+        "ContractId": "SC-2026-0042",
+        "SourceTeam": "Process Engineering",
+        "Sensitivity": "Confidential",
+        "DerivedFrom": "ref-a5532ca2bc769783dd0de7ed",
+        "DerivedContent": true,
+        "CardVersion": 1
+      }
+    },
+    "graphRequests": [
+      {
+        "method": "PUT",
+        "url": "https://graph.microsoft.com/v1.0/sites/contoso.sharepoint.com,8a1b2c3d-4e5f-4a6b-8c7d-9e0f1a2b3c4d,9b2c3d4e-5f6a-4b7c-8d9e-0f1a2b3c4d5e/drive/items/01KXCARDSFOLDER0000000000000000000:/KC-supplier-quality-issue-sq-118-photoresist-lot-contamination-a5532ca2.md:/content",
+        "headers": {
+          "Content-Type": "text/markdown; charset=utf-8"
+        },
+        "body": "<contents of knowledge_card_SQ-118.md; sha256=da85596d24c142feb9e667345df7d0b4bde3ed471269104aebef30d9e3e3065d>",
+        "bodySha256": "da85596d24c142feb9e667345df7d0b4bde3ed471269104aebef30d9e3e3065d",
+        "note": "simple upload; use an upload session for large files"
+      },
+      {
+        "method": "PATCH",
+        "url": "https://graph.microsoft.com/v1.0/sites/contoso.sharepoint.com,8a1b2c3d-4e5f-4a6b-8c7d-9e0f1a2b3c4d,9b2c3d4e-5f6a-4b7c-8d9e-0f1a2b3c4d5e/drive/items/01KXEC202D1D5EA74B8C783CD5DBE280E5/listItem/fields",
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "body": {
+          "Title": "SUPPLIER QUALITY ISSUE SQ-118 - Photoresist lot contamination",
+          "SourceFingerprint": "sha256:86d05d134d37f704a1b545ee253d93cc3fd01eeb638e743e91e6399d89acce89",
+          "ExpiryDate": "2026-11-06T01:00:00Z",
+          "ApprovalId": "APR-F272A4FE7BCB",
+          "RetentionLabel": "KX-Derived-30d",
+          "ContractId": "SC-2026-0042",
+          "SourceTeam": "Process Engineering",
+          "Sensitivity": "Confidential",
+          "DerivedFrom": "ref-a5532ca2bc769783dd0de7ed",
+          "DerivedContent": true,
+          "CardVersion": 1
+        }
+      },
+      {
+        "method": "PATCH",
+        "url": "https://graph.microsoft.com/v1.0/drives/b!a3gtc2l0ZS1mYWtlLWRyaXZlLWlkLTAwMDAwMDAwMDAwMDAwMDAwMDAwMDAw/items/01KXEC202D1D5EA74B8C783CD5DBE280E5/retentionLabel",
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "body": {
+          "name": "KX-Derived-30d"
+        }
+      }
+    ]
+  },
+  "workflowRecordInternalNotPublished": {
+    "requestId": "KR-2896011A4A",
+    "state": "PUBLISHED",
+    "requestedBy": [
+      "bob@contoso.com"
+    ],
+    "ownerApproval": {
+      "approvalId": "APR-F272A4FE7BCB",
+      "by": "alice@contoso.com",
+      "at": "2026-10-07T01:00:00Z",
+      "fingerprint": "sha256:86d05d134d37f704a1b545ee253d93cc3fd01eeb638e743e91e6399d89acce89"
+    },
+    "complianceApproval": {
+      "approvalId": "CMP-F7DBD2A6CA46",
+      "by": "erin@contoso.com",
+      "at": "2026-10-07T01:00:00Z"
+    },
+    "history": [
+      {
+        "at": "2026-10-07T01:00:00Z",
+        "from": "REQUESTED",
+        "to": "OWNER_APPROVED",
+        "actor": "alice@contoso.com",
+        "note": "OK to share supplier issue summary"
+      },
+      {
+        "at": "2026-10-07T01:00:00Z",
+        "from": "OWNER_APPROVED",
+        "to": "COMPLIANCE_APPROVED",
+        "actor": "erin@contoso.com",
+        "note": "PII redaction verified"
+      },
+      {
+        "at": "2026-10-07T01:00:00Z",
+        "from": "COMPLIANCE_APPROVED",
+        "to": "PUBLISHED",
+        "actor": "publisher",
+        "note": "KC-supplier-quality-issue-sq-118-photoresist-lot-contamination-a5532ca2.md"
+      }
+    ]
+  }
+}

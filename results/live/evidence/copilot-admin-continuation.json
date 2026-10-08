@@ -1,0 +1,100 @@
+{
+  "_publicationNotice": "Sanitized historical record, not a new test or operational approval. Identifiers are placeholders; original private evidence is retained separately. Recorded statuses/times/results are historical, not current state. Sanitized bytes cannot verify original hashes.",
+  "date": "2026-10-07",
+  "tenantId": "f0000000-0000-4000-8000-000000000019",
+  "identity": "admin@example.invalid",
+  "identityEvidence": "Copilot account menu verified email and tenant; independent delegated /me verified the same administrator.",
+  "scope": "Synthetic administrator positive paths only; not ordinary-user isolation or a completed three-architecture E2E.",
+  "expectedFacts": {
+    "wetCleanOnlySeasoningWafers": 15,
+    "particleAdders": "below 10 particles of 0.12 um or larger per wafer",
+    "etchRateMonitor": "within 3% of the chamber baseline"
+  },
+  "attempts": [
+    {
+      "id": "C-COPILOT-SITE-SCOPED",
+      "conversationId": "f0000000-0000-4000-8000-00000000003a",
+      "prompt": "Search only the approved synthetic TXT cards on https://sharepoint.example.invalid/sites/Example-Exchange. According to GL-ETCH-007 revision 5, how many seasoning wafers are required after a wet clean only, and what are the chamber release criteria? Cite the actual retrieved Exchange card. Do not use the web, general knowledge, or the original KX-Source site. If the approved card cannot be found, say that explicitly.",
+      "result": "Copilot said it could not find the approved Exchange card; no answer or citation.",
+      "passed": false,
+      "screenshot": "../screenshots/c-copilot-admin-not-found.png"
+    },
+    {
+      "id": "A-COPILOT-WRONG-CONTRACT",
+      "conversationId": "f0000000-0000-4000-8000-000000000026",
+      "prompt": "Find the approved synthetic knowledge in the ExampleDerived connector, contract KX-DEMO-20261007. What does GL-ETCH-007 revision 5 say about the seasoning wafer count after a wet clean only and the chamber release criteria? Ground the answer only in that connector and cite the retrieved source. Do not use SharePoint files, web results, general knowledge or previous chats. If no connector item is found, say so.",
+      "result": "No connector item found. The prompt incorrectly supplied the B contract rather than KX-Synthetic-20261007.",
+      "passed": false,
+      "interpretation": "Invalid positive-query setup; not evidence that the correctly scoped connector cannot answer.",
+      "screenshot": "../screenshots/a-copilot-admin-not-found.png"
+    },
+    {
+      "id": "A-COPILOT-CROSS-SOURCE",
+      "conversationId": "f0000000-0000-4000-8000-000000000012",
+      "prompt": "Search the KX synthetic derived knowledge connector (connection ExampleDerived, contract KX-Synthetic-20261007) for GL-ETCH-007 revision 5. According to that approved summary, how many seasoning wafers are needed after a wet clean only, and what are the release criteria? Cite the connector item. Do not use the original file, SharePoint copies, web or general knowledge.",
+      "correctFacts": true,
+      "citation": "https://sharepoint.example.invalid/sites/Example-Exchange/_layouts/15/viewer.aspx?sourcedoc={f0000000-0000-4000-8000-000000000009}",
+      "passed": false,
+      "interpretation": "Actual citation is the C SharePoint card despite the connector-only prompt. Not an A grounding pass.",
+      "screenshot": "../screenshots/a-copilot-cross-source-citation.png"
+    },
+    {
+      "id": "C-COPILOT-EXACT-URL",
+      "conversationId": "f0000000-0000-4000-8000-000000000033",
+      "prompt": "Use this approved synthetic Exchange card, not the original file: https://sharepoint.example.invalid/sites/Example-Exchange/Shared%20Documents/example-item-0005.txt . According to this card, how many seasoning wafers are required after a wet clean only, and what are the chamber release criteria? Cite the card and do not use web or general knowledge.",
+      "result": "Sorry, I wasn't able to respond to that. Is there something else I can help with?",
+      "passed": false,
+      "interpretation": "Generic response failure; no specific access, indexing or format cause established."
+    },
+    {
+      "id": "C-COPILOT-NAMED-CARD",
+      "conversationId": "f0000000-0000-4000-8000-000000000022",
+      "prompt": "Find the approved GL-ETCH-007 revision 5 knowledge card in Example-Exchange (contract KX-Synthetic-20261007). How many seasoning wafers are required after a wet clean only? What are the chamber release criteria? Use the shared card and cite it.",
+      "answerFacts": [
+        "15 seasoning wafers after a wet clean only",
+        "Adder count below 10 particles of 0.12 um or larger per wafer",
+        "Etch-rate monitor within 3% of the chamber baseline"
+      ],
+      "citation": "https://sharepoint.example.invalid/sites/Example-Exchange/_layouts/15/viewer.aspx?sourcedoc={f0000000-0000-4000-8000-000000000009}",
+      "passed": true,
+      "interpretation": "Administrator received correct facts with the actual approved C card citation. The same administrator's original metadata and listing returned 403 in delegated-admin.json.",
+      "screenshot": "../screenshots/c-copilot-admin-grounded.png"
+    }
+  ],
+  "brokerAnswerQuality": {
+    "evidence": "delegated-admin.json",
+    "authenticationAndCitationChecksPassed": true,
+    "wetCleanQuestionAnswered": false,
+    "observation": "Both /ask and /mcp returned seasoning context and unrelated 35-wafer PM material, not the requested 15-wafer wet-clean fact. One chunk was withheld by the coverage guard.",
+    "interpretation": "Authenticated API success is not answer-quality or Copilot-agent success."
+  },
+  "connectorVisibility": {
+    "connectionId": "ExampleDerived",
+    "initialState": "OFF, with UI warning excluding Copilot Chat and Search Results",
+    "activationTimeApproximateKst": "2026-10-07T16:15:00+09:00",
+    "uiStateAfterAction": "ON; initial warning removed",
+    "observedUiRequest": "POST /fd/mssearchconnectors/v1.0/admin/connections/ExampleDerived/migrateFCC",
+    "httpStatus": 204,
+    "sixItemAclReadback": "All six retain one grant to group f0000000-0000-4000-8000-000000000016; no everyone grant; original expiry unchanged.",
+    "backendReadbackCaveat": "An early post-toggle connection-detail read still listed only Microsoft Search in enabledContentExperiencesV2; that field alone was not used as current Copilot state.",
+    "reloadedUiState": "Full page reload at approximately 16:43 KST retained Copilot Visibility ON and no exclusion warning.",
+    "reloadedUiScreenshot": "../screenshots/a-copilot-visibility-after-reload.png",
+    "postActivationConnectorCitation": "PASS in scoped agent conversation f0000000-0000-4000-8000-000000000039; details in agent-deployment.json"
+  },
+  "originalBrowserOpen": {
+    "url": "https://sharepoint.example.invalid/sites/Example-Source/Shared%20Documents/Shareable/Etch/GL-ETCH-007_chamber_seasoning_guideline.txt",
+    "result": "Redirected to SharePoint AccessDenied.aspx; 'You need access' and 'You don't have access to this item.'",
+    "correlationId": "f0000000-0000-4000-8000-00000000003c",
+    "accountMenu": "Administrator",
+    "accessRequestSubmitted": false,
+    "passed": true,
+    "screenshot": "../screenshots/source-file-admin-access-denied.png"
+  },
+  "supersededAzureCleanup": {
+    "subscriptionId": "f0000000-0000-4000-8000-000000000008",
+    "resourceGroup": "rg-example-knowledge",
+    "groupExists": false,
+    "resourceListResult": "ResourceGroupNotFound",
+    "currentMinus2DeploymentUntouched": true
+  }
+}
