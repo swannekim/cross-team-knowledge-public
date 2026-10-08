@@ -1,13 +1,13 @@
 # Local test results — not live-service evidence
 
-> **Sanitized public-release copy — historical evidence, not new live tests.** Tenant/account/resource identifiers are placeholders; screenshots are labeled sanitized copies with opaque redactions where needed. Original private evidence is retained separately. Pass/fail/blocked/not-run distinctions are preserved. Historical approvals, deadlines and active-state statements describe their recorded checkpoint only, not current status or permission to act. Sanitized artifacts cannot establish the original cryptographic hashes.
+> Sanitized historical results. [Publication details](../SANITIZATION_MANIFEST.json).
 
-
-Every PASS below is a local assertion over fixtures, emulators, generated keys, fake services or loopback HTTP. Names containing `live`, `real`, `Purview` or `SSO` do not establish tenant sign-in, policy decisions, deployed agents or service permission trimming.
+These are local assertions over fixtures, emulators, generated keys, fake services and loopback HTTP.
+Test names containing `live`, `Purview` or `SSO` describe code paths, not deployed-service coverage.
 
 Original evidence remains in [offline-baseline](offline-baseline/TEST_RESULTS.md). Actual service observations are in [A](live/reports/A_connector.md), [B](live/reports/B_broker.md) and [C](live/reports/C_publishing.md).
 
-This Markdown can be re-rendered from recorded JSON without a test rerun. Run metrics/outcomes below are unchanged by rendering; descriptions are qualified for local scope. Blank source descriptions are not additional evidence.
+Metrics and outcomes are preserved from the recorded JSON. Empty description cells reflect missing source descriptions.
 
 - Recorded command: `python3 -m unittest discover -v   (recorded via python3 tools/run_tests.py)`
 - Python 3.14.0, recorded 2026-10-07T07:42:27Z, wall time 82.93 s

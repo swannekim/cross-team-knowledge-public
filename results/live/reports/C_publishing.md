@@ -1,64 +1,72 @@
 # C - Governed derivative publishing
 
-> **Sanitized public-release copy — historical evidence, not new live tests.** Tenant/account/resource identifiers are placeholders; screenshots are labeled sanitized copies with opaque redactions where needed. Original private evidence is retained separately. Pass/fail/blocked/not-run distinctions are preserved. Historical approvals, deadlines and active-state statements describe their recorded checkpoint only, not current status or permission to act. Sanitized artifacts cannot establish the original cryptographic hashes.
+C produced an accurate cited answer for the administrator, but all three ordinary-Reader C-only Copilot attempts failed despite successful listing and later scoped Search.
 
 
-Updated: 8 October 2026. Tenant: `example.invalid`. Data: supplied fictional fixtures only.
+Synthetic demo: 7–8 October 2026; results through the 08:24 KST checkpoint on 8 October.
 
-**Status (08:24 KST, 8 October): prior C admin positive/Reader three failures/Outsider joint negative retained. Morning B catalog preflight returned 404 for both users; no install/B call. Separate install consent RESTORED 08:21:38, independently verified. MFA active until today 20:43; content expires today 14:59:02 KST. Edit denial, revocation and expiry untested.**
+| Test | Result | Boundary |
+|---|---|---|
+| Publication | Six approved TXT cards matched downloaded bytes and metadata | Synthetic output approval, not a customer governance workflow |
+| Administrator Copilot | **PASS:** requested cleaning/seasoning facts and actual Exchange citation | Earlier no-result and generic-error attempts retained below |
+| Ordinary Reader API | Exchange listing **200/six cards**; later C-scoped Search **200/one hit** | Earlier zero-hit positive test failed; edit denial **NOT RUN** |
+| Ordinary Reader Copilot | Named-card, viewer-URL and direct-TXT-URL attempts: **three failed positive retrievals**, safe abstention | Mixed-source answer cited A and failed C source isolation |
+| Outsider | Exchange **403** and C-scoped Search zero hits; joint A/C Copilot prompt returned no facts/citations | Separate scoped API negative; **one** joint UI scenario |
+| Lifecycle and controls | Withdrawal/re-publication passed; actual expiry, guest and revocation tests **NOT RUN** | MIP/retention, DLP and block-download **NOT CONFIGURED** |
+
+> Sanitized historical evidence: identifiers are placeholders, not operational configuration. Screenshots retain redaction labels; sanitized artifacts cannot verify original hashes. Results apply only to the named identities and operations, not production controls. Approvals and deadlines describe their recorded checkpoint.
 
 ![Architecture C — implemented SharePoint derivative-publishing demo — sanitized public copy](../../../docs/diagrams/architecture-c-publishing.png)
 
-*Sanitized public copy; identifying pixels may be opaquely redacted. Historical result, not a new test.*
-
-*Implemented 7–8 October 2026 demo, not the production target.*
+*Sanitized diagram of the implemented demo, not the production target.*
 [Architecture and source files](../../../docs/01_Technical_Architecture.md#architecture-c).
 
 <a id="visual-evidence"></a>
 
 ## Visual evidence
 
-Actual captured screens. Admin grounding passed; the ordinary reader's three C-only attempts did not.
-
 ### Admin — C grounding passed
 
 ![Administrator C Copilot answer grounded in the Exchange card — sanitized public copy](../screenshots/c-copilot-admin-grounded.png)
 
-*Sanitized public copy; identifying pixels may be opaquely redacted. Historical result, not a new test.*
-
-*Administrator: named-card query returned the requested seasoning facts and an actual Exchange citation.
+*Sanitized capture — Administrator: named-card query returned the requested seasoning facts and an actual Exchange citation.
 This does not establish ordinary-reader retrieval.*
 
-### Ordinary reader — Reader C-only retrieval failed
+### Ordinary reader — C-only retrieval failed
 
 ![Reader C-only named-card query with no results — sanitized public copy](../screenshots/c-copilot-reader-no-results.png)
 
-*Sanitized public copy; identifying pixels may be opaquely redacted. Historical result, not a new test.*
-
-*Reader: Microsoft 365 data on, KX connector off; no card or citation. Failed positive retrieval with safe abstention.*
+*Sanitized capture — Reader: Microsoft 365 data on, KX connector off; no card or citation. Failed positive retrieval with safe abstention.*
 
 ![Reader direct TXT URL retry with no results — sanitized public copy](../screenshots/c-copilot-reader-direct-url-failed.png)
 
-*Sanitized public copy; identifying pixels may be opaquely redacted. Historical result, not a new test.*
-
-*Reader: final direct-TXT-URL retry also failed with no citation. Named-card, viewer-URL and direct-URL attempts all failed;
+*Sanitized capture — Reader: final direct-TXT-URL retry also failed with no citation. Named-card, viewer-URL and direct-URL attempts all failed;
 the separate Graph Search hit does not pass Copilot retrieval.*
 
 <details>
-<summary>Earlier admin retrieval failure</summary>
+<summary>Diagnostic history — earlier admin retrieval failure</summary>
 
 ![Administrator initial C query with no approved card found — sanitized public copy](../screenshots/c-copilot-admin-not-found.png)
 
-*Sanitized public copy; identifying pixels may be opaquely redacted. Historical result, not a new test.*
-
-*Administrator: initial C-scoped query found no approved card or citation. The later named-card success does not erase this failure.*
+*Sanitized capture — Administrator: initial C-scoped query found no approved card or citation.*
 
 </details>
 
-## Test results
+## Approval and lifecycle boundary
 
-PASS below is scoped to each named operation. Admin grounding/source-denial evidence does not establish ordinary-user
-permissions, production governance or complete E2E isolation.
+[Publication preview](../PUBLICATION_PREVIEW.md) contains sanitized copies of the reviewed JSON/TXT payloads, not
+the original bytes. In the demo, publication checked approved bytes and source fingerprints; re-publication retained
+identical content and the original expiry.
+
+The manual cleanup deadline was `2026-10-08T05:59:02Z` (**8 October, 14:59:02 KST**). Expiry metadata does not delete
+cards: ingestion, reconciliation and `live_poc sweep` were operator-run. B's snapshot expiry does not delete C cards,
+and copies, retained versions and conversation history cannot be recalled. Library-root `read` does not establish
+effective edit denial or download prevention.
+
+<details>
+<summary>Diagnostic history — publication checks, retrieval failures and identity-specific retries</summary>
+
+## Detailed test record
 
 | Test | Actual result | Status |
 |---|---|---|
@@ -97,17 +105,6 @@ conversation `f0000000-0000-4000-8000-000000000022`, independently returned all 
 actual Exchange citation above. [Successful screenshot](../screenshots/c-copilot-admin-grounded.png);
 [complete attempt history](../evidence/copilot-admin-continuation.json). Earlier failures remain historical, not relabelled passes.
 
-## Approval boundary
-
-[Publication preview](../PUBLICATION_PREVIEW.md) contains every exact outbound JSON/TXT payload. User approval is for this synthetic demo only, not customer data-owner or compliance approval. Publication verifies the approved bytes and current source fingerprint. Lifecycle re-publication retained identical content and the original expiry.
-
-Expiry metadata is not automatic deletion. The operator must run `live_poc sweep`; copies, retained versions and conversation history cannot be recalled. Ingestion and reconciliation are operator-run, not scheduled.
-
-The manual A/C cleanup deadline is `2026-10-08T05:59:02Z`; B's snapshot expiry does not delete C cards.
-Library-root `read` is an ACL observation, not proof that no other grant permits editing. Read-only access also does
-not imply download prevention. Independent source/listing negatives passed for Reader/Outsider, while reader edit denial,
-guest controls and C ordinary-reader positive Copilot grounding remain unverified.
-
 ## Initial native Copilot attempt (retained history)
 
 Conversation: `f0000000-0000-4000-8000-00000000003a`, verified account `admin@example.invalid`.
@@ -129,10 +126,8 @@ returned `200` with one hit. [Recorded evidence](../evidence/delegated-admin.jso
 establish its root cause. Later independent API/UI results below are separate; effective read-only access remains unverified.
 The same admin's later direct original-file browser denial is also recorded:
 [screenshot](../screenshots/source-file-admin-access-denied.png), correlation `f0000000-0000-4000-8000-00000000003c`.
-This pairs actual A/B/C admin positive paths with an original-open negative, without establishing ordinary-user coverage.
 The later [A scoped answer](../screenshots/a-scoped-agent-grounded.png) used an actual clicked native connector citation
 ([panel](../screenshots/a-scoped-agent-citation.png)) matching the approved A opaque URL, **not this C SharePoint card**.
-Earlier mixed-source/no-result attempts remain separate historical failures.
 The later temporary admin-removal drill restored the exact original membership. Its broker negative was **NOT RUN**
 because Copilot's client chunk failed to load; it is not an independent-user or C access-control pass.
 [Record](../evidence/admin-audience-revocation.json). Subsequent independent API results are not a rerun of that failed browser attempt.
@@ -157,13 +152,10 @@ Automatic rollback completed **18:33:38 KST**: both `excludeUsers` lists empty, 
 exited **0**. Full backup remains private outside Git. Issued sessions were **not revoked**; future sign-ins may
 require MFA. Reader's approved Readers grant remains.
 
-**Reauthorized exception ACTIVE:** approval **20:43:06 KST** covers the same two users/policies until
-**8 October 2026, 20:43 KST**. The initial outdated-admin-token attempt failed before mutation. Fresh isolated
-admin sign-in succeeded and exact policy readbacks passed at **20:49:37/44 KST**.
-[Evidence](../test-authentication-exception.json): watchdog `REDACTED-MFA-EXTENSION-WATCHDOG` and one-shot backup
-`REDACTED-MFA-BACKUP-ID` target restoration. Other settings and content expiry are unchanged.
-The running watchdog retains old functions; backup verification can invoke the corrected script after exit.
-No service process was changed. The earlier browser timeout was later resolved as below.
+At the recorded checkpoint, the same two-user/two-policy MFA exception had been reauthorized through
+**8 October 2026, 20:43 KST**. An outdated-admin-token attempt failed before mutation; fresh isolated admin
+sign-in and policy readbacks then succeeded. [Authentication history](../test-authentication-exception.json)
+records the restoration safeguards, not a later restoration result. Content expiry was unchanged.
 
 ## Evening Reader API and actual Copilot attempts
 
@@ -196,21 +188,16 @@ and asked for the same facts from either approved source. Copilot reported no ac
 **no requested facts and zero citations**, with safe abstention.
 **PASS for one joint A/C outsider scenario**, not separate internal retrieval traces or a general isolation guarantee.
 [Screenshot](../screenshots/ac-copilot-outsider-no-evidence.png); [record](../evidence/copilot-selected-users.json).
-The separate B two-user existing-app distribution was approved at **22:02:52 KST**, but both verified users saw
-unavailable-agent/Add disabled. No installation/invocation occurred; B answer tests remain **NOT RUN**.
-[Distribution record](../broker-test-user-distribution.json). The later Teams manifest-link attempt is incomplete:
-admin sign-out was cancelled to preserve drafts; isolated Reader context closed before an outcome.
-Morning scope approval **8 October 07:53:44.262 KST** was applied only to Reader/Outsider Principal grants at **08:07:08/11**,
-preserving baseline grants. Genuine sign-in/`/me` passed, but exact B catalog GET returned 404 for
+The separate B [distribution record](../broker-test-user-distribution.json) retains unavailable-agent/Add-disabled
+failures and an incomplete Teams attempt. With approved temporary catalog/install scopes on 8 October,
+genuine sign-in/`/me` passed, but exact B catalog GET returned 404 for
 [Reader](../evidence/broker-install-reader-20261008.json) and [Outsider](../evidence/broker-install-outsider-20261008.json):
 **BLOCKED_CATALOG/INCOMPLETE**, no installation POST/B call; tokens discarded. Not global app-absence proof or broker denial.
-A new installation ID is not a new app ID; new-app/SSO/catalog-publication fallback remains excluded.
 Early consent restore failed local timestamp validation. Fixing both ledger reads with `-DateKind String` enabled
-fresh restore: **RESTORED at 08:21:38 KST**, watchdog `REDACTED-CONSENT-WATCHDOG` exit **0**. Independent Graph readback
+fresh restore: **RESTORED at 08:21:38 KST**. Independent Graph readback
 found **zero target Principal grants** and unchanged baseline AllPrincipals/admin scopes.
-Backup `REDACTED-CONSENT-BACKUP-ID` remains scheduled **today 09:00 KST**, verification only if already restored.
-No further permission/installation fallback is planned. MFA **today 20:43** and content expiry **today 14:59:02** are separate.
-C's three failed positive retrievals stand.
+Install-consent restoration is separate from the MFA deadline (**8 October 20:43 KST**) and content expiry
+(**14:59:02 KST** that day). None of these B distribution checks changes C's three failed positive retrievals.
 
 A code review found that a recreated card with a lost upload response could leave cleanup using an old item ID. Pending writes now start without an inherited remote ID; cleanup uses the stable filename until the new ID is confirmed. A regression covers this case; the live drill did not inject a network failure.
 
@@ -222,3 +209,5 @@ Morning PersonalBrokerInstall: **49/49 AST mocks / 314 checks**, zero parse erro
 [consent helper](../evidence/temporary-app-install-consent-local-tests.json) **25 scenarios / 71 assertions**.
 Live consent restoration has separate Graph evidence; full Python suite not rerun.
 Original simulation results remain separate in `../offline-baseline/`.
+
+</details>

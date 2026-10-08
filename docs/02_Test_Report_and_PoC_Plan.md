@@ -1,22 +1,48 @@
 # Test report and PoC plan — cross-team knowledge without file access
 
-> **Sanitized public-release copy — historical evidence, not new live tests.** Tenant/account/resource identifiers are placeholders; screenshots are labeled sanitized copies with opaque redactions where needed. Original private evidence is retained separately. Pass/fail/blocked/not-run distinctions are preserved. Historical approvals, deadlines and active-state statements describe their recorded checkpoint only, not current status or permission to act. Sanitized artifacts cannot establish the original cryptographic hashes.
+The 7–8 October synthetic demo established A's ordinary-reader cited answer, B's admin maintenance answer and C's admin answer, with distinct gaps in B distribution and C reader retrieval.
 
 ### Companion to `docs/01_Technical_Architecture.md` · v0.9 · updated 8 October 2026
+
+## 0. Summary
+
+Results through the **8 October 2026, 08:24 KST checkpoint**:
+
+| Architecture | Observed live result | Remaining limitation |
+|---|---|---|
+| [A — connector](../results/live/reports/A_connector.md) | Admin and authorized ordinary Reader received accurate answers with verified A citations; original-source metadata/list calls returned **403** | Reader used native Copilot with mixed sources, not a personal A agent. Guest, revocation and retrieval-disappearance tests remain open |
+| [B — broker](../results/live/reports/B_broker.md) | **API/auth:** admin and Reader access passed; Outsider **403**. **Quality:** admin Copilot and Reader API returned **2026-10-21 / 18 hours**; cleaning count **15** was missing, with safe admin-Copilot abstention | **Ordinary-user Copilot NOT RUN:** genuine sign-ins reached exact-app catalog **404s**, so no install POST or B invocation. Distribution failure is not broker denial |
+| [C — publishing](../results/live/reports/C_publishing.md) | Admin returned requested facts and an Exchange citation. Reader listed six cards and later found a scoped Search hit | **Three C-only Reader Copilot retrieval failures**; a mixed-source answer cited A instead. Edit denial and production governance remain unverified |
+| Outsider A/C boundary | Separate A- and C-scoped Search negatives; **one joint A/C Copilot prompt** returned no facts or citations | One observed UI scenario, not two independent UI runs or a general isolation guarantee |
+
+The wet-clean question is an example chamber-cleaning task asking for the subsequent seasoning-wafer count.
+Reader's earlier API run recorded **7/10**; a later run passed five Graph cases, then stopped at
+`AADSTS50076` before any B cases. That later suite is incomplete, not an overall 5/5 pass.
+
+| Evidence scope | Recorded coverage | Interpretation |
+|---|---|---|
+| Offline/local | Original **104/104** baseline; later full Python suite **211/211**, 82.93 s; separate PowerShell **26 scenarios / 91 assertions** | Fixtures, emulators and mocks, not cloud-service or live-watchdog validation |
+| Synthetic leakage benchmark | **180 fixed runs**; no detected unauthorized results or seeded leakage | Bounded probe results, not general safety evidence |
+| Live demo | Real publication/readback, lifecycle operations, delegated APIs and the identity-specific Copilot results above | No live production controls, guest/revocation coverage or actual TTL cleanup proof |
+| Supplied historical checks | Eight observations without raw request/response evidence | Unverified; retained in the evidence history |
+
+> **Evidence boundary.** This is sanitized historical evidence, not a new test run. Public identifiers are placeholders,
+> not operational configuration; screenshots retain redaction labels and sanitized artifacts cannot verify original
+> hashes. Outcomes apply to the named identities and operations. Approvals and deadlines describe their recorded checkpoint.
+
+Install consent was restored at **08:21:38 KST on 8 October**, with independent Graph readback. The separate MFA
+exception was active at the recorded checkpoint with a **20:43 KST** deadline; content expiry was **14:59:02 KST**.
+Neither later MFA restoration nor actual content cleanup is established by this record.
 
 <a id="visual-results"></a>
 
 ## Visual results
 
-Sanitized copies of actual captured test screens, not mockups. Results differ by architecture and identity.
-
 ### A — ordinary-reader positive
 
 ![Reader native Copilot answer grounded in the A connector — sanitized public copy](../results/live/screenshots/a-copilot-reader-grounded.png)
 
-*Sanitized public copy; identifying pixels may be opaquely redacted. Historical result, not a new test.*
-
-*Reader: sanitized copy of the original capture with a Microsoft survey overlay over the lower citation area; main facts remain visible.
+*Sanitized capture — Reader: a Microsoft survey overlay covers the lower citation area; main facts remain visible.
 The clicked A citation was separately verified. Original-file denial is established by Reader's API 403s, not this screenshot.*
 [A gallery and report](../results/live/reports/A_connector.md#visual-evidence).
 
@@ -24,64 +50,21 @@ The clicked A citation was separately verified. Original-file denial is establis
 
 ![Administrator Copilot broker answer with PM date and duration — sanitized public copy](../results/live/screenshots/b-copilot-sso-grounded.png)
 
-*Sanitized public copy; identifying pixels may be opaquely redacted. Historical result, not a new test.*
-
-*Administrator: PM date/duration and broker citation passed. Wet-clean quality failed; test-user distribution was blocked.*
+*Sanitized capture — Administrator: PM date/duration and broker citation passed. Wet-clean quality failed; test-user distribution was blocked.*
 [B gallery and report](../results/live/reports/B_broker.md#visual-evidence).
 
 ### C — ordinary-reader retrieval failure
 
 ![Reader C-only Copilot lookup with no results — sanitized public copy](../results/live/screenshots/c-copilot-reader-no-results.png)
 
-*Sanitized public copy; identifying pixels may be opaquely redacted. Historical result, not a new test.*
-
-*Reader: C-only named-card retrieval failed with no citation; all three isolated C attempts failed despite a Graph Search
+*Sanitized capture — Reader: C-only named-card retrieval failed with no citation; all three isolated C attempts failed despite a Graph Search
 hit. Admin C grounding passed separately.* [C gallery and report](../results/live/reports/C_publishing.md#visual-evidence).
 
 ---
 
-## 0. Summary
-
-**08:24 KST, 8 October 2026: earlier A/B/C results remain valid. Reader native A Copilot grounding passed with an actual A
-citation; evening A/C Graph Search each found one hit. Five Graph cases passed, then B token acquisition failed 50076:
-suite incomplete, no evening B cases. Three C-only Reader Copilot retries failed; one Outsider joint A/C Copilot negative passed.
-B distribution approved at 22:02:52 KST, but both users' existing-app links are unavailable: distribution BLOCKED;
-non-admin answer/invocation tests NOT RUN.
-The Teams manifest-link attempt was incomplete. Morning catalog/install scopes were approved and applied, but exact-app
-GET returned 404 for both genuinely authenticated users: no installation POST or B invocation. Early consent restore
-failed local timestamp validation, then the corrected retry completed **RESTORED at 08:21:38 KST** with independent
-Graph readback: zero target Principal grants, baseline AllPrincipals/admin scopes unchanged.
-Earlier Outsider 7/7 and Reader 7/10 remain historical records. Full isolation coverage is incomplete.**
-After historical unsuccessful attempts, C's actual admin named-card Copilot query **passed** all three requested facts
-and cited the real Exchange card; the same admin's original metadata/list returned 403 and actual browser
-original-open redirected to AccessDenied. After its first no-result attempt, A's hard-scoped agent **passed**
-all three facts at ~16:46–16:48 with a clicked native citation matching the approved A opaque URL, not C SharePoint.
-B's actual personal Copilot SSO/OpenAPI retrieval **passed**
-without another MFA prompt; a second independent PM question correctly returned **2026-10-21 / 18 hours** with
-the actual opaque citation. The wet-clean-only **15** fact remained absent with correct abstention; no broker policy,
-excerpt or counter changes/reset were made to force it.
-Independent APIs ran under the approved one-hour Reader/Outsider MFA exception, automatically **RESTORED at 18:33:38 KST**.
-Both policy exclusion lists were empty at that checkpoint; watchdog exited 0, issued sessions not revoked.
-The **20:43:06 KST** reauthorization was applied/read back at **20:49:37/44 KST**, after fresh isolated admin
-authentication, and is **ACTIVE until 8 October 20:43 KST** with watchdog and scheduled rollback. Only the same
-two users/two always-on policies changed. Reader's Readers grant remains; content expiry is unchanged.
-No password/licence reassignment. C reader positive retrieval, B non-admin Copilot, guest, edit denial,
-live governance, real expiry and propagation remain incomplete. Reports: [A connector](../results/live/reports/A_connector.md),
-[B broker](../results/live/reports/B_broker.md), [C publishing](../results/live/reports/C_publishing.md).
-Post-specific-app B invocation also passed with audit 42. The earlier temporary admin removal was fully restored before
-the later approved Reader Readers grant; its attempted
-negative query was **NOT RUN**, with no new chat/broker call because Copilot's client chunk failed to load.
-
-| Layer | What was tested | Result |
-|---|---|---|
-| 1. Supplied historical corporate checks | Eight claimed read-only observations; no raw requests/responses supplied | **Not independently verified.** L4 could not run; L8 uses undocumented fields. A current unlabelled-file observation does not verify its labelled/encrypted counts. See §3. |
-| 2. Local tests | A/B/C on synthetic data with emulators, mocks and local validators | Last full Python run **211/211**, **82.93 s**, 16:42:27 KST; not rerun. Persisted 21:42 KST PowerShell run **26 scenarios / 91 assertions** passed. Original **104/104** baseline preserved; no cloud/live-watchdog validation. |
-| 3. Synthetic leakage benchmark | 20 probes × 3 users × 3 options = 180 runs, included in the test suite | No detected unauthorised results, PII/secret leaks, original-location exposures or Highly Confidential leaks on those probes. Not general or live-service safety evidence. |
-| 4. Live implementation | A/C publication/lifecycle, populated-state handoff, admin/selected-user Copilot and delegated APIs | Earlier A reader positive/Outsider joint negative and three C failures retained. Morning B: genuine identities, catalog GET 404 each; no installation POST/B call. Install consent restored 08:21:38, fresh Graph readback passed; initial restore failure retained. MFA active until today 20:43; content expires today 14:59:02. |
-
 Before the 8 October repository update, the existing agent-package and live-broker local suites passed
 **52 tests in 6.572 s**. [Targeted run](../results/live/evidence/pre-push-local-validation.json).
-This does not replace the recorded full 211-test run or establish new cloud behavior.
+This targeted local run is separate from the full 211-test record.
 
 ---
 
@@ -93,24 +76,26 @@ This does not replace the recorded full 211-test run or establish new cloud beha
 
 ---
 
+<details>
+<summary>Evidence and diagnostic history — environment, live attempts, authentication, offline tests and benchmark</summary>
+
 ## 2. Environment and constraints
-- **Historical corporate report:** describes a normal licensed user with delegated Graph access and no administrative writes. This environment is distinct from the current demo preflight; the description has not been independently verified.
-- **Current tenant:** Global Administrator and Azure Owner access confirmed; all 50 E7 and Teams seats assigned.
-  Earlier created synthetic identities remain unlicensed. User-selected existing licensed Reader/Outsider later authenticated
-  for APIs and Reader native Copilot; no licence reassignment. A/B personal installation is admin-only, not a tenant catalogue.
-- **Sanitisation:** internal business names, titles, content and secrets are omitted. Current operational resource identifiers are included for the explicitly selected demo target.
+- **Historical corporate report:** describes a normal licensed user with delegated Graph access and no administrative writes. This unverified account is separate from the synthetic demo.
+- **Demo environment:** administrative deployment access was confirmed. Earlier synthetic identities were unlicensed;
+  selected existing licensed Reader/Outsider later authenticated, without licence reassignment. Personal A/B installation
+  was admin-only.
+- **Sanitisation:** business content, secrets and customer/tenant identifiers are omitted or replaced with placeholders.
 - **Offline baseline:** Python standard library, loopback-only networking, deterministic extractive summaries, BM25, HS256 test tokens, simulated indexing and mocked Purview. Preserve the original evidence in `results/offline-baseline/`.
 - **Expanded local suite:** live adapter tests use generated RSA keys, fake Graph/Blob SDKs and local storage.
   They require `deployment/requirements-live.txt` dependencies but do not perform tenant sign-in or prove real-service access.
 
-### Current implementation observations (partial; supplied by deployment coordinator)
+### Recorded implementation observations
 - The pipeline's actual `Sites.Selected` access to Source (read) and Exchange (write) was confirmed with `200` responses.
 - On an uploaded unlabelled `.txt`, `GET /drives/{sourceDrive}/items/{id}?$select=id,sensitivityLabel` returned `200` and `sensitivityLabel: {displayName:"",id:"",protectionEnabled:false}`. These fields remain undocumented; this is not validation of labelled/encrypted files.
 - `POST .../extractSensitivityLabels` returned `415 unsupportedMediaType`, “selected file type does not support label operations” (request ID `f0000000-0000-4000-8000-000000000032`). The demo uses an explicitly synthetic, pinned-SHA256 fixture registry, not Purview enforcement.
 - Earlier created owner/reader/outsider accounts were unlicensed; ROPC hit `AADSTS50079` (MFA enrolment).
   At that stage CA/MFA were unchanged. Later user-approved **17:30:28 KST two-user/two-policy temporary exclusions**
-  enabled testing with selected existing licensed accounts; independent API results are below. Do not describe
-  current authentication policies as wholly unchanged or tenant-wide disabled.
+  enabled testing with selected existing licensed accounts. This was a scoped exception, not tenant-wide disablement.
 - In the earlier `-1` subscription, both registry builds succeeded. The first revision failed closed because B's contract omitted `redactedExtract`; the corrected contract uses `summary` + `redactedExtract` (A remains summary-only). The second revision timed out on public health after 90 s; container logs showed `sqlite3.OperationalError: database is locked` during `DurableState` COMMIT on actual CIFS. Both failed revisions were deactivated; neither was a healthy broker.
 - Earlier admin FIDO device-flow authentication expired with `AADSTS70020`; that attempt obtained no delegated API
   token. At ~15:51 KST the Copilot browser account selector successfully switched to `admin@example.invalid`;
@@ -119,32 +104,28 @@ This does not replace the recorded full 211-test run or establish new cloud beha
   delegated `/me`; known GL-ETCH source metadata and source list each returned `403`, Exchange list `200`, and scoped
   A/C `/search/query` each returned `200` with one hit. B `/ask` and `/mcp` each returned `200`/two citations,
   but omitted the correct wet-clean-only count (15). [Recorded evidence](../results/live/evidence/delegated-admin.json).
-- Current deployment: Container Apps **Multiple mode**, `minReplicas=0`, `maxReplicas=1`, exactly one active revision
+- Recorded deployment: Container Apps **Multiple mode**, `minReplicas=0`, `maxReplicas=1`, exactly one active revision
   and 100% explicit traffic; Blob-leased local SQLite checkpointed before response, replacing failed CIFS.
   Earlier zero-counter restart remains history; later populated handoff preserved exact metadata/rate/coverage rows
   and prior audit prefix, **2/1/2/19 → 2/1/2/22**, no reset. Cold starts are expected.
 
-### Current Azure target (`-2`)
-| Setting | Current value/status |
+### Recorded Azure target (`-2`; identifiers are placeholders)
+| Setting | Value/status at the checkpoint |
 |---|---|
-| Subscription | `f0000000-0000-4000-8000-00000000003f` |
-| Resource group / region | `rg-example-knowledge` / Korea Central |
-| Storage / registry | `exampleknowledgestorage` / `exampleknowledgeacr` |
-| Managed identity client ID | `f0000000-0000-4000-8000-000000000036` |
-| Broker origin | `https://broker.example.invalid` (final image active and healthy) |
+| Broker origin | `https://broker.example.invalid` (final recorded image healthy) |
 | Provisioning | New Container Apps environment; managed identity Graph roles, private-container-scoped Storage Blob Data Contributor and registry AcrPull configured |
 | State bootstrap | Private Blob marker created once, never reset; actual populated handoff preserved metadata/rate/coverage and prior audit prefix |
-| Current image | Build `de3`, tag `20261007-5`; `sha256:REDACTED_IMAGE_DIGEST_01` |
+| Final recorded image | Build `de3`, tag `20261007-5`; digest retained in deployment evidence |
 | Revision/traffic | `example-broker--0000002`; Multiple mode, exactly one active revision, explicit 100% traffic |
 | Health/notices | Health, `/demo/privacy`, `/demo/terms` all 200; both notices exactly match approved text |
 | Open work | B wet-clean quality and non-admin Copilot, C ordinary-reader retrieval, guest/rate/coverage/propagation/revocation and true expiry; Outsider broker API denial already passed |
 
 The earlier `-1` failed revisions were stopped, then the superseded resource group was deleted after replacement
 verification. **Deletion confirmed ~16:06 KST:** `az group exists` returned `false`; resource listing returned
-`ResourceGroupNotFound`. Current `-2` resources were untouched and registry/storage charges continue.
-No automatic cleanup/expiry jobs are scheduled.
+`ResourceGroupNotFound`. Replacement `-2` resources were untouched. Retained registry/storage incur charges;
+no automatic cleanup/expiry jobs were scheduled.
 
-### Current preparation and permission checks
+### Preparation and permission checks
 | Check | Observed result |
 |---|---|
 | A connection/schema | Ready; ten properties; schema registration completed in **133 s** |
@@ -153,17 +134,15 @@ No automatic cleanup/expiry jobs are scheduled.
 | Initial source preparation | All six eligible candidates rejected with `source_hash_mismatch`; PowerShell byte-array upload had serialized decimal strings rather than source bytes |
 | Repair and rerun | Upload helper corrected with `If-Match` and bounded HTTP 5xx retries; all ten synthetic files reseeded. Real full `root/delta`, six downloads and fingerprint preparation then passed |
 | Eligibility | Six eligible; four excluded: opted-out log, Highly Confidential fixture, Internal path, Drafts path |
-| Initial derivatives | Six A JSON payloads and six C `.txt` files were prepared before approval; subsequently published under the current approved plan below |
+| Initial derivatives | Six A JSON payloads and six C `.txt` files were prepared before approval; subsequently published under the approved plan below |
 | Privilege cleanup | Temporary provisioning role count **0**, key-credential count **0**. Permissions/keys were briefly restored for seed repair, then removed again; issued tokens may remain effective until expiry |
 
 The original plan hash `fbbc9a35a7b0e058c4fc65589bd72c78e93325e26855dee542d046e191096d2b` is superseded, not approved.
 After the B contract correction, a real-Graph snapshot was regenerated (six documents/twelve drafts) and validated
 with B's `load_snapshot`. **Historical plan v2 SHA-256:** `7fccebd6d72adf298301728a22c45d282f9186f9ef7f5b6bd0332a925b14237f`;
-captured `2026-10-07T05:39:58Z`, expires `2026-10-08T05:39:58Z`. The second successful build produced image digest
-`sha256:REDACTED_IMAGE_DIGEST_03`.
+captured `2026-10-07T05:39:58Z`, with expiry `2026-10-08T05:39:58Z`.
 
 Plan v2 used the old broker hostname and was replaced; it was not the publication approval target.
-Deployment failures and pending authentication checks are not passes.
 The two app-context 403s demonstrate scoped app restrictions for those calls, not
 Team B/outsider user denial or Copilot security trimming.
 
@@ -171,7 +150,7 @@ Code review also found a C recovery issue involving stale journal remote IDs aft
 lost upload responses. This failure case remains part of the implementation history; the latest recorded local suite and
 per-architecture report record regression coverage, separately from the successful operator lifecycle test.
 
-### Approved publication and current broker checks
+### Approved publication and broker checks
 | Check | Observed result |
 |---|---|
 | User approval | `15:02 KST`, “Publish and test”; approved plan SHA-256 `4db3b8811c0588ac98a14fe9123fb4b1f20a5ffdd08256bb23da35d7cbac6b3b` |
@@ -181,7 +160,7 @@ per-architecture report record regression coverage, separately from the successf
 | B first `-2` image | Registry build `de1` succeeded; `/healthz` returned `200` with `persistenceReady:true` at `06:07 UTC` |
 | Anonymous HTTP checks | [Fresh post-notice-image run](../results/live/evidence/broker-http-after-agent-notices.json), **07:55:42–43 UTC**, **6 passed**: health 200; no-token/malformed-token/MCP 401; citation 200 without ref reflection; unknown route 404. Signed-in paths **NOT EVALUATED BY THIS RUN**, not admin-blocked; historical run remains separate |
 | Real Entra token negative | Graph app token with wrong broker audience rejected **401**, no citations; not a delegated-user SSO test |
-| Follow-up defect / previous image | Unpaired-surrogate input could poison durable state. Reject-`400` validation was added before transactions; previous healthy `de2` returned actual **400**, followed by healthy status. Current `de3` adds approved public notices |
+| Follow-up defect / previous image | Unpaired-surrogate input could poison durable state. Reject-`400` validation was added before transactions; previous healthy `de2` returned actual **400**, followed by healthy status. Final recorded `de3` added approved public notices |
 | Managed-identity directory checks | Actual container identity queried three users: admin and test reader enabled/Member/in audience; outsider enabled/Member/not in audience. **Identity lookup, not signed-in retrieval** |
 | Earlier restart checkpoint comparison | Identity binding, reference key and audit prefix preserved; `live_start` **1→2**, audit rows **4→8**; user counters **0** before delegated queries. This is not a restart test of the subsequently populated counters |
 | Actual populated-state handoff | Before meta/rate/coverage/audit **2/1/2/19**, after **2/1/2/22**; exact metadata/rate/coverage rows and prior audit prefix preserved, no reset. Separate from earlier zero-counter experiment |
@@ -214,24 +193,17 @@ per-architecture report record regression coverage, separately from the successf
 | Post-specific-app B invocation | Conversation `f0000000-0000-4000-8000-000000000014`: **PASS**, 200/correct PM date/duration/ref; audit **42**, **07:59:35.463912 UTC**, request `e000000000000000000000000000000b`, hash `812d219f9561ae2a`/98 characters, correct admin |
 | Temporary admin audience removal | [Record](../results/live/evidence/admin-audience-revocation.json): removed **08:04:20 UTC**, early restore **08:08:37**, exact original membership restored before the later Reader grant. Negative **NOT RUN**: chunk 88758 timeout, input wait 20 s, no new chat/broker call; unsent draft cleared. Not policy failure or independent-outsider coverage |
 
-Native A/C Copilot testing can proceed in the verified admin browser session without a custom agent. That privileged
-session cannot replace independent-user access tests. Later Reader/Outsider API runs are below; their Copilot UI remains
-untested. B's direct admin APIs and actual personal Copilot
-SSO/OpenAPI invocation and independent PM date/duration answer succeeded, while wet-clean quality failed.
-Baseline manifests retain fictional endpoints/IDs
-and `${{BROKER_SSO_REFERENCE_ID}}`; separate tenant-specific packages were generated and installed.
-Healthy infrastructure, directory lookup and anonymous `401`
-responses must not substitute for signed-in checks. B's snapshot fails closed at expiry; A/C still require manual deletion.
-Repository destination: https://github.com/swannekim/cross-team-knowledge-public (sanitized public-release candidate; publication pending).
+Baseline manifests retain fictional endpoints/IDs and `${{BROKER_SSO_REFERENCE_ID}}`; separate demo packages were
+generated and installed for the administrator. Reader/Outsider results follow below. B's snapshot freshness gate and
+manual A/C deletion are separate lifecycle controls.
+Public repository: https://github.com/swannekim/cross-team-knowledge-public.
 
-The historical delegated script exited `0`; its status-based PASS fields do **not** score answer correctness.
-The script now has memory-only device flow, quality assertions and timestamps for future runs; this does not change
-the meaning of the already recorded run.
+The historical delegated script exited `0` using status-based assertions, not answer-quality checks. Later memory-only
+device flow, quality assertions and timestamps did not rescore that run.
 Request IDs: source metadata `f0000000-0000-4000-8000-00000000002d`, source list
 `f0000000-0000-4000-8000-000000000030`, B ask `e000000000000000000000000000000a`, MCP inner request
 `e0000000000000000000000000000001`. The run is persisted in [delegated-admin.json](../results/live/evidence/delegated-admin.json).
-These are real admin API observations, not successful Copilot SSO, ordinary-user negative tests or a completed E2E task.
-The subsequent actual Copilot SSO invocation is recorded separately in
+The subsequent Copilot SSO invocation is recorded separately in
 [agent-deployment.json](../results/live/evidence/agent-deployment.json), with [screenshot](../results/live/screenshots/b-copilot-sso-insufficient.png):
 request `e0000000000000000000000000000003`, admin object ID `f0000000-0000-4000-8000-000000000031`,
 query hash `870a492bef21b469`, timestamp `2026-10-07T07:34:53.451484+00:00`.
@@ -239,39 +211,31 @@ The service-issued registration/application URI are preserved there. Additive SS
 URI, v2 GUID audience and scope checks; preauthorized `ab3be6b7-f5df-413d-ac2d-abf1e3fd9c0b` and added the approved
 Teams consent callback. Organization-only setup was subsequently restricted to actual acquired app
 `f0000000-0000-4000-8000-000000000017`, saved and verified after portal reload.
-The second independently confirmed PM question returned **2026-10-21 / 18 hours** with the actual PM opaque ref;
-[screenshot](../results/live/screenshots/b-copilot-sso-grounded.png). Second correlation: audit **30**,
+The [second PM answer](../results/live/screenshots/b-copilot-sso-grounded.png) correlates with audit **30**,
 `2026-10-07T07:36:48.071589+00:00`, request `e0000000000000000000000000000006`, hash `11bb52a05ead3e6b`,
 same admin object ID, HTTP 200, one withheld chunk.
-Copilot `acquisitions/get` mapped the actual app/title/manifest before app-specific binding. A further invocation
-after the binding change is not recorded in these two question results.
-The direct original-open browser denial is in [this screenshot](../results/live/screenshots/source-file-admin-access-denied.png).
+Copilot `acquisitions/get` mapped app/title/manifest before app-specific binding; audit **42** in the table above records
+the later post-binding invocation.
+The [original-open screenshot](../results/live/screenshots/source-file-admin-access-denied.png) records admin AccessDenied;
+the UI alone does not supply an HTTP status.
 The unsuccessful audience-negative attempt logged `ChunkLoadError: Loading chunk 88758 failed`, timeout for
 `m365-chat-3s-calling-config.shared.52d93f45.chunk.js` on `res.public.onecdn.static.microsoft`.
-Internet connectivity did not establish that Copilot input was ready. The restored membership and cleared draft
-are recorded separately from the **NOT RUN** authorization check.
-It supplements the earlier metadata/list 403s; do not infer a browser HTTP status solely from the AccessDenied UI.
-The actual A scoped answer is in [this screenshot](../results/live/screenshots/a-scoped-agent-grounded.png) and the native
-Sources panel in [this screenshot](../results/live/screenshots/a-scoped-agent-citation.png). The coordinator clicked the citation;
-its opened broker URL matches the frozen approved A item URL, rather than a C SharePoint viewer.
-Title: `[Synthetic] ETCH CHAMBER SEASONING GUIDELINE (GL-ETCH-007, revision 5) (summary)`;
-source team `Synthetic Process Engineering`, contract `KX-Synthetic-20261007`, custom connector `ks.png` icon.
-Earlier failed attempts remain history. A/B/C admin positives plus original metadata/list/open denials do not replace
-independent ordinary-reader/outsider, guest, revocation and expiry tests.
+Membership restoration succeeded, but that authorization check was **NOT RUN**.
+The [A scoped answer](../results/live/screenshots/a-scoped-agent-grounded.png) and
+[native Sources panel](../results/live/screenshots/a-scoped-agent-citation.png) show the summary title, synthetic
+source team, `KX-Synthetic-20261007` contract and `ks.png` icon. The clicked URL matched the approved A item.
 See also [populated handoff evidence](../results/live/evidence/broker-populated-restart.json) and
 [complete admin attempt history](../results/live/evidence/copilot-admin-continuation.json).
 
 The unsuccessful first A UI attempt is preserved in [its screenshot](../results/live/screenshots/a-copilot-admin-not-found.png).
-Its contract-name mismatch must be corrected before using it to assess properly scoped connector retrieval.
-The [corrected attempt](../results/live/screenshots/a-copilot-cross-source-citation.png) demonstrates that a correct contract name in
-natural-language instructions did not restrict the actual source. Its sole URL was
+The [corrected attempt](../results/live/screenshots/a-copilot-cross-source-citation.png) still cited C, demonstrating that
+the natural-language restriction did not isolate A. Its sole URL was
 `https://sharepoint.example.invalid/sites/Example-Exchange/_layouts/15/viewer.aspx?sourcedoc={f0000000-0000-4000-8000-000000000009}`.
-Source provenance and answer correctness must be scored separately.
 
 ### Independent licensed-user APIs — 17:55 KST checkpoint
 
-The user supplied five existing licensed accounts and approved **Reader alone** joining the task-created Readers group
-at **17:22:38 KST**. Admin/original synthetic reader remained members; Outsider received no demo grant.
+The user approved **Reader alone** joining the task-created Readers group at **17:22:38 KST**.
+Admin/original synthetic reader remained members; Outsider received no demo grant.
 Original source ACLs and existing passwords/licence assignments were unchanged. These identities differ from the
 earlier unlicensed synthetic accounts.
 
@@ -292,43 +256,29 @@ earlier unlicensed synthetic accounts.
 Evidence: [Reader reader retry](../results/live/evidence/delegated-reader-reader-retry.json),
 [Outsider outsider](../results/live/evidence/delegated-outsider-outsider.json).
 The [initial Reader attempt](../results/live/evidence/delegated-reader-reader-initial-auth.json) failed `invalid_grant/50076`;
-preserved as history, not a current failed-sign-in verdict after the genuine successful retry.
+before the successful retry.
 Reader A/C Search request IDs: `f0000000-0000-4000-8000-000000000035` /
 `f0000000-0000-4000-8000-000000000013`; PM `e0000000000000000000000000000002`;
 wrong purpose `e0000000000000000000000000000007`.
 Outsider ask `e0000000000000000000000000000009`; MCP `e0000000000000000000000000000004`.
 
-These are independent **API** cases, not non-admin Copilot UI evidence. The reader's zero Search hits are failures,
-not proof of correct trimming; group/search propagation is possible but its root cause is unproven.
-Exchange listing success does not establish edit denial/download prevention. Guest, revocation, full rate/coverage
-and actual expiry tests remain incomplete; no broker policy, excerpts or counters were changed to force wet-clean 15.
+The zero-hit Reader searches failed positive retrieval; propagation is a hypothesis, not a diagnosed cause.
+No broker policy, excerpts or counters were changed to force the missing cleaning count.
 
 ### Approved one-hour authentication exception — RESTORED
 
 [Exception readback/restore plan](../results/live/test-authentication-exception.json) records user approval at
 **17:30:28 KST** to append only Reader and Outsider to `conditions.users.excludeUsers` in two always-on MFA policies:
 `f0000000-0000-4000-8000-00000000001c` and `f0000000-0000-4000-8000-00000000003e`.
-Both policies remain enabled and all other settings matched the intended additive diff.
+Both policies stayed enabled and all other settings matched the intended additive diff.
 Risk policies, administrator and other users were not changed; other authentication requirements can still apply.
 Security Defaults/per-user MFA were not changed, but their reads returned **403**, so their actual state was not established.
-This was an explicitly approved one-hour scoped relaxation, **not tenant-wide MFA disablement** or an unchanged-policy claim.
+Automatic rollback completed **18:33:38 KST** with watchdog exit **0** and ledger **RESTORED**. Both policy readbacks
+showed empty `excludeUsers`, preserving unrelated settings; exact per-policy timings remain in the linked evidence.
+**Issued sessions were not revoked** (`issuedSessionsRevoked:false`). The earlier admin audience restoration was a
+different operation, and neither rollback removed Reader's approved Readers grant.
 
-Watchdog `REDACTED-MFA-INITIAL-WATCHDOG` completed automatic rollback and exited **0**. The private ledger is
-**RESTORED**; overall completion **18:33:38.5419737 KST**. The scheduled target was **18:33:21 KST / 09:33:21 UTC**,
-not the final readback time. Recorded canonical readbacks confirm:
-
-| Policy | Restored/read back (KST) | Remaining `excludeUsers` |
-|---|---|---|
-| `f0000000-0000-4000-8000-00000000001c` | 18:33:33.1642066 | `[]` |
-| `f0000000-0000-4000-8000-00000000003e` | 18:33:38.5367093 | `[]` |
-
-Only that run's exclusions were removed, preserving unrelated settings; its watchdog/rollback completed.
-Full policy backup stays private outside Git. **Issued sessions were not revoked** (`issuedSessionsRevoked:false`):
-policy restoration is not proof of immediate token/session invalidation, and future sign-ins may require MFA.
-The earlier **17:08 admin audience restoration** was a different operation. Neither rollback removes Reader's later
-approved Readers grant. Later native Copilot results are separate from this authentication-policy history.
-
-### Extension approved at 20:43 KST — ACTIVE
+### Extension approved at 20:43 KST — active at the recorded checkpoint
 
 At **20:43:06 KST on 7 October**, the user approved resuming the **same Reader/Outsider-only, two-policy exception**
 until “tomorrow,” recorded as **8 October 2026, 20:43 KST**.
@@ -338,16 +288,14 @@ Microsoft Graph rejected the existing administrator token with **Continuous Acce
 the two exclusions were reapplied at **20:49:37/44 KST**. Canonical readback matched the expected changes and
 preserved every other policy setting. The earlier completed rollback remains historical evidence.
 
-Detached watchdog **`REDACTED-MFA-EXTENSION-WATCHDOG`** is running and backup rollback automation
-**`REDACTED-MFA-BACKUP-ID`** is scheduled for **8 October 20:43 KST**. The exception is now active; restoration is pending.
-`Set-TemporaryTestMfaException.ps1` now accepts explicit `-RestoreAt` (more than two minutes, at most 48 hours ahead),
-requires actual `-ApprovedAt`, and supports isolated `-AzureConfigDirectory`. The active ledger records that profile
-for restoration. No credentials/private backup are published here. The approved content expiry was not extended.
+At the recorded checkpoint, the watchdog was running and backup rollback was scheduled for
+**8 October 20:43 KST**. The record does not establish a later restoration outcome.
+The helper recorded explicit approval/restoration times and an isolated administrator profile for rollback.
+The approved content expiry was not extended.
 
 The earlier **Enter password / timeout** observation was not proof of Reader's sign-in; the later verified session is below.
-The running watchdog retains old functions. Backup automation verifies restoration and can invoke the corrected cleanup
-script after it exits; no service process was changed. Earlier issued sessions were not revoked, and other MFA requirements
-can still apply.
+The watchdog retained its original functions; backup verification could use the corrected cleanup script after exit.
+Earlier issued sessions were not revoked, and other MFA requirements could still apply.
 
 ### Evening Reader API retry — five Graph passes, suite incomplete
 
@@ -444,15 +392,14 @@ Stop fallback: new app IDs, tenant publication and SSO broadening remain exclude
 **Consent RESTORED at 08:21:38 KST:** early restore failed local timestamp validation: PowerShell 7.6 `ConvertFrom-Json`
 converted ledger timestamps to `DateTime`, losing the fraction/offset round-trip expected by `DateTimeOffset.Parse`.
 Both restore-ledger reads now use `ConvertFrom-Json -AsHashtable -DateKind String`. A fresh restore signaled the existing
-watchdog; Reader's introduced grant was removed at **08:21:21**, Outsider' at **08:21:31**. The ledger reached RESTORED at
-`2026-10-07T23:21:38.1924058Z` (**8 October 08:21:38 KST**); watchdog `REDACTED-CONSENT-WATCHDOG` exited **0**.
+watchdog; Reader's introduced grant was removed at **08:21:21**, Outsider's at **08:21:31**. The ledger reached RESTORED at
+`2026-10-07T23:21:38.1924058Z` (**8 October 08:21:38 KST**); the watchdog exited **0**.
 Independent fresh Graph readback found **zero target Principal grants**, with original AllPrincipals/admin Principal
 four-scope grants exactly unchanged. [Evidence](../results/live/broker-test-user-distribution.json).
 The initial failed attempt remains history; removing consent does not revoke issued tokens/sessions.
-Backup `REDACTED-CONSENT-BACKUP-ID` remains scheduled **today 09:00 KST** for additional verification, with no extra mutation
-if already restored. No further installation/permission fallback is planned.
-Separate MFA watchdog `REDACTED-MFA-EXTENSION-WATCHDOG` remains active until **today 20:43 KST**;
-content expires **today 14:59:02 KST**, unchanged.
+A backup consent verification was scheduled for **8 October 09:00 KST**; its later outcome is not recorded here.
+This was install-consent restoration, not restoration of the separate MFA exception with its **20:43 KST** deadline.
+Content expiry remained **14:59:02 KST** that day.
 
 ### Local script corrections, not new cloud deployment evidence
 
@@ -582,9 +529,10 @@ The probes were 13 answerable questions, 1 Highly Confidential, 2 out-of-scope a
 
 ---
 
+</details>
+
 ## 5. Live validation coverage and gaps
-The offline baseline does not establish any live result. Current real API/Copilot evidence is listed separately below;
-publication/readback must not be conflated with user retrieval or Copilot integration.
+Publication, user retrieval and policy enforcement are scored separately.
 
 | Item | Current evidence and remaining validation | Planned cases |
 |---|---|---|
@@ -602,37 +550,25 @@ publication/readback must not be conflated with user retrieval or Copilot integr
 ## 6. Live validation plan (controlled tenant; synthetic data first)
 
 ### 6.1 Prerequisites
-- Complete remaining selected-user Copilot and authorization cases; Reader native A positive is established.
-  Preserve earlier Outsider 7/7 and Reader 7/10 separately from the evening five Graph passes/B token failure.
-  Earlier MFA exclusions were restored; the same scoped exception was subsequently reauthorized and read back.
-  Verify identity separately in each service, including SharePoint; confirm scheduled restoration. Other policies may require MFA.
-  No tenant-wide disablement, password reset or licence reassignment; do not repeat removal until client input is ready.
-  Broader coverage still requires **TA-owner**, **TB-user**, **Outsider** and guest cases. Earlier created synthetic
-  accounts were unlicensed; the selected existing users need no seat reassignment. Direct Graph/broker and Copilot
-  routes have different licensing requirements; record which route actually ran.
-- Appropriate consent/site-grant roles and AI Administrator for connector management; verify effective permissions.
-- Current broker hosting is already in the specified `-2` subscription. Azure OpenAI, Functions and AI Search are
-  optional target-design extensions, not prerequisites for the deployed BM25 broker.
-- Current source/Exchange sites and synthetic registry already exist. For real Purview validation, add separately
-  approved supported-format labelled/encrypted fixtures; synthetic label names are not applied labels.
-- Existing A/B packages are installed for admin only. Morning approved B preflight stopped at both catalog 404s.
-  Introduced catalog/install grants are restored with baseline unchanged. No further permission/installation work
-  without a new user request; no new app IDs, tenant publication or broader SSO fallback is approved.
-  Preserve baseline manifests as fixtures.
+- Verify **TA-owner**, **TB-user**, **Outsider** and guest identities separately in each service, including SharePoint.
+  Check licensing for the route under test, effective consent/site grants and connector-administration roles.
+- Reconfirm authentication policy and restoration state before a new run; historical exceptions are not standing
+  authorization. The recorded B approval did not cover new app IDs, tenant publication or broader SSO fallback.
+- Use separately approved, supported-format labelled/encrypted fixtures for Purview validation. The demo's synthetic
+  label registry does not apply labels.
+- Reuse demo resources only after checking their state. Azure OpenAI, Functions and AI Search are optional target-design
+  extensions, not prerequisites for the demonstrated BM25 broker. Preserve baseline manifests as fixtures.
 
 ### 6.2 Option A setup: completed API work versus remaining integration
 1. Register the app with a certificate. Grant `Sites.Selected`, `ExternalConnection.ReadWrite.OwnedBy` and `ExternalItem.ReadWrite.OwnedBy` (application), then give admin consent.
 2. `POST /sites/{TeamA-site}/permissions` with role `read` for the app (Appendix A.1 of the architecture document).
-3. Current demo has `Example-Readers`, manually managed. An access package/owner governance workflow remains target work.
-4. Existing `deployment/scripts` and `app/live_poc` already created `ExampleDerived`, registered its schema (133 s), and
-   published six reviewed items. Do not create a duplicate connection or blindly rerun setup.
-5. Measure client availability after **Copilot Visibility ON**. The actual connection was OFF, then ON after
-   activation 204 at ~16:15; full reload ~16:43 retained ON/no warning. Six ACLs/expiry unchanged. Earlier Search-only
-   backend readback is historical; actual admin grounding later passed. Do not treat the ~31-minute interval as an SLA.
-   Assess **staged rollout** separately.
-6. Native A ordinary-reader grounding now passed for Reader without personal installation. Keep it separate from the
-   admin hard-scoped-agent result; independent personal A-agent distribution is not tested or newly approved.
-   `declarativeAgent.connector.json` in the baseline names the fictional connection, not the deployed package.
+3. The demo used a manually managed audience group; access-package/owner governance remains target work.
+4. `deployment/scripts` and `app/live_poc` created the connection, registered its schema (133 s) and published six reviewed
+   items. Verify their state rather than creating duplicates.
+5. Measure availability and staged rollout after **Copilot Visibility ON**. The recorded OFF→ON change persisted after
+   reload, with unchanged ACLs/expiry. The ~31-minute activation-to-answer interval is one observation, not an SLA.
+6. Test personal A-agent distribution separately from the established native Reader answer.
+   `declarativeAgent.connector.json` is a fictional baseline fixture, not operational configuration.
 
 Steps 1–2 describe the pipeline grants already verified. Front-end visibility, rollout and user tests remain separate work.
 
